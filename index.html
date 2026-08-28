@@ -1120,8 +1120,20 @@ html&gt;body{padding:0}&lt;/style&gt;
       border-left: 4px solid light-dark(#107c10, #54b054);
     }
     #usvi-reporting-mockup .spfx-status-field.amber { border-left-color: light-dark(#ca5010, #f3a15f); }
+    #usvi-reporting-mockup .spfx-status-field.red { border-left-color: light-dark(#a4262c, #ff8b91); }
+    #usvi-reporting-mockup .spfx-status-field.neutral { border-left-color: light-dark(#8a8886, #adadad); }
     #usvi-reporting-mockup .spfx-status-label { font-size: 11px; color: light-dark(#616161, #c8c8c8); margin-bottom: 5px; }
     #usvi-reporting-mockup .spfx-status-value { font-size: 13px; font-weight: 600; }
+    #usvi-reporting-mockup .spfx-status-field select { min-height: 30px; padding: 4px 6px; font-size: 12px; }
+    #usvi-reporting-mockup .spfx-status-rule { margin: -3px 0 10px; color: light-dark(#616161, #c8c8c8); font-size: 11px; }
+    #usvi-reporting-mockup .spfx-status-exception {
+      margin-top: 12px;
+      padding: 12px;
+      background: light-dark(#fff4ce, #4b3b0e);
+      border-left: 4px solid light-dark(#ca5010, #f3a15f);
+    }
+    #usvi-reporting-mockup .spfx-status-exception[hidden] { display: none; }
+    #usvi-reporting-mockup .spfx-status-exception-title { font-size: 12px; font-weight: 600; margin-bottom: 10px; }
     #usvi-reporting-mockup .spfx-inline-note {
       display: flex; gap: 9px; align-items: flex-start;
       padding: 10px 12px; margin-bottom: 15px;
@@ -1230,11 +1242,19 @@ html&gt;body{padding:0}&lt;/style&gt;
 
           &lt;div class=&quot;spfx-section&quot;&gt;
             &lt;div class=&quot;spfx-section-title&quot;&gt;Current status&lt;/div&gt;
+            &lt;div class=&quot;spfx-status-rule&quot;&gt;Select Green, Amber, Red or N/A for each category. Amber and Red ratings require an explanation and recovery action.&lt;/div&gt;
             &lt;div class=&quot;spfx-status-row&quot;&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Overall&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Green - On track&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Schedule&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Amber - Watch&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Budget&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Green - On plan&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Safety&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Green - No event&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-overall&quot;&gt;Overall&lt;/label&gt;&lt;select id=&quot;w-overall&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Attention needed&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Off track&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-schedule&quot;&gt;Schedule&lt;/label&gt;&lt;select id=&quot;w-schedule&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - Watch&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Milestone threatened&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-budget&quot;&gt;Budget&lt;/label&gt;&lt;select id=&quot;w-budget&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On plan&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Forecast pressure&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Over plan&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-safety&quot;&gt;Safety&lt;/label&gt;&lt;select id=&quot;w-safety&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - No event&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Emerging concern&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Serious event&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;spfx-status-exception&quot; data-status-exception&gt;
+              &lt;div class=&quot;spfx-status-exception-title&quot;&gt;Amber / Red status explanation&lt;/div&gt;
+              &lt;div class=&quot;spfx-grid&quot;&gt;
+                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-status-reason&quot;&gt;Reason and project impact &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;w-status-reason&quot; value=&quot;Utility conflict creates a potential five-working-day schedule delay.&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-recovery&quot;&gt;Recovery action, owner and target date &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;w-recovery&quot; value=&quot;Design Manager to complete field verification by September 14.&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
           &lt;/div&gt;
 
@@ -1314,11 +1334,19 @@ html&gt;body{padding:0}&lt;/style&gt;
 
           &lt;div class=&quot;spfx-section&quot;&gt;
             &lt;div class=&quot;spfx-section-title&quot;&gt;Monthly status and executive summary&lt;/div&gt;
+            &lt;div class=&quot;spfx-status-rule&quot;&gt;Ratings are suggested from approved weekly updates. The Project Manager confirms or changes them before submission.&lt;/div&gt;
             &lt;div class=&quot;spfx-status-row&quot;&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Overall&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Green - On track&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Schedule&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Amber - 5-day risk&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Budget&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Green - On plan&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;div class=&quot;spfx-status-label&quot;&gt;Risk&lt;/div&gt;&lt;div class=&quot;spfx-status-value&quot;&gt;Amber - Active issue&lt;/div&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-overall&quot;&gt;Overall&lt;/label&gt;&lt;select id=&quot;m-overall&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Attention needed&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Off track&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-schedule&quot;&gt;Schedule&lt;/label&gt;&lt;select id=&quot;m-schedule&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - 5-day risk&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Milestone threatened&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-budget&quot;&gt;Budget&lt;/label&gt;&lt;select id=&quot;m-budget&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On plan&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Forecast pressure&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Over plan&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-risk&quot;&gt;Risk&lt;/label&gt;&lt;select id=&quot;m-risk&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - Controlled&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - Active issue&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Escalation required&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;spfx-status-exception&quot; data-status-exception&gt;
+              &lt;div class=&quot;spfx-status-exception-title&quot;&gt;Amber / Red status explanation&lt;/div&gt;
+              &lt;div class=&quot;spfx-grid&quot;&gt;
+                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-status-reason&quot;&gt;Reason and monthly impact &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;m-status-reason&quot; value=&quot;Utility conflict creates a five-working-day exposure to civil mobilization.&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-recovery&quot;&gt;Recovery plan, owner and target date &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;m-recovery&quot; value=&quot;Expedited field verification; Design Manager; target September 14.&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;spfx-grid&quot; style=&quot;margin-top:13px&quot;&gt;
               &lt;div class=&quot;spfx-field spfx-span-8&quot;&gt;&lt;label for=&quot;m-summary&quot;&gt;Executive summary / what changed this month? &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;textarea id=&quot;m-summary&quot;&gt;The project remains on track overall. The revised phasing plan was accepted; however, an underground utility conflict creates a five-working-day schedule exposure. Resolution is targeted before civil mobilization.&lt;/textarea&gt;&lt;/div&gt;
@@ -1399,6 +1427,22 @@ Permit response - Green - Permitting Lead - Closed&lt;/textarea&gt;&lt;/div&gt;
               : &#x27;Mockup response: the report would be saved without starting the review workflow.&#x27;;
           toast.classList.add(&#x27;show&#x27;);
         });
+      });
+      const updateException = (view) =&gt; {
+        const needsExplanation = [...view.querySelectorAll(&#x27;[data-status-picker]&#x27;)]
+          .some((picker) =&gt; picker.value === &#x27;amber&#x27; || picker.value === &#x27;red&#x27;);
+        const exception = view.querySelector(&#x27;[data-status-exception]&#x27;);
+        if (exception) exception.hidden = !needsExplanation;
+      };
+      root.querySelectorAll(&#x27;[data-status-picker]&#x27;).forEach((picker) =&gt; {
+        const applyStatus = () =&gt; {
+          const statusField = picker.closest(&#x27;.spfx-status-field&#x27;);
+          statusField.classList.remove(&#x27;amber&#x27;, &#x27;red&#x27;, &#x27;neutral&#x27;);
+          if (picker.value !== &#x27;green&#x27;) statusField.classList.add(picker.value);
+          updateException(picker.closest(&#x27;[role=&quot;tabpanel&quot;]&#x27;));
+        };
+        picker.addEventListener(&#x27;change&#x27;, applyStatus);
+        applyStatus();
       });
     })();
   &lt;/script&gt;
