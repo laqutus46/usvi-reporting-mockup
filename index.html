@@ -1,1738 +1,974 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Usvi Reporting Spfx Mockup</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
-</head>
-<body>
-<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Usvi Reporting Spfx Mockup" srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;Usvi Reporting Spfx Mockup&lt;/title&gt;
-&lt;style&gt;:root {
-  color-scheme: light dark;
-  background-color: var(
-    --background,
-    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
-  ) !important;
-
-  /* Agent-facing contract; keep in sync with SKILL.md. */
-  --background: var(
-    --color-background-primary,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
-  --card-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --popover: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255), rgb(45 45 45))
-  );
-  --popover-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --primary: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --primary-foreground: var(
-    --color-text-inverse,
-    light-dark(rgb(255 255 255), rgb(13 13 13))
-  );
-  --secondary: var(
-    --color-background-secondary,
-    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
-  );
-  --secondary-foreground: var(
-    --color-text-primary,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
-  --muted-foreground: var(
-    --color-text-secondary,
-    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
-  );
-  --accent: var(
-    --color-background-info,
-    light-dark(rgb(229 242 255), rgb(13 39 63))
-  );
-  --accent-foreground: var(
-    --color-text-info,
-    light-dark(rgb(51 156 255), rgb(131 195 255))
-  );
-  --destructive: var(
-    --color-text-warning,
-    light-dark(rgb(226 85 7), rgb(255 133 73))
-  );
-  --border: var(
-    --color-border-secondary,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-  --input: var(
-    --color-border-primary,
-    light-dark(
-      rgb(26 28 31 / 11.8%),
-      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
-    )
-  );
-  --ring: var(
-    --color-ring-primary,
-    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
-  );
-  --font-size-base: var(--font-text-md-size, 14px);
-  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
-  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
-  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
-  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
-  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
-  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
-  --viz-series-1: var(--primary);
-  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
-  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
-  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
-  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
-  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
-
-  /* Internal implementation variables; not part of the agent contract. */
-  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
-    monospace;
-  --font-size-normal: max(11px, var(--font-size-base));
-  --font-size-tooltip: calc(var(--font-size-base) - 1px);
-  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
-  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
-  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
-  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
-  --font-weight-normal: 430;
-  --font-weight-medium: 500;
-  --line-height-normal: calc(var(--font-size-normal) * 1.5);
-  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
-  --line-height-small: calc(var(--font-size-small) + 4px);
-  --radius: var(--border-radius-lg, 12.5px);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-2xl: calc(var(--radius) * 1.6);
-  --radius-full: 9999px;
-  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
-
-  /* Legacy aliases; not part of the current agent contract. */
-  --viz-bg: transparent;
-  --viz-panel: var(--card);
-  --viz-border: var(--border);
-  --viz-text: var(--foreground);
-  --viz-muted: var(--muted-foreground);
-  --viz-accent: var(--primary);
-  --viz-accent-text: var(--primary-foreground);
-  --viz-accent-bg: var(--accent);
-  --viz-font-size: var(--font-size-base);
-  --viz-warning: var(--destructive);
-}
-
-:root[data-theme=&quot;light&quot;] {
-  color-scheme: light;
-}
-
-:root[data-theme=&quot;dark&quot;] {
-  color-scheme: dark;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html &gt; body {
-  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
-  --color-background-primary: var(
-    --background,
-    light-dark(rgb(255 255 255), rgb(24 24 24))
-  );
-  --color-text-primary: var(
-    --foreground,
-    light-dark(rgb(26 28 31), rgb(255 255 255))
-  );
-  --color-border-secondary: var(
-    --border,
-    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
-  );
-
-  margin: 0;
-  padding: 5px;
-  color: var(--foreground);
-  background: transparent !important;
-  font-family: var(--font-sans) !important;
-  font-size: var(--font-size-normal);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-normal);
-}
-
-a {
-  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
-  cursor: pointer;
-  font-weight: var(--font-weight-medium, 500);
-  text-decoration: none;
-  text-underline-offset: 2px;
-}
-
-a:is(:hover, :focus-visible) {
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 0.5px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-block: 0;
-}
-
-h1 {
-  font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-size: var(--font-size-h3);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.3;
-}
-
-b,
-strong,
-th {
-  font-weight: var(--font-weight-medium);
-}
-
-code:not(pre code) {
-  display: inline;
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
-  background: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.92em;
-  overflow-wrap: anywhere;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  word-break: break-word;
-}
-
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: thin;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  color: var(--foreground);
-  font: inherit;
-  text-align: start;
-}
-
-.table :is(th, td) {
-  padding-block: 10px;
-  padding-inline: 0 24px;
-  overflow-wrap: anywhere;
-  border-bottom: 1px solid var(--border);
-  text-align: start;
-  vertical-align: top;
-}
-
-.table-responsive &gt; .table :is(th, td) {
-  overflow-wrap: break-word;
-}
-
-.table :is(th, td):last-child {
-  padding-inline-end: 0;
-}
-
-.table :is(caption, thead th) {
-  font-weight: 600;
-}
-
-.table thead th {
-  padding-block: 8px;
-  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
-}
-
-.table tbody tr:last-child :is(th, td) {
-  border-bottom: 0;
-}
-
-.table.table-sm :is(th, td) {
-  padding-block: 6px;
-}
-
-.table.table-sm :is(th, td):not(:last-child) {
-  padding-inline-end: 16px;
-}
-
-.table :is(.text-end, [align=&quot;right&quot;]) {
-  text-align: end;
-  font-variant-numeric: tabular-nums;
-}
-
-.table :is(.text-center, [align=&quot;center&quot;]) {
-  text-align: center;
-}
-
-.table .text-nowrap {
-  white-space: nowrap;
-}
-
-#widget {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  padding: 0;
-  background: transparent !important;
-}
-
-.card {
-  min-width: 0;
-  padding: 12px;
-  overflow: hidden;
-  overflow-wrap: break-word;
-  border-radius: var(--radius-2xl);
-  corner-shape: superellipse(1.5);
-  color: var(--card-foreground);
-  background: var(--card);
-}
-
-#widget &gt; :not(.card, .progress) {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.tooltip {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  width: max-content;
-  max-width: min(
-    20rem,
-    var(--tooltip-available-width, calc(100vw - 10px)),
-    calc(100vw - 10px)
-  );
-  max-height: min(
-    var(--tooltip-available-height, calc(100vh - 10px)),
-    calc(100vh - 10px)
-  );
-  padding: 4px 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--popover-foreground);
-  background: var(--popover);
-  box-shadow: none;
-  font-size: var(--font-size-tooltip);
-  line-height: var(--line-height-tooltip);
-  overflow-wrap: break-word;
-  white-space: normal;
-  pointer-events: none;
-  user-select: none;
-}
-
-.viz-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
-  gap: 10px;
-}
-
-.viz-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.viz-stat-value {
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.25;
-}
-
-.viz-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.progress {
-  display: flex;
-  height: 6px;
-  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
-  overflow: hidden;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-}
-
-.progress-bar {
-  height: 100%;
-  flex-shrink: 0;
-  border: 0;
-  background: var(--viz-series-1);
-}
-
-.viz-badge {
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  color: var(--accent-foreground);
-  background: var(--accent);
-  font-weight: var(--font-weight-medium);
-}
-
-small,
-.text-small,
-.viz-badge {
-  font-size: var(--font-size-small);
-  line-height: var(--line-height-small);
-}
-
-.text-muted {
-  color: var(--muted-foreground);
-}
-
-.tabular-nums {
-  font-variant-numeric: tabular-nums;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.viz-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.viz-controls &gt; .form-label {
-  display: grid;
-  min-width: min(100%, 260px);
-  flex: 1 1 280px;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: 2px 12px;
-  margin-bottom: 0;
-}
-
-.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
-  grid-column: 1 / -1;
-}
-
-.btn,
-.form-check-input,
-.form-control,
-.form-range,
-.form-select {
-  font: inherit;
-}
-
-.btn {
-  appearance: button;
-  display: inline-flex;
-  inline-size: fit-content;
-  max-inline-size: 100%;
-  min-height: 28px;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0 8px;
-  -webkit-app-region: no-drag;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  cursor: var(--cursor-interaction, pointer);
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  user-select: none;
-  -webkit-font-smoothing: antialiased;
-}
-
-.btn:is(.btn-block, .viz-tile) {
-  inline-size: 100%;
-}
-
-.btn.viz-tile {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  white-space: normal;
-}
-
-a.btn {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.btn-primary {
-  border-color: transparent;
-  color: var(--primary-foreground);
-  background: var(--foreground);
-  background-clip: padding-box;
-}
-
-.btn-primary .text-muted {
-  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
-}
-
-.btn-primary:not(:disabled):hover {
-  background: color-mix(in srgb, var(--foreground) 80%, transparent);
-  background-clip: padding-box;
-}
-
-.btn-ghost {
-  border-color: transparent;
-  color: var(--muted-foreground);
-  background: transparent;
-}
-
-.btn-ghost:not(:disabled):hover {
-  color: var(--foreground);
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-[data-lucide] {
-  stroke-width: 1.6;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--foreground);
-}
-
-.form-control {
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  padding: 0 8px;
-  outline: none;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--foreground);
-  background: var(--secondary);
-}
-
-.form-control::placeholder {
-  color: var(--muted-foreground);
-}
-
-.form-control[type=&quot;file&quot;] {
-  padding: 0;
-  overflow: hidden;
-  cursor: var(--cursor-interaction, pointer);
-}
-
-.form-control[type=&quot;file&quot;]::file-selector-button {
-  min-height: 26px;
-  margin-right: 8px;
-  padding: 0 8px;
-  border: 0;
-  border-right: 1px solid var(--input);
-  color: var(--secondary-foreground);
-  background: var(--secondary);
-  cursor: inherit;
-  font: inherit;
-}
-
-.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
-  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.form-control-color[type=&quot;color&quot;] {
-  width: 40px;
-  height: 28px;
-  padding: 3px;
-  cursor: var(--cursor-interaction, pointer);
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
-  border: 0;
-  border-radius: calc(var(--radius-lg) - 4px);
-  corner-shape: superellipse(1.5);
-}
-
-textarea.form-control {
-  height: auto;
-  min-height: 72px;
-  padding: 8px 10px;
-  resize: vertical;
-}
-
-.form-control:focus-visible {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-control:disabled,
-.form-select:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.form-select {
-  appearance: none;
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  margin: 0;
-  padding: 0 32px 0 8px;
-  outline: none;
-  border: 1px solid var(--input);
-  border-radius: var(--radius-lg);
-  corner-shape: superellipse(1.5);
-  color: var(--foreground);
-  background-color: var(--secondary);
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
-    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
-  background-position:
-    calc(100% - 14px) 50%,
-    calc(100% - 10px) 50%;
-  background-repeat: no-repeat;
-  background-size: 4px 4px;
-  cursor: var(--cursor-interaction, default);
-}
-
-.form-select:not(:disabled):hover {
-  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
-}
-
-.form-select:focus-visible {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-check {
-  display: flex;
-  min-height: 20px;
-  align-items: center;
-  gap: 6px;
-}
-
-.form-check-input {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  flex: 0 0 auto;
-  margin: 0;
-  border: 1px solid var(--input);
-  color: var(--primary-foreground);
-  background-color: transparent;
-  cursor: var(--cursor-interaction, default);
-  transition:
-    background-color 150ms,
-    border-color 150ms,
-    box-shadow 150ms;
-}
-
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
-  border-color: var(--input);
-  border-radius: var(--radius-sm);
-  corner-shape: superellipse(1.5);
-  background-color: var(--secondary);
-  box-shadow: var(--shadow-sm);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input:not(:disabled):not(:checked):hover {
-  background-color: var(--card);
-}
-
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
-}
-
-.form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--primary-foreground);
-  content: &quot;&quot;;
-  mask: var(--checkmark-image) center / 12px 12px no-repeat;
-}
-
-.form-check-input[type=&quot;radio&quot;] {
-  width: 14px;
-  height: 14px;
-  border-radius: var(--radius-full);
-}
-
-.form-check-input[type=&quot;radio&quot;]:checked {
-  border: 2px solid var(--primary);
-  background:
-    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
-    var(--primary);
-}
-
-.form-check:not(.form-switch) .form-check-input:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-}
-
-.form-switch .form-check-input:disabled,
-.form-switch .form-check-input:disabled + .form-check-label {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.form-check-label {
-  color: var(--foreground);
-  cursor: var(--cursor-interaction, default);
-}
-
-.form-switch .form-check-input {
-  position: relative;
-  width: 32px;
-  height: 20px;
-  border: 0;
-  border-radius: var(--radius-full);
-  background: var(--muted);
-  box-shadow: none;
-  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.form-switch .form-check-input::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  box-sizing: border-box;
-  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-  box-shadow: var(--shadow-sm);
-  content: &quot;&quot;;
-  transform: translate(2px, -50%);
-  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
-}
-
-.form-switch .form-check-input:checked {
-  background: var(--primary);
-}
-
-.form-switch .form-check-input:checked::before {
-  transform: translate(14px, -50%);
-}
-
-.form-switch .form-check-input:focus-visible {
-  box-shadow: 0 0 0 2px var(--ring);
-}
-
-.form-range {
-  appearance: none;
-  display: block;
-  width: 100%;
-  height: 28px;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: 0;
-  accent-color: var(--primary);
-  background: linear-gradient(
-      color-mix(in srgb, var(--foreground) 7%, transparent),
-      color-mix(in srgb, var(--foreground) 7%, transparent)
-    )
-    center / 100% 2px no-repeat;
-}
-
-.form-range::-webkit-slider-runnable-track {
-  height: 28px;
-  background: transparent;
-}
-
-.form-range::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  margin-top: 4px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-}
-
-.form-range:focus-visible::-webkit-slider-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-range::-moz-range-track {
-  height: 28px;
-  background: transparent;
-}
-
-.form-range::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  background: light-dark(var(--primary-foreground), var(--foreground));
-}
-
-.form-range:focus-visible::-moz-range-thumb {
-  border-color: var(--ring);
-  box-shadow: inset 0 0 0 1px var(--ring);
-}
-
-.form-range:disabled {
-  cursor: not-allowed;
-  opacity: 0.4;
-}
-
-.btn:not(.btn-primary, .viz-tile):is(
-  [aria-pressed=&quot;true&quot;],
-  [aria-selected=&quot;true&quot;],
-  .is-selected
-) {
-  border-color: var(--primary);
-  color: var(--primary-foreground);
-  background: var(--primary);
-}
-
-.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
-  border-color: var(--primary);
-  box-shadow: inset 0 0 0 1px var(--primary);
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
-
-@media (pointer: coarse) {
-  .btn,
-  .form-control,
-  .form-select {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .form-control,
-  .form-select {
-    font-size: max(16px, var(--font-size-normal));
-  }
-
-  .form-control[type=&quot;file&quot;]::file-selector-button {
-    min-width: 44px;
-    min-height: 44px;
-  }
-
-  .form-control-color[type=&quot;color&quot;] {
-    width: 44px;
-    height: 44px;
-  }
-
-  .form-control:is(
-    [type=&quot;date&quot;],
-    [type=&quot;datetime-local&quot;],
-    [type=&quot;month&quot;],
-    [type=&quot;time&quot;],
-    [type=&quot;week&quot;]
-  ) {
-    min-width: 0;
-    max-width: 100%;
-    padding-block: 8px;
-  }
-
-  .form-check {
-    min-height: 44px;
-    padding-inline: 15px;
-  }
-
-  .form-check-input {
-    position: relative;
-  }
-
-  .form-check-input::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    content: &quot;&quot;;
-    transform: translate(-50%, -50%);
-  }
-
-  .form-check-label {
-    display: inline-flex;
-    min-width: 44px;
-    min-height: 44px;
-    align-items: center;
-  }
-
-  .form-range {
-    height: 44px;
-    touch-action: pan-y;
-  }
-
-  .form-range::-webkit-slider-runnable-track {
-    height: 44px;
-  }
-
-  .form-range::-moz-range-track {
-    height: 44px;
-  }
-
-  .form-range::-webkit-slider-thumb {
-    margin-top: 12px;
-  }
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-#widget &gt; svg {
-  width: 100%;
-}
-
-/* Model-authored chart rules can otherwise stretch icons after these styles load. */
-svg.lucide {
-  display: block;
-  width: 16px !important;
-  height: 16px !important;
-  flex: none;
-  margin: 0 !important;
-  stroke-width: 1.6;
-}
-
-.text-warning,
-.text-destructive {
-  color: var(--destructive);
-}
-
-html&gt;body{padding:0}&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;usvi-reporting-mockup&quot;&gt;
-  &lt;style&gt;
-    #usvi-reporting-mockup {
-      font-family: &quot;Segoe UI&quot;, Arial, sans-serif;
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>USVI SPFx Outcome Reporting Concept</title><style>:root{color-scheme:light dark}html,body{margin:0;min-height:100%;background:light-dark(#fff,#181818)}body{padding:16px;box-sizing:border-box}</style></head><body><div id="usvi-weekly-capture-mockup">
+  <style>
+    #usvi-weekly-capture-mockup {
+      width: 100%;
+      font-family: "Segoe UI", Arial, sans-serif;
       color: light-dark(#242424, #f5f5f5);
       background: transparent;
-      width: 100%;
     }
-    #usvi-reporting-mockup * { box-sizing: border-box; }
-    #usvi-reporting-mockup .spfx-shell {
-      background: light-dark(#ffffff, #202020);
-      color: light-dark(#242424, #f5f5f5);
-      min-height: 680px;
+    #usvi-weekly-capture-mockup * { box-sizing: border-box; }
+    #usvi-weekly-capture-mockup .uw-shell { background: light-dark(#ffffff, #202020); min-height: 760px; }
+    #usvi-weekly-capture-mockup .uw-masthead {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 14px 20px; background: light-dark(#0b4f7c, #092f4a); color: #ffffff;
     }
-    #usvi-reporting-mockup .spfx-masthead {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 15px 22px 13px;
-      background: light-dark(#0b4f7c, #092f4a);
-      color: #ffffff;
+    #usvi-weekly-capture-mockup .uw-brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    #usvi-weekly-capture-mockup .uw-mark {
+      width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto;
+      background: #ffffff; color: #0b4f7c; font-size: 12px; font-weight: 500;
     }
-    #usvi-reporting-mockup .spfx-product {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      min-width: 0;
-    }
-    #usvi-reporting-mockup .spfx-mark {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      flex: 0 0 auto;
-      background: #ffffff;
-      color: #0b4f7c;
-      font-weight: 700;
-      letter-spacing: -.4px;
-    }
-    #usvi-reporting-mockup .spfx-title { font-weight: 600; font-size: 16px; }
-    #usvi-reporting-mockup .spfx-subtitle { font-size: 12px; opacity: .82; margin-top: 2px; }
-    #usvi-reporting-mockup .spfx-user { text-align: right; font-size: 12px; white-space: nowrap; }
-    #usvi-reporting-mockup .spfx-tabs {
-      display: flex;
-      gap: 24px;
-      padding: 0 22px;
-      background: light-dark(#ffffff, #202020);
+    #usvi-weekly-capture-mockup .uw-title { font-size: 16px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-subtitle { font-size: 11px; opacity: .82; margin-top: 2px; }
+    #usvi-weekly-capture-mockup .uw-user { text-align: right; font-size: 11px; white-space: nowrap; }
+    #usvi-weekly-capture-mockup .uw-tabs {
+      display: flex; gap: 24px; padding: 0 20px;
       border-bottom: 1px solid light-dark(#e1e1e1, #4a4a4a);
+      background: light-dark(#ffffff, #202020);
     }
-    #usvi-reporting-mockup .spfx-tab {
-      appearance: none;
-      border: 0;
-      border-bottom: 3px solid transparent;
-      background: transparent;
-      color: inherit;
-      padding: 14px 2px 11px;
-      font: inherit;
-      font-size: 13px;
-      cursor: pointer;
+    #usvi-weekly-capture-mockup .uw-tab {
+      appearance: none; border: 0; border-bottom: 3px solid transparent;
+      background: transparent; color: inherit; padding: 13px 2px 10px;
+      font: inherit; font-size: 12px; cursor: pointer;
     }
-    #usvi-reporting-mockup .spfx-tab[aria-selected=&quot;true&quot;] {
-      color: light-dark(#005a9e, #69afe5);
-      border-bottom-color: light-dark(#0078d4, #69afe5);
-      font-weight: 600;
+    #usvi-weekly-capture-mockup .uw-tab[aria-selected="true"] {
+      color: light-dark(#005a9e, #69afe5); border-bottom-color: light-dark(#0078d4, #69afe5); font-weight: 500;
     }
-    #usvi-reporting-mockup .spfx-stage { padding: 18px 22px 24px; }
-    #usvi-reporting-mockup .spfx-form-surface {
-      background: light-dark(#f4f4f4, #2c2c2c);
-      padding: 22px;
+    #usvi-weekly-capture-mockup .uw-stage { padding: 18px 20px 24px; }
+    #usvi-weekly-capture-mockup .uw-view[hidden],
+    #usvi-weekly-capture-mockup .uw-step-panel[hidden],
+    #usvi-weekly-capture-mockup .uw-weekly-scope-panel[hidden] { display: none; }
+    #usvi-weekly-capture-mockup .uw-surface { background: light-dark(#f4f4f4, #2c2c2c); padding: 20px; }
+    #usvi-weekly-capture-mockup .uw-form-head {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 14px;
     }
-    #usvi-reporting-mockup .spfx-form-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
+    #usvi-weekly-capture-mockup h2,
+    #usvi-weekly-capture-mockup h3 { margin: 0; font-weight: 500; }
+    #usvi-weekly-capture-mockup h2 { font-size: 18px; }
+    #usvi-weekly-capture-mockup h3 { font-size: 15px; color: light-dark(#004578, #8fc9ee); }
+    #usvi-weekly-capture-mockup .uw-help { margin-top: 4px; color: light-dark(#605e5c, #c8c8c8); font-size: 11px; }
+    #usvi-weekly-capture-mockup .uw-workflow { display: flex; align-items: center; gap: 6px; font-size: 10px; white-space: nowrap; }
+    #usvi-weekly-capture-mockup .uw-workflow-step { display: flex; align-items: center; gap: 5px; }
+    #usvi-weekly-capture-mockup .uw-workflow-dot {
+      width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%;
+      background: light-dark(#0078d4, #2899ec); color: #ffffff; font-size: 9px;
     }
-    #usvi-reporting-mockup h2,
-    #usvi-reporting-mockup h3 { margin: 0; font-weight: 600; }
-    #usvi-reporting-mockup h2 { font-size: 18px; }
-    #usvi-reporting-mockup h3 { font-size: 16px; color: light-dark(#004578, #8fc9ee); }
-    #usvi-reporting-mockup .spfx-progress { display: flex; align-items: center; gap: 6px; font-size: 11px; white-space: nowrap; }
-    #usvi-reporting-mockup .spfx-progress-step { display: flex; align-items: center; gap: 5px; }
-    #usvi-reporting-mockup .spfx-progress-dot {
-      width: 18px; height: 18px; display: grid; place-items: center;
-      border-radius: 50%; background: light-dark(#0078d4, #2899ec); color: #fff; font-size: 10px;
+    #usvi-weekly-capture-mockup .uw-workflow-line { width: 18px; height: 1px; background: light-dark(#bdbdbd, #666666); }
+    #usvi-weekly-capture-mockup .uw-reuse-note {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      padding: 10px 12px; margin-bottom: 14px;
+      background: light-dark(#e5f3ff, #17384d); color: light-dark(#004578, #d7efff); font-size: 11px;
     }
-    #usvi-reporting-mockup .spfx-progress-line { width: 20px; height: 1px; background: light-dark(#bdbdbd, #666); }
-    #usvi-reporting-mockup .spfx-section {
-      padding: 17px 0;
-      border-top: 1px solid light-dark(#d6d6d6, #505050);
+    #usvi-weekly-capture-mockup .uw-reuse-flow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    #usvi-weekly-capture-mockup .uw-reuse-item { padding: 3px 7px; background: light-dark(#ffffff, #244d66); color: inherit; }
+    #usvi-weekly-capture-mockup .uw-step-nav {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px;
     }
-    #usvi-reporting-mockup .spfx-section:first-of-type { border-top: 0; padding-top: 0; }
-    #usvi-reporting-mockup .spfx-section-title { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
-    #usvi-reporting-mockup .spfx-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 13px 16px; }
-    #usvi-reporting-mockup .spfx-span-3 { grid-column: span 3; }
-    #usvi-reporting-mockup .spfx-span-4 { grid-column: span 4; }
-    #usvi-reporting-mockup .spfx-span-6 { grid-column: span 6; }
-    #usvi-reporting-mockup .spfx-span-8 { grid-column: span 8; }
-    #usvi-reporting-mockup .spfx-span-12 { grid-column: span 12; }
-    #usvi-reporting-mockup .spfx-field label { display: block; font-size: 12px; margin-bottom: 5px; }
-    #usvi-reporting-mockup .spfx-required { color: light-dark(#a4262c, #ff8b91); }
-    #usvi-reporting-mockup input,
-    #usvi-reporting-mockup select,
-    #usvi-reporting-mockup textarea {
-      width: 100%;
-      min-height: 34px;
-      border: 1px solid light-dark(#707070, #858585);
-      border-radius: 0;
-      background: light-dark(#ffffff, #191919);
-      color: light-dark(#242424, #f5f5f5);
-      padding: 7px 9px;
-      font: inherit;
-      font-size: 13px;
+    #usvi-weekly-capture-mockup .uw-step {
+      appearance: none; min-height: 52px; border: 1px solid light-dark(#d2d0ce, #565656);
+      background: light-dark(#ffffff, #222222); color: inherit; padding: 8px 10px; text-align: left;
+      font: inherit; cursor: pointer;
     }
-    #usvi-reporting-mockup textarea { min-height: 72px; resize: vertical; }
-    #usvi-reporting-mockup .spfx-readonly {
-      min-height: 34px;
-      padding: 7px 9px;
-      border: 1px solid light-dark(#c8c8c8, #5d5d5d);
-      background: light-dark(#e8e8e8, #383838);
-      font-size: 13px;
+    #usvi-weekly-capture-mockup .uw-step[aria-selected="true"] {
+      border-color: light-dark(#0078d4, #69afe5); background: light-dark(#e5f3ff, #17384d);
     }
-    #usvi-reporting-mockup .spfx-hint { margin-top: 4px; color: light-dark(#616161, #c8c8c8); font-size: 11px; }
-    #usvi-reporting-mockup .spfx-status-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    #usvi-reporting-mockup .spfx-status-field {
-      padding: 10px;
-      background: light-dark(#ffffff, #191919);
-      border-left: 4px solid light-dark(#107c10, #54b054);
+    #usvi-weekly-capture-mockup .uw-step-number { color: light-dark(#0078d4, #69afe5); font-size: 10px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-step-label { display: block; margin-top: 3px; font-size: 12px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-section {
+      padding: 16px 0; border-top: 1px solid light-dark(#d6d6d6, #505050);
     }
-    #usvi-reporting-mockup .spfx-status-field.amber { border-left-color: light-dark(#ca5010, #f3a15f); }
-    #usvi-reporting-mockup .spfx-status-field.red { border-left-color: light-dark(#a4262c, #ff8b91); }
-    #usvi-reporting-mockup .spfx-status-field.neutral { border-left-color: light-dark(#8a8886, #adadad); }
-    #usvi-reporting-mockup .spfx-status-label { font-size: 11px; color: light-dark(#616161, #c8c8c8); margin-bottom: 5px; }
-    #usvi-reporting-mockup .spfx-status-value { font-size: 13px; font-weight: 600; }
-    #usvi-reporting-mockup .spfx-status-field select { min-height: 30px; padding: 4px 6px; font-size: 12px; }
-    #usvi-reporting-mockup .spfx-status-rule { margin: -3px 0 10px; color: light-dark(#616161, #c8c8c8); font-size: 11px; }
-    #usvi-reporting-mockup .spfx-status-exception {
-      margin-top: 12px;
-      padding: 12px;
+    #usvi-weekly-capture-mockup .uw-section:first-child { padding-top: 0; border-top: 0; }
+    #usvi-weekly-capture-mockup .uw-section-title { font-size: 13px; font-weight: 500; margin-bottom: 11px; }
+    #usvi-weekly-capture-mockup .uw-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 13px 15px; }
+    #usvi-weekly-capture-mockup .uw-span-2 { grid-column: span 2; }
+    #usvi-weekly-capture-mockup .uw-span-3 { grid-column: span 3; }
+    #usvi-weekly-capture-mockup .uw-span-4 { grid-column: span 4; }
+    #usvi-weekly-capture-mockup .uw-span-5 { grid-column: span 5; }
+    #usvi-weekly-capture-mockup .uw-span-6 { grid-column: span 6; }
+    #usvi-weekly-capture-mockup .uw-span-7 { grid-column: span 7; }
+    #usvi-weekly-capture-mockup .uw-span-8 { grid-column: span 8; }
+    #usvi-weekly-capture-mockup .uw-span-9 { grid-column: span 9; }
+    #usvi-weekly-capture-mockup .uw-span-12 { grid-column: span 12; }
+    #usvi-weekly-capture-mockup .uw-field label { display: block; margin-bottom: 5px; font-size: 11px; }
+    #usvi-weekly-capture-mockup .uw-required { color: light-dark(#a4262c, #ff8b91); }
+    #usvi-weekly-capture-mockup input,
+    #usvi-weekly-capture-mockup select,
+    #usvi-weekly-capture-mockup textarea {
+      width: 100%; min-height: 34px; padding: 7px 9px;
+      border: 1px solid light-dark(#707070, #858585); border-radius: 0;
+      background: light-dark(#ffffff, #191919); color: inherit; font: inherit; font-size: 12px;
+    }
+    #usvi-weekly-capture-mockup textarea { min-height: 76px; resize: vertical; }
+    #usvi-weekly-capture-mockup .uw-readonly {
+      min-height: 34px; padding: 7px 9px; border: 1px solid light-dark(#c8c8c8, #5d5d5d);
+      background: light-dark(#e8e8e8, #383838); font-size: 12px;
+    }
+    #usvi-weekly-capture-mockup .uw-hint { margin-top: 4px; color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-purpose-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    #usvi-weekly-capture-mockup .uw-purpose-choice {
+      display: flex; align-items: flex-start; gap: 10px; min-height: 84px; padding: 12px;
+      border: 1px solid light-dark(#c8c6c4, #626262); background: light-dark(#ffffff, #191919); cursor: pointer;
+    }
+    #usvi-weekly-capture-mockup .uw-purpose-choice:has(input:checked) {
+      border: 2px solid light-dark(#0078d4, #69afe5); padding: 11px; background: light-dark(#e5f3ff, #17384d);
+    }
+    #usvi-weekly-capture-mockup .uw-purpose-choice input { width: 16px; min-height: 16px; margin: 2px 0 0; flex: 0 0 auto; }
+    #usvi-weekly-capture-mockup .uw-purpose-copy strong { display: block; margin-bottom: 5px; font-size: 12px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-purpose-copy span { display: block; color: light-dark(#605e5c, #c8c8c8); font-size: 10px; line-height: 1.45; }
+    #usvi-weekly-capture-mockup .uw-status-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    #usvi-weekly-capture-mockup .uw-status {
+      padding: 10px; border-left: 4px solid #107c10; background: light-dark(#ffffff, #191919);
+    }
+    #usvi-weekly-capture-mockup .uw-status.amber { border-left-color: #ca5010; }
+    #usvi-weekly-capture-mockup .uw-status.red { border-left-color: #a4262c; }
+    #usvi-weekly-capture-mockup .uw-status.neutral { border-left-color: #8a8886; }
+    #usvi-weekly-capture-mockup .uw-status label { display: block; margin-bottom: 5px; font-size: 10px; color: light-dark(#605e5c, #c8c8c8); }
+    #usvi-weekly-capture-mockup .uw-status select { min-height: 30px; padding: 4px 6px; }
+    #usvi-weekly-capture-mockup .uw-rule {
+      margin-bottom: 10px; color: light-dark(#605e5c, #c8c8c8); font-size: 10px;
+    }
+    #usvi-weekly-capture-mockup .uw-exception {
+      margin-top: 12px; padding: 12px; border-left: 4px solid #ca5010;
       background: light-dark(#fff4ce, #4b3b0e);
-      border-left: 4px solid light-dark(#ca5010, #f3a15f);
     }
-    #usvi-reporting-mockup .spfx-status-exception[hidden] { display: none; }
-    #usvi-reporting-mockup .spfx-status-exception-title { font-size: 12px; font-weight: 600; margin-bottom: 10px; }
-    #usvi-reporting-mockup .spfx-inline-note {
-      display: flex; gap: 9px; align-items: flex-start;
-      padding: 10px 12px; margin-bottom: 15px;
-      background: light-dark(#e5f3ff, #17384d);
-      color: light-dark(#004578, #d7efff);
-      font-size: 12px;
+    #usvi-weekly-capture-mockup .uw-exception[hidden] { display: none; }
+    #usvi-weekly-capture-mockup .uw-outcome-test {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px;
     }
-    #usvi-reporting-mockup .spfx-inline-note strong { font-weight: 600; }
-    #usvi-reporting-mockup .spfx-repeat {
-      background: light-dark(#ffffff, #191919);
-      border: 1px solid light-dark(#d6d6d6, #505050);
-      padding: 12px;
+    #usvi-weekly-capture-mockup .uw-outcome-type {
+      display: flex; align-items: center; justify-content: center; min-height: 38px;
+      padding: 6px; background: light-dark(#ffffff, #191919); border: 1px solid light-dark(#d2d0ce, #565656);
+      font-size: 10px; text-align: center;
     }
-    #usvi-reporting-mockup .spfx-repeat-grid { display: grid; grid-template-columns: 1.6fr .8fr .8fr .8fr auto; gap: 10px; align-items: end; }
-    #usvi-reporting-mockup .spfx-actions { display: flex; justify-content: center; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
-    #usvi-reporting-mockup .spfx-button {
-      appearance: none; border: 1px solid light-dark(#8a8886, #adadad); border-radius: 0;
-      background: light-dark(#ffffff, #2c2c2c); color: inherit; padding: 8px 16px;
-      min-height: 34px; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer;
+    #usvi-weekly-capture-mockup .uw-repeat {
+      padding: 12px; background: light-dark(#ffffff, #191919); border: 1px solid light-dark(#d6d6d6, #505050);
     }
-    #usvi-reporting-mockup .spfx-button-primary { background: light-dark(#107c10, #1f8f2f); border-color: transparent; color: #fff; }
-    #usvi-reporting-mockup .spfx-button-blue { background: light-dark(#0078d4, #1769aa); border-color: transparent; color: #fff; }
-    #usvi-reporting-mockup .spfx-list { margin-top: 24px; }
-    #usvi-reporting-mockup .spfx-list-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
-    #usvi-reporting-mockup .spfx-table-wrap { overflow-x: auto; background: light-dark(#ffffff, #202020); }
-    #usvi-reporting-mockup table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 12px; }
-    #usvi-reporting-mockup th,
-    #usvi-reporting-mockup td { padding: 12px 10px; text-align: left; border-bottom: 1px solid light-dark(#ededed, #454545); vertical-align: top; }
-    #usvi-reporting-mockup th { font-weight: 600; }
-    #usvi-reporting-mockup .spfx-state { font-weight: 600; }
-    #usvi-reporting-mockup .spfx-state.approved { color: light-dark(#107c10, #65c466); }
-    #usvi-reporting-mockup .spfx-state.review { color: light-dark(#ca5010, #f3a15f); }
-    #usvi-reporting-mockup .spfx-state.draft { color: light-dark(#605e5c, #c8c8c8); }
-    #usvi-reporting-mockup .spfx-link { border: 0; background: transparent; color: light-dark(#0078d4, #69afe5); cursor: pointer; font: inherit; }
-    #usvi-reporting-mockup .spfx-view[hidden] { display: none; }
-    #usvi-reporting-mockup .spfx-toast {
-      display: none; margin: 14px 0 0; padding: 10px 12px;
-      background: light-dark(#dff6dd, #173b1d); color: light-dark(#0b5a08, #b9f5b4); font-size: 12px;
+    #usvi-weekly-capture-mockup .uw-repeat + .uw-repeat { margin-top: 10px; }
+    #usvi-weekly-capture-mockup .uw-repeat-head { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 10px; font-size: 11px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-type-tag { padding: 3px 7px; background: light-dark(#e5f3ff, #17384d); color: light-dark(#004578, #d7efff); font-size: 10px; font-weight: 400; }
+    #usvi-weekly-capture-mockup .uw-check-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    #usvi-weekly-capture-mockup .uw-check {
+      display: flex; align-items: center; gap: 7px; padding: 8px 9px;
+      background: light-dark(#ffffff, #191919); font-size: 11px;
     }
-    #usvi-reporting-mockup .spfx-toast.show { display: block; }
-    @media (max-width: 760px) {
-      #usvi-reporting-mockup .spfx-masthead { align-items: flex-start; }
-      #usvi-reporting-mockup .spfx-user { display: none; }
-      #usvi-reporting-mockup .spfx-stage { padding: 12px; }
-      #usvi-reporting-mockup .spfx-form-surface { padding: 16px; }
-      #usvi-reporting-mockup .spfx-form-head { flex-direction: column; }
-      #usvi-reporting-mockup .spfx-progress { flex-wrap: wrap; }
-      #usvi-reporting-mockup .spfx-span-3,
-      #usvi-reporting-mockup .spfx-span-4,
-      #usvi-reporting-mockup .spfx-span-6,
-      #usvi-reporting-mockup .spfx-span-8 { grid-column: span 12; }
-      #usvi-reporting-mockup .spfx-status-row { grid-template-columns: repeat(2, 1fr); }
-      #usvi-reporting-mockup .spfx-repeat-grid { grid-template-columns: 1fr; }
+    #usvi-weekly-capture-mockup .uw-check input { width: 16px; min-height: 16px; margin: 0; }
+    #usvi-weekly-capture-mockup .uw-step-actions,
+    #usvi-weekly-capture-mockup .uw-submit-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 16px; flex-wrap: wrap; }
+    #usvi-weekly-capture-mockup .uw-submit-actions { justify-content: center; }
+    #usvi-weekly-capture-mockup .uw-button {
+      appearance: none; min-height: 34px; padding: 8px 15px; border: 1px solid light-dark(#8a8886, #adadad);
+      border-radius: 0; background: light-dark(#ffffff, #2c2c2c); color: inherit;
+      font: inherit; font-size: 11px; font-weight: 500; cursor: pointer;
     }
-    @media (max-width: 420px) {
-      #usvi-reporting-mockup .spfx-tabs { gap: 14px; overflow-x: auto; }
-      #usvi-reporting-mockup .spfx-tab { white-space: nowrap; }
-      #usvi-reporting-mockup .spfx-status-row { grid-template-columns: 1fr; }
-      #usvi-reporting-mockup .spfx-progress-line { width: 8px; }
+    #usvi-weekly-capture-mockup .uw-button-primary { background: light-dark(#107c10, #1f8f2f); border-color: transparent; color: #ffffff; }
+    #usvi-weekly-capture-mockup .uw-button-blue { background: light-dark(#0078d4, #1769aa); border-color: transparent; color: #ffffff; }
+    #usvi-weekly-capture-mockup .uw-toast {
+      display: none; margin-top: 12px; padding: 10px 12px;
+      background: light-dark(#dff6dd, #173b1d); color: light-dark(#0b5a08, #b9f5b4); font-size: 11px;
     }
-  &lt;/style&gt;
+    #usvi-weekly-capture-mockup .uw-toast.show { display: block; }
+    #usvi-weekly-capture-mockup .uw-summary {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px;
+    }
+    #usvi-weekly-capture-mockup .uw-summary-item { padding: 10px; background: light-dark(#ffffff, #191919); }
+    #usvi-weekly-capture-mockup .uw-summary-label { color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-summary-value { margin-top: 4px; font-size: 14px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-history { margin-top: 20px; }
+    #usvi-weekly-capture-mockup .uw-history-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+    #usvi-weekly-capture-mockup .uw-table-wrap { overflow-x: auto; background: light-dark(#ffffff, #202020); }
+    #usvi-weekly-capture-mockup table { width: 100%; border-collapse: collapse; min-width: 760px; font-size: 11px; }
+    #usvi-weekly-capture-mockup th,
+    #usvi-weekly-capture-mockup td { padding: 10px 9px; text-align: left; border-bottom: 1px solid light-dark(#ededed, #454545); }
+    #usvi-weekly-capture-mockup th { font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-link { border: 0; background: transparent; color: light-dark(#0078d4, #69afe5); cursor: pointer; font: inherit; }
+    #usvi-weekly-capture-mockup .uw-status-text.approved { color: light-dark(#107c10, #65c466); }
+    #usvi-weekly-capture-mockup .uw-status-text.review { color: light-dark(#ca5010, #f3a15f); }
+    #usvi-weekly-capture-mockup .uw-month-nav {
+      display: flex; gap: 4px; flex-wrap: wrap; margin: 0 0 16px;
+      border-bottom: 1px solid light-dark(#d6d6d6, #505050);
+    }
+    #usvi-weekly-capture-mockup .uw-month-tab {
+      appearance: none; border: 0; border-bottom: 3px solid transparent; background: transparent;
+      color: inherit; padding: 10px 12px 8px; font: inherit; font-size: 11px; cursor: pointer;
+    }
+    #usvi-weekly-capture-mockup .uw-month-tab[aria-pressed="true"] {
+      color: light-dark(#005a9e, #69afe5); border-bottom-color: light-dark(#0078d4, #69afe5); font-weight: 500;
+    }
+    #usvi-weekly-capture-mockup .uw-month-panel[hidden] { display: none; }
+    #usvi-weekly-capture-mockup .uw-kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+    #usvi-weekly-capture-mockup .uw-kpi { padding: 12px; background: light-dark(#ffffff, #191919); border-top: 3px solid light-dark(#0078d4, #69afe5); }
+    #usvi-weekly-capture-mockup .uw-kpi-label { color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-kpi-value { margin-top: 5px; font-size: 16px; font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-kpi-detail { margin-top: 3px; font-size: 10px; color: light-dark(#605e5c, #c8c8c8); }
+    #usvi-weekly-capture-mockup .uw-report-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 14px; }
+    #usvi-weekly-capture-mockup .uw-report-block { padding: 14px; background: light-dark(#ffffff, #191919); }
+    #usvi-weekly-capture-mockup .uw-report-block h3 { margin-bottom: 9px; }
+    #usvi-weekly-capture-mockup .uw-report-copy { font-size: 12px; line-height: 1.5; margin: 0; }
+    #usvi-weekly-capture-mockup .uw-source-note { margin-top: 8px; color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-rag-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+    #usvi-weekly-capture-mockup .uw-rag { padding: 9px; background: light-dark(#f7f7f7, #292929); border-left: 4px solid #107c10; font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-rag.amber { border-left-color: #ca5010; }
+    #usvi-weekly-capture-mockup .uw-rag strong { display: block; margin-top: 3px; font-size: 11px; }
+    #usvi-weekly-capture-mockup .uw-outcome-list { display: grid; gap: 8px; }
+    #usvi-weekly-capture-mockup .uw-outcome-row { display: grid; grid-template-columns: 92px 1fr 1fr 92px; gap: 10px; padding: 11px; background: light-dark(#ffffff, #191919); align-items: start; font-size: 11px; }
+    #usvi-weekly-capture-mockup .uw-outcome-row strong { font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-outcome-source { color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-page-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    #usvi-weekly-capture-mockup .uw-page-item { padding: 11px; background: light-dark(#ffffff, #191919); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-page-item strong { display: block; margin-bottom: 4px; font-size: 11px; }
+    #usvi-weekly-capture-mockup .uw-sector-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    #usvi-weekly-capture-mockup .uw-project-picker { padding: 12px; background: light-dark(#ffffff, #191919); border: 1px solid light-dark(#d6d6d6, #505050); }
+    #usvi-weekly-capture-mockup .uw-project-picker-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    #usvi-weekly-capture-mockup .uw-project-search { flex: 1 1 360px; }
+    #usvi-weekly-capture-mockup .uw-project-actions { display: flex; gap: 7px; flex-wrap: wrap; }
+    #usvi-weekly-capture-mockup .uw-project-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; margin-top: 10px; }
+    #usvi-weekly-capture-mockup [data-project-item][hidden] { display: none; }
+    #usvi-weekly-capture-mockup .uw-selected-projects { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 11px; }
+    #usvi-weekly-capture-mockup [data-project-tags] { display: flex; gap: 6px; flex-wrap: wrap; }
+    #usvi-weekly-capture-mockup .uw-selected-label { color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-project-tag { padding: 4px 7px; background: light-dark(#e5f3ff, #17384d); color: light-dark(#004578, #d7efff); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-work-scope-picker { padding: 9px; background: light-dark(#ffffff, #191919); border: 1px solid light-dark(#d6d6d6, #505050); }
+    #usvi-weekly-capture-mockup .uw-work-scope-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    #usvi-weekly-capture-mockup .uw-work-scope-tags .uw-project-tag { display: inline-flex; align-items: center; gap: 6px; }
+    #usvi-weekly-capture-mockup .uw-work-scope-tags button { border: 0; padding: 0; background: transparent; color: inherit; font: inherit; font-size: 9px; cursor: pointer; text-decoration: underline; }
+    @media (max-width: 820px) {
+      #usvi-weekly-capture-mockup .uw-span-2,
+      #usvi-weekly-capture-mockup .uw-span-3,
+      #usvi-weekly-capture-mockup .uw-span-4,
+      #usvi-weekly-capture-mockup .uw-span-5,
+      #usvi-weekly-capture-mockup .uw-span-6,
+      #usvi-weekly-capture-mockup .uw-span-7,
+      #usvi-weekly-capture-mockup .uw-span-8,
+      #usvi-weekly-capture-mockup .uw-span-9 { grid-column: span 12; }
+      #usvi-weekly-capture-mockup .uw-form-head { flex-direction: column; }
+      #usvi-weekly-capture-mockup .uw-workflow { flex-wrap: wrap; }
+      #usvi-weekly-capture-mockup .uw-step-nav { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-status-grid { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-outcome-test { grid-template-columns: repeat(3, 1fr); }
+      #usvi-weekly-capture-mockup .uw-check-grid { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-kpi-grid,
+      #usvi-weekly-capture-mockup .uw-rag-row { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-report-grid { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-outcome-row { grid-template-columns: 82px 1fr; }
+      #usvi-weekly-capture-mockup .uw-page-map { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-sector-options,
+      #usvi-weekly-capture-mockup .uw-project-options { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-purpose-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 460px) {
+      #usvi-weekly-capture-mockup .uw-user { display: none; }
+      #usvi-weekly-capture-mockup .uw-tabs { overflow-x: auto; gap: 16px; }
+      #usvi-weekly-capture-mockup .uw-tab { white-space: nowrap; }
+      #usvi-weekly-capture-mockup .uw-stage { padding: 12px; }
+      #usvi-weekly-capture-mockup .uw-surface { padding: 15px; }
+      #usvi-weekly-capture-mockup .uw-step-nav { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-status-grid { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-outcome-test { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-summary { grid-template-columns: repeat(2, 1fr); }
+      #usvi-weekly-capture-mockup .uw-kpi-grid,
+      #usvi-weekly-capture-mockup .uw-rag-row,
+      #usvi-weekly-capture-mockup .uw-page-map { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-sector-options,
+      #usvi-weekly-capture-mockup .uw-project-options { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-project-picker-head { align-items: stretch; flex-direction: column; }
+    }
+  </style>
 
-  &lt;div class=&quot;spfx-shell&quot;&gt;
-    &lt;header class=&quot;spfx-masthead&quot;&gt;
-      &lt;div class=&quot;spfx-product&quot;&gt;
-        &lt;div class=&quot;spfx-mark&quot;&gt;SP&lt;/div&gt;
-        &lt;div&gt;
-          &lt;div class=&quot;spfx-title&quot;&gt;USVI Program Reporting&lt;/div&gt;
-          &lt;div class=&quot;spfx-subtitle&quot;&gt;Project updates, review and approved reporting&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;spfx-user&quot;&gt;Project Manager view&lt;br&gt;&lt;strong&gt;Healthcare Sector&lt;/strong&gt;&lt;/div&gt;
-    &lt;/header&gt;
+  <div class="uw-shell">
+    <header class="uw-masthead">
+      <div class="uw-brand">
+        <div class="uw-mark">SP</div>
+        <div><div class="uw-title">USVI Program Reporting</div><div class="uw-subtitle">Outcome-based project and functional reporting</div></div>
+      </div>
+      <div class="uw-user"><span data-user-view>Project Manager view</span><br><strong data-user-scope>Healthcare Sector</strong></div>
+    </header>
 
-    &lt;nav class=&quot;spfx-tabs&quot; aria-label=&quot;Reporting forms&quot; role=&quot;tablist&quot;&gt;
-      &lt;button class=&quot;spfx-tab&quot; id=&quot;weekly-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;weekly-view&quot;&gt;Weekly Updates&lt;/button&gt;
-      &lt;button class=&quot;spfx-tab&quot; id=&quot;monthly-tab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;monthly-view&quot;&gt;Monthly Reports&lt;/button&gt;
-    &lt;/nav&gt;
+    <nav class="uw-tabs" role="tablist" aria-label="SPFx reporting uses">
+      <button class="uw-tab" type="button" role="tab" aria-selected="true" aria-controls="uw-weekly">Weekly Project Report</button>
+      <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-functional">Functional Work &amp; Outcomes</button>
+    </nav>
 
-    &lt;main class=&quot;spfx-stage&quot;&gt;
-      &lt;section class=&quot;spfx-view&quot; id=&quot;weekly-view&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;weekly-tab&quot;&gt;
-        &lt;div class=&quot;spfx-form-surface&quot;&gt;
-          &lt;div class=&quot;spfx-form-head&quot;&gt;
-            &lt;div&gt;
-              &lt;h2&gt;Create Weekly Project Update&lt;/h2&gt;
-              &lt;div class=&quot;spfx-hint&quot;&gt;Capture only what changed this week. Project reference data fills automatically.&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;spfx-progress&quot; aria-label=&quot;Workflow: Draft, Sector review, PMO approved&quot;&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;1&lt;/span&gt;Draft&lt;/span&gt;&lt;span class=&quot;spfx-progress-line&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;2&lt;/span&gt;Sector review&lt;/span&gt;&lt;span class=&quot;spfx-progress-line&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;3&lt;/span&gt;PMO approved&lt;/span&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+    <main class="uw-stage">
+      <section class="uw-view" id="uw-weekly" role="tabpanel">
+        <div class="uw-surface">
+          <div class="uw-form-head">
+            <div><h2>Create Weekly Project Report</h2><div class="uw-help">Capture outcomes and measurable change—not a list of meetings, activities, or completed tasks.</div></div>
+            <div class="uw-workflow" aria-label="Workflow: Draft, Sector review, PMO report ready">
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Draft</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Sector review</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Report ready</span>
+            </div>
+          </div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Report identification&lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label for=&quot;w-project&quot;&gt;Project &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;select id=&quot;w-project&quot;&gt;&lt;option&gt;Juan F. Luis Hospital - Rebuild&lt;/option&gt;&lt;option&gt;Myrah Keating Smith - Improvements&lt;/option&gt;&lt;option&gt;Schneider Regional - Recovery&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label for=&quot;w-week&quot;&gt;Week ending &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;w-week&quot; type=&quot;date&quot; value=&quot;2026-09-11&quot;&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Project manager&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;A. Project Manager&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Sector&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;Healthcare&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Island&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;St. Croix&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Project ID&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;HC-0017&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+          <div class="uw-reuse-note">
+            <span><strong>Outcome-first reporting:</strong> state what changed or was achieved, the value or impact, and the evidence. Actions are captured only as commitments that enable the outcome.</span>
+            <span class="uw-reuse-flow"><span class="uw-reuse-item">Weekly PDF</span><span>&gt;</span><span class="uw-reuse-item">Monthly 12-15 pages</span><span>&gt;</span><span class="uw-reuse-item">Power BI</span></span>
+          </div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Current status&lt;/div&gt;
-            &lt;div class=&quot;spfx-status-rule&quot;&gt;Select Green, Amber, Red or N/A for each category. Amber and Red ratings require an explanation and recovery action.&lt;/div&gt;
-            &lt;div class=&quot;spfx-status-row&quot;&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-overall&quot;&gt;Overall&lt;/label&gt;&lt;select id=&quot;w-overall&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Attention needed&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Off track&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-schedule&quot;&gt;Schedule&lt;/label&gt;&lt;select id=&quot;w-schedule&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - Watch&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Milestone threatened&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-budget&quot;&gt;Budget&lt;/label&gt;&lt;select id=&quot;w-budget&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On plan&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Forecast pressure&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Over plan&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;w-safety&quot;&gt;Safety&lt;/label&gt;&lt;select id=&quot;w-safety&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - No event&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Emerging concern&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Serious event&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;spfx-status-exception&quot; data-status-exception&gt;
-              &lt;div class=&quot;spfx-status-exception-title&quot;&gt;Amber / Red status explanation&lt;/div&gt;
-              &lt;div class=&quot;spfx-grid&quot;&gt;
-                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-status-reason&quot;&gt;Reason and project impact &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;w-status-reason&quot; value=&quot;Utility conflict creates a potential five-working-day schedule delay.&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-recovery&quot;&gt;Recovery action, owner and target date &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;w-recovery&quot; value=&quot;Design Manager to complete field verification by September 14.&quot;&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+          <nav class="uw-step-nav" role="tablist" aria-label="Weekly report steps">
+            <button class="uw-step" type="button" role="tab" aria-selected="true" aria-controls="uw-step-1"><span class="uw-step-number">STEP 1</span><span class="uw-step-label">Project & Status</span></button>
+            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-2"><span class="uw-step-number">STEP 2</span><span class="uw-step-label">Results & Outcomes</span></button>
+            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-3"><span class="uw-step-number">STEP 3</span><span class="uw-step-label">Risks & Decisions</span></button>
+            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-4"><span class="uw-step-number">STEP 4</span><span class="uw-step-label">Outlook & Submit</span></button>
+          </nav>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Weekly narrative&lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-accomplishments&quot;&gt;Key accomplishments &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;textarea id=&quot;w-accomplishments&quot;&gt;Completed temporary utility relocation and accepted the revised phasing plan.&lt;/textarea&gt;&lt;div class=&quot;spfx-hint&quot;&gt;Use short, outcome-focused bullets.&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-next&quot;&gt;Next 2-week look-ahead &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;textarea id=&quot;w-next&quot;&gt;Mobilize civil subcontractor; begin site drainage; complete infection-control review.&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-change&quot;&gt;What changed this week?&lt;/label&gt;&lt;textarea id=&quot;w-change&quot;&gt;Underground utility conflict may affect the civil start date by five working days.&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;w-support&quot;&gt;Decision or leadership support needed&lt;/label&gt;&lt;textarea id=&quot;w-support&quot;&gt;Confirm owner for expedited utility coordination by September 14.&lt;/textarea&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+          <section class="uw-step-panel" id="uw-step-1" role="tabpanel">
+            <div class="uw-section">
+              <div class="uw-section-title">Report identification</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-4"><label for="uw-report-mode">How are you reporting this week? <span class="uw-required">*</span></label><select id="uw-report-mode" data-weekly-report-mode><option value="single">One project</option><option value="multiple">Several selected projects</option><option value="bundle" selected>A saved project bundle</option></select><div class="uw-hint">Choose a saved bundle for projects you report together regularly, or select projects for an ad hoc group.</div></div>
+                <div class="uw-field uw-span-4"><label for="uw-week">Week ending <span class="uw-required">*</span></label><input id="uw-week" type="date" value="2026-09-11"></div>
+                <div class="uw-field uw-span-4"><label>Prepared by</label><div class="uw-readonly">A. Project Manager</div></div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Add risk, issue or decision&lt;/div&gt;
-            &lt;div class=&quot;spfx-repeat&quot;&gt;
-              &lt;div class=&quot;spfx-repeat-grid&quot;&gt;
-                &lt;div class=&quot;spfx-field&quot;&gt;&lt;label for=&quot;w-item&quot;&gt;Item&lt;/label&gt;&lt;input id=&quot;w-item&quot; value=&quot;Utility conflict at north service corridor&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;spfx-field&quot;&gt;&lt;label for=&quot;w-type&quot;&gt;Type&lt;/label&gt;&lt;select id=&quot;w-type&quot;&gt;&lt;option&gt;Issue&lt;/option&gt;&lt;option&gt;Risk&lt;/option&gt;&lt;option&gt;Decision&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-                &lt;div class=&quot;spfx-field&quot;&gt;&lt;label for=&quot;w-owner&quot;&gt;Owner&lt;/label&gt;&lt;input id=&quot;w-owner&quot; value=&quot;Design Manager&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;spfx-field&quot;&gt;&lt;label for=&quot;w-due&quot;&gt;Due&lt;/label&gt;&lt;input id=&quot;w-due&quot; type=&quot;date&quot; value=&quot;2026-09-14&quot;&gt;&lt;/div&gt;
-                &lt;button class=&quot;spfx-button spfx-button-blue&quot; type=&quot;button&quot; data-demo-action=&quot;add&quot;&gt;Add item&lt;/button&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-single-panel hidden>
+                  <label for="uw-single-project">Project <span class="uw-required">*</span></label><select id="uw-single-project"><option>Juan F. Luis Hospital - Rebuild</option><option>Roy L. Schneider Hospital - Recovery</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>Charlotte Amalie High School</option></select>
+                  <div class="uw-grid" style="margin-top:10px"><div class="uw-field uw-span-3"><label>Sector</label><div class="uw-readonly">Healthcare</div></div><div class="uw-field uw-span-3"><label>Island</label><div class="uw-readonly">St. Croix</div></div><div class="uw-field uw-span-3"><label>Project ID</label><div class="uw-readonly">HC-0017</div></div><div class="uw-field uw-span-3"><label>Project phase</label><div class="uw-readonly">Construction</div></div></div>
+                </div>
 
-          &lt;div class=&quot;spfx-actions&quot;&gt;
-            &lt;button class=&quot;spfx-button&quot; type=&quot;button&quot; data-demo-action=&quot;draft&quot;&gt;Save draft&lt;/button&gt;
-            &lt;button class=&quot;spfx-button spfx-button-primary&quot; type=&quot;button&quot; data-demo-action=&quot;submit&quot;&gt;Submit for Sector Review&lt;/button&gt;
-            &lt;button class=&quot;spfx-button&quot; type=&quot;button&quot;&gt;Cancel&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;spfx-toast&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-multiple-panel hidden>
+                  <label for="uw-multi-project-add">Projects included in this report <span class="uw-required">*</span></label>
+                  <div class="uw-work-scope-picker"><select id="uw-multi-project-add" data-weekly-project-add><option value="">Add another project</option><option>Juan F. Luis Hospital</option><option>Roy L. Schneider Hospital</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>St. Thomas Wastewater</option><option>Charlotte Amalie High School</option><option>Julius E. Sprauve School</option><option>Program Reporting Transformation</option></select><div class="uw-work-scope-tags" data-weekly-project-tags></div></div>
+                  <div class="uw-hint">Production SPFx would search the PM's assigned projects from the 54-project Master Project List.</div>
+                </div>
 
-          &lt;div class=&quot;spfx-list&quot;&gt;
-            &lt;div class=&quot;spfx-list-head&quot;&gt;&lt;h3&gt;My Weekly Updates&lt;/h3&gt;&lt;span class=&quot;spfx-hint&quot;&gt;Latest submission shown first&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;spfx-table-wrap&quot;&gt;
-              &lt;table&gt;
-                &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Week ending&lt;/th&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Overall&lt;/th&gt;&lt;th&gt;Key change&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Reviewer&lt;/th&gt;&lt;th&gt;View&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-                &lt;tbody&gt;
-                  &lt;tr&gt;&lt;td&gt;9/11/2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Green&lt;/td&gt;&lt;td&gt;Utility conflict identified&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state draft&quot;&gt;Draft&lt;/span&gt;&lt;/td&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;Open &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;9/4/2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Green&lt;/td&gt;&lt;td&gt;Phasing plan accepted&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state approved&quot;&gt;Approved&lt;/span&gt;&lt;/td&gt;&lt;td&gt;Healthcare Lead&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;Open &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;8/28/2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Amber&lt;/td&gt;&lt;td&gt;Permit response pending&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state approved&quot;&gt;Approved&lt;/span&gt;&lt;/td&gt;&lt;td&gt;Healthcare Lead&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;Open &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
+                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-bundle-panel>
+                  <div class="uw-grid"><div class="uw-field uw-span-6"><label for="uw-bundle">Saved project bundle <span class="uw-required">*</span></label><select id="uw-bundle" data-weekly-bundle><option value="healthcare-recovery" selected>Healthcare Recovery Bundle</option><option value="st-croix-capital">St. Croix Capital Projects</option><option value="education-north">Education North Bundle</option></select></div><div class="uw-field uw-span-3"><label>Bundle owner</label><div class="uw-readonly">A. Project Manager</div></div><div class="uw-field uw-span-3"><label>Projects covered</label><div class="uw-readonly" data-weekly-bundle-count>3 projects</div></div></div>
+                  <div class="uw-selected-label" style="margin-top:10px">Bundle members</div><div class="uw-work-scope-tags" data-weekly-bundle-tags></div>
+                  <div class="uw-hint">Bundle membership is maintained centrally so the PM does not rebuild the same project group every week.</div>
+                </div>
+              </div>
+            </div>
 
-      &lt;section class=&quot;spfx-view&quot; id=&quot;monthly-view&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;monthly-tab&quot; hidden&gt;
-        &lt;div class=&quot;spfx-form-surface&quot;&gt;
-          &lt;div class=&quot;spfx-form-head&quot;&gt;
-            &lt;div&gt;
-              &lt;h2&gt;Create Monthly Project Report&lt;/h2&gt;
-              &lt;div class=&quot;spfx-hint&quot;&gt;Review the monthly roll-up, add management context, then submit for approval.&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;spfx-progress&quot; aria-label=&quot;Workflow: Draft, Sector review, PMO published&quot;&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;1&lt;/span&gt;Draft&lt;/span&gt;&lt;span class=&quot;spfx-progress-line&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;2&lt;/span&gt;Sector review&lt;/span&gt;&lt;span class=&quot;spfx-progress-line&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;spfx-progress-step&quot;&gt;&lt;span class=&quot;spfx-progress-dot&quot;&gt;3&lt;/span&gt;PMO published&lt;/span&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+            <div class="uw-section">
+              <div class="uw-section-title">Project / bundle health</div>
+              <div class="uw-rule">Choose one rating for each category. Amber and Red require a reason, impact, recovery action, owner, and target date.</div>
+              <div class="uw-status-grid">
+                <div class="uw-status"><label for="uw-overall">Overall</label><select id="uw-overall" data-weekly-status><option value="green" selected>Green - On track</option><option value="amber">Amber - Attention needed</option><option value="red">Red - Off track</option><option value="neutral">N/A</option></select></div>
+                <div class="uw-status amber"><label for="uw-schedule">Schedule</label><select id="uw-schedule" data-weekly-status><option value="green">Green - On track</option><option value="amber" selected>Amber - Milestone at risk</option><option value="red">Red - Milestone missed</option><option value="neutral">N/A</option></select></div>
+                <div class="uw-status"><label for="uw-cost">Cost / funding</label><select id="uw-cost" data-weekly-status><option value="green" selected>Green - On plan</option><option value="amber">Amber - Forecast pressure</option><option value="red">Red - Funding gap</option><option value="neutral">N/A</option></select></div>
+                <div class="uw-status amber"><label for="uw-risk">Risk / issues</label><select id="uw-risk" data-weekly-status><option value="green">Green - Controlled</option><option value="amber" selected>Amber - Active constraint</option><option value="red">Red - Escalation required</option><option value="neutral">N/A</option></select></div>
+              </div>
+              <div class="uw-exception" data-status-exception>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-6"><label for="uw-status-reason">Amber / Red reason and impact <span class="uw-required">*</span></label><textarea id="uw-status-reason">Underground utility conflict creates a potential five-working-day delay to civil mobilization.</textarea></div>
+                  <div class="uw-field uw-span-6"><label for="uw-status-recovery">Recovery action, owner, and target date <span class="uw-required">*</span></label><textarea id="uw-status-recovery">Design Manager to complete field verification and confirm the recovery sequence by September 14.</textarea></div>
+                </div>
+              </div>
+            </div>
 
-          &lt;div class=&quot;spfx-inline-note&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;i&lt;/span&gt;&lt;span&gt;&lt;strong&gt;Weekly updates are reused.&lt;/strong&gt; Accomplishments, risks and decisions below were pre-populated from approved weekly submissions. Edit only the monthly summary and exceptions.&lt;/span&gt;&lt;/div&gt;
+            <div class="uw-section">
+              <div class="uw-section-title">Material change this week</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-8"><label for="uw-change">What materially changed since the previous report? <span class="uw-required">*</span></label><textarea id="uw-change">A previously undocumented utility alignment was confirmed in the north service corridor, creating a near-term schedule exposure.</textarea><div class="uw-hint">Describe the change and why it matters. Do not repeat unchanged background information.</div></div>
+                <div class="uw-field uw-span-4"><label for="uw-change-area">Primary area affected</label><select id="uw-change-area"><option>Schedule</option><option>Scope</option><option>Cost / funding</option><option>Design</option><option>Permitting / compliance</option><option>Procurement</option><option>Field operations</option><option>Safety / quality</option></select></div>
+              </div>
+            </div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Report identification&lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label for=&quot;m-project&quot;&gt;Project &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;select id=&quot;m-project&quot;&gt;&lt;option&gt;Juan F. Luis Hospital - Rebuild&lt;/option&gt;&lt;option&gt;Myrah Keating Smith - Improvements&lt;/option&gt;&lt;option&gt;Schneider Regional - Recovery&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label for=&quot;m-period&quot;&gt;Reporting month &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;m-period&quot; type=&quot;month&quot; value=&quot;2026-09&quot;&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Prepared by&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;A. Project Manager&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Sector&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;Healthcare&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Island&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;St. Croix&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label&gt;Weekly updates included&lt;/label&gt;&lt;div class=&quot;spfx-readonly&quot;&gt;4 approved updates&lt;/div&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+            <div class="uw-step-actions"><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-2">Continue to Results & Outcomes</button></div>
+          </section>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Monthly status and executive summary&lt;/div&gt;
-            &lt;div class=&quot;spfx-status-rule&quot;&gt;Ratings are suggested from approved weekly updates. The Project Manager confirms or changes them before submission.&lt;/div&gt;
-            &lt;div class=&quot;spfx-status-row&quot;&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-overall&quot;&gt;Overall&lt;/label&gt;&lt;select id=&quot;m-overall&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Attention needed&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Off track&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-schedule&quot;&gt;Schedule&lt;/label&gt;&lt;select id=&quot;m-schedule&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - On track&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - 5-day risk&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Milestone threatened&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-budget&quot;&gt;Budget&lt;/label&gt;&lt;select id=&quot;m-budget&quot; data-status-picker&gt;&lt;option value=&quot;green&quot; selected&gt;Green - On plan&lt;/option&gt;&lt;option value=&quot;amber&quot;&gt;Amber - Forecast pressure&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Over plan&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-status-field amber&quot;&gt;&lt;label class=&quot;spfx-status-label&quot; for=&quot;m-risk&quot;&gt;Risk&lt;/label&gt;&lt;select id=&quot;m-risk&quot; data-status-picker&gt;&lt;option value=&quot;green&quot;&gt;Green - Controlled&lt;/option&gt;&lt;option value=&quot;amber&quot; selected&gt;Amber - Active issue&lt;/option&gt;&lt;option value=&quot;red&quot;&gt;Red - Escalation required&lt;/option&gt;&lt;option value=&quot;neutral&quot;&gt;N/A - Not applicable&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;spfx-status-exception&quot; data-status-exception&gt;
-              &lt;div class=&quot;spfx-status-exception-title&quot;&gt;Amber / Red status explanation&lt;/div&gt;
-              &lt;div class=&quot;spfx-grid&quot;&gt;
-                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-status-reason&quot;&gt;Reason and monthly impact &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;m-status-reason&quot; value=&quot;Utility conflict creates a five-working-day exposure to civil mobilization.&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-recovery&quot;&gt;Recovery plan, owner and target date &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input id=&quot;m-recovery&quot; value=&quot;Expedited field verification; Design Manager; target September 14.&quot;&gt;&lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot; style=&quot;margin-top:13px&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-8&quot;&gt;&lt;label for=&quot;m-summary&quot;&gt;Executive summary / what changed this month? &lt;span class=&quot;spfx-required&quot;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;textarea id=&quot;m-summary&quot;&gt;The project remains on track overall. The revised phasing plan was accepted; however, an underground utility conflict creates a five-working-day schedule exposure. Resolution is targeted before civil mobilization.&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-4&quot;&gt;&lt;label for=&quot;m-support&quot;&gt;Leadership decision or support&lt;/label&gt;&lt;textarea id=&quot;m-support&quot;&gt;Assign utility coordination owner and approve expedited field verification.&lt;/textarea&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+          <section class="uw-step-panel" id="uw-step-2" role="tabpanel" hidden>
+            <div class="uw-section">
+              <div class="uw-section-title">Results achieved and value created</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-7"><label for="uw-accomplishment">What outcome was achieved or materially advanced? <span class="uw-required">*</span></label><textarea id="uw-accomplishment">The revised construction phasing plan was accepted, clearing the path for civil subcontractor mobilization.</textarea><div class="uw-hint">Do not enter “held meeting,” “reviewed document,” or another task by itself. State the result produced.</div></div>
+                <div class="uw-field uw-span-5"><label for="uw-accomplishment-value">Value, impact, or evidence <span class="uw-required">*</span></label><textarea id="uw-accomplishment-value">The accepted sequence protects the planned mobilization window and provides an approved basis for site logistics.</textarea></div>
+              </div>
+            </div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Condensed report content&lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-accomplishments&quot;&gt;Key accomplishments&lt;/label&gt;&lt;textarea id=&quot;m-accomplishments&quot;&gt;- Temporary utility relocation completed
-- Revised construction phasing accepted
-- Infection-control review initiated&lt;/textarea&gt;&lt;div class=&quot;spfx-hint&quot;&gt;Pre-populated from approved weekly updates.&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-next&quot;&gt;Next-month priorities&lt;/label&gt;&lt;textarea id=&quot;m-next&quot;&gt;- Mobilize civil subcontractor
-- Begin drainage work
-- Complete 60% design review&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-milestones&quot;&gt;Milestones and schedule variance&lt;/label&gt;&lt;textarea id=&quot;m-milestones&quot;&gt;Civil mobilization - Sep. 21 - At risk (+5 days)
-60% design review - Oct. 9 - On track&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-risks&quot;&gt;Top risks and issues&lt;/label&gt;&lt;textarea id=&quot;m-risks&quot;&gt;Utility conflict - Amber - Design Manager - Due Sep. 14
-Permit response - Green - Permitting Lead - Closed&lt;/textarea&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-12&quot;&gt;&lt;label for=&quot;m-metrics&quot;&gt;Monthly metrics and exceptions&lt;/label&gt;&lt;textarea id=&quot;m-metrics&quot;&gt;Schedule variance: +5 working days potential | Forecast: unchanged | Safety: 0 recordables | Procurement: no exception | Grants/compliance: on track&lt;/textarea&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+            <div class="uw-section">
+              <div class="uw-section-title">Key coordination outcomes</div>
+              <div class="uw-rule"><strong>Outcome test:</strong> report coordination only if it produced at least one of these results.</div>
+              <div class="uw-outcome-test" aria-label="Reportable coordination outcomes"><div class="uw-outcome-type">Decision</div><div class="uw-outcome-type">Commitment</div><div class="uw-outcome-type">Resolution</div><div class="uw-outcome-type">Change</div><div class="uw-outcome-type">Escalation</div><div class="uw-outcome-type">Milestone</div></div>
+              <div class="uw-repeat">
+                <div class="uw-repeat-head"><span>Coordination outcome 1</span><span class="uw-type-tag">Decision</span></div>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-4"><label for="uw-engagement">Coordination / engagement</label><input id="uw-engagement" value="Utility and civil coordination review"></div>
+                  <div class="uw-field uw-span-8"><label for="uw-outcome">Outcome / decision <span class="uw-required">*</span></label><input id="uw-outcome" value="Team agreed to verify the utility alignment before civil mobilization."></div>
+                  <div class="uw-field uw-span-6"><label for="uw-resulting-action">Enabling commitment / next action</label><input id="uw-resulting-action" value="Complete field verification and issue an updated utility sketch."><div class="uw-hint">The action supports the outcome; it is not the reportable result by itself.</div></div>
+                  <div class="uw-field uw-span-3"><label for="uw-outcome-owner">Owner</label><input id="uw-outcome-owner" value="Design Manager"></div>
+                  <div class="uw-field uw-span-3"><label for="uw-outcome-due">Due date</label><input id="uw-outcome-due" type="date" value="2026-09-14"></div>
+                </div>
+              </div>
+              <div class="uw-step-actions"><button class="uw-button" type="button" data-demo="add-outcome">Add another outcome</button></div>
+            </div>
 
-          &lt;div class=&quot;spfx-section&quot;&gt;
-            &lt;div class=&quot;spfx-section-title&quot;&gt;Attachments and certification&lt;/div&gt;
-            &lt;div class=&quot;spfx-grid&quot;&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-file&quot;&gt;Supporting file&lt;/label&gt;&lt;input id=&quot;m-file&quot; type=&quot;file&quot;&gt;&lt;div class=&quot;spfx-hint&quot;&gt;Optional: schedule excerpt, photo or approved supporting document.&lt;/div&gt;&lt;/div&gt;
-              &lt;div class=&quot;spfx-field spfx-span-6&quot;&gt;&lt;label for=&quot;m-cert&quot;&gt;Submission certification&lt;/label&gt;&lt;select id=&quot;m-cert&quot;&gt;&lt;option&gt;I confirm this update is accurate and ready for Sector review&lt;/option&gt;&lt;option&gt;Not ready - save as draft&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
+            <div class="uw-section">
+              <div class="uw-section-title">Other material changes</div>
+              <div class="uw-check-grid">
+                <label class="uw-check"><input type="checkbox" checked>Milestone achieved or moved</label>
+                <label class="uw-check"><input type="checkbox">Cost or forecast changed</label>
+                <label class="uw-check"><input type="checkbox">Approval or permit received</label>
+                <label class="uw-check"><input type="checkbox">Scope or strategy changed</label>
+                <label class="uw-check"><input type="checkbox">Procurement status changed</label>
+                <label class="uw-check"><input type="checkbox">Safety / quality event</label>
+              </div>
+            </div>
 
-          &lt;div class=&quot;spfx-actions&quot;&gt;
-            &lt;button class=&quot;spfx-button&quot; type=&quot;button&quot; data-demo-action=&quot;draft&quot;&gt;Save draft&lt;/button&gt;
-            &lt;button class=&quot;spfx-button spfx-button-primary&quot; type=&quot;button&quot; data-demo-action=&quot;submit&quot;&gt;Submit for Sector Review&lt;/button&gt;
-            &lt;button class=&quot;spfx-button&quot; type=&quot;button&quot;&gt;Cancel&lt;/button&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;spfx-toast&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-1">Back</button><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-3">Continue to Risks & Decisions</button></div>
+          </section>
 
-          &lt;div class=&quot;spfx-list&quot;&gt;
-            &lt;div class=&quot;spfx-list-head&quot;&gt;&lt;h3&gt;My Monthly Reports&lt;/h3&gt;&lt;span class=&quot;spfx-hint&quot;&gt;One record per project and reporting month&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;spfx-table-wrap&quot;&gt;
-              &lt;table&gt;
-                &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Period&lt;/th&gt;&lt;th&gt;Project&lt;/th&gt;&lt;th&gt;Overall&lt;/th&gt;&lt;th&gt;Weekly inputs&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;th&gt;Last action&lt;/th&gt;&lt;th&gt;Output&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-                &lt;tbody&gt;
-                  &lt;tr&gt;&lt;td&gt;September 2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Green&lt;/td&gt;&lt;td&gt;4 approved&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state draft&quot;&gt;Draft&lt;/span&gt;&lt;/td&gt;&lt;td&gt;PM editing&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;Preview &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;August 2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Amber&lt;/td&gt;&lt;td&gt;4 approved&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state approved&quot;&gt;Published&lt;/span&gt;&lt;/td&gt;&lt;td&gt;PMO approved&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;PDF &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                  &lt;tr&gt;&lt;td&gt;July 2026&lt;/td&gt;&lt;td&gt;Juan F. Luis Hospital&lt;/td&gt;&lt;td&gt;Green&lt;/td&gt;&lt;td&gt;5 approved&lt;/td&gt;&lt;td&gt;&lt;span class=&quot;spfx-state approved&quot;&gt;Published&lt;/span&gt;&lt;/td&gt;&lt;td&gt;PMO approved&lt;/td&gt;&lt;td&gt;&lt;button class=&quot;spfx-link&quot; type=&quot;button&quot;&gt;PDF &amp;gt;&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;
-                &lt;/tbody&gt;
-              &lt;/table&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/section&gt;
-    &lt;/main&gt;
-  &lt;/div&gt;
+          <section class="uw-step-panel" id="uw-step-3" role="tabpanel" hidden>
+            <div class="uw-section">
+              <div class="uw-section-title">Active risk or issue</div>
+              <div class="uw-repeat">
+                <div class="uw-repeat-head"><span>Risk / issue 1</span><span class="uw-type-tag">Issue - Open</span></div>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-3"><label for="uw-risk-type">Type</label><select id="uw-risk-type"><option>Issue</option><option>Risk</option></select></div>
+                  <div class="uw-field uw-span-9"><label for="uw-risk-title">Title <span class="uw-required">*</span></label><input id="uw-risk-title" value="Underground utility conflict at north service corridor"></div>
+                  <div class="uw-field uw-span-6"><label for="uw-risk-impact">Impact if not resolved <span class="uw-required">*</span></label><textarea id="uw-risk-impact">Civil mobilization could be delayed by five working days and may affect the drainage sequence.</textarea></div>
+                  <div class="uw-field uw-span-6"><label for="uw-risk-mitigation">Mitigation / resolution plan <span class="uw-required">*</span></label><textarea id="uw-risk-mitigation">Complete field verification, update the utility sketch, and resequence initial civil work if required.</textarea></div>
+                  <div class="uw-field uw-span-3"><label for="uw-risk-rating">Rating</label><select id="uw-risk-rating"><option>Amber - High</option><option>Green - Controlled</option><option>Red - Critical</option></select></div>
+                  <div class="uw-field uw-span-3"><label for="uw-risk-owner">Owner</label><input id="uw-risk-owner" value="Design Manager"></div>
+                  <div class="uw-field uw-span-3"><label for="uw-risk-due">Target date</label><input id="uw-risk-due" type="date" value="2026-09-14"></div>
+                  <div class="uw-field uw-span-3"><label for="uw-risk-escalation">Leadership action?</label><select id="uw-risk-escalation"><option>Yes - decision required</option><option>No - project team managing</option></select></div>
+                </div>
+              </div>
+              <div class="uw-step-actions"><button class="uw-button" type="button" data-demo="add-risk">Add another risk or issue</button></div>
+            </div>
 
-  &lt;script&gt;
-    (() =&gt; {
-      const root = document.getElementById(&#x27;usvi-reporting-mockup&#x27;);
-      const tabs = [...root.querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)];
-      const views = [...root.querySelectorAll(&#x27;[role=&quot;tabpanel&quot;]&#x27;)];
-      tabs.forEach((tab) =&gt; {
-        tab.addEventListener(&#x27;click&#x27;, () =&gt; {
-          tabs.forEach((item) =&gt; item.setAttribute(&#x27;aria-selected&#x27;, String(item === tab)));
-          views.forEach((view) =&gt; { view.hidden = view.id !== tab.getAttribute(&#x27;aria-controls&#x27;); });
-        });
-      });
-      root.querySelectorAll(&#x27;[data-demo-action]&#x27;).forEach((button) =&gt; {
-        button.addEventListener(&#x27;click&#x27;, () =&gt; {
-          const view = button.closest(&#x27;[role=&quot;tabpanel&quot;]&#x27;);
-          const toast = view.querySelector(&#x27;.spfx-toast&#x27;);
-          const action = button.getAttribute(&#x27;data-demo-action&#x27;);
-          toast.textContent = action === &#x27;submit&#x27;
-            ? &#x27;Mockup response: the report would now route to the Healthcare Sector Lead for completeness and accuracy review.&#x27;
-            : action === &#x27;add&#x27;
-              ? &#x27;Mockup response: the item would be added to the project risk, issue and decision register.&#x27;
-              : &#x27;Mockup response: the report would be saved without starting the review workflow.&#x27;;
-          toast.classList.add(&#x27;show&#x27;);
-        });
-      });
-      const updateException = (view) =&gt; {
-        const needsExplanation = [...view.querySelectorAll(&#x27;[data-status-picker]&#x27;)]
-          .some((picker) =&gt; picker.value === &#x27;amber&#x27; || picker.value === &#x27;red&#x27;);
-        const exception = view.querySelector(&#x27;[data-status-exception]&#x27;);
-        if (exception) exception.hidden = !needsExplanation;
+            <div class="uw-section">
+              <div class="uw-section-title">Decision or leadership support required</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-6"><label for="uw-decision">What decision or support is required? <span class="uw-required">*</span></label><textarea id="uw-decision">Confirm the accountable owner for expedited utility coordination and authorize field verification before civil mobilization.</textarea></div>
+                <div class="uw-field uw-span-6"><label for="uw-decision-impact">What happens if no action is taken?</label><textarea id="uw-decision-impact">The civil start may move by five working days, increasing exposure to downstream sequencing impacts.</textarea></div>
+                <div class="uw-field uw-span-4"><label for="uw-decision-from">Decision needed from</label><select id="uw-decision-from"><option>ODR / Client</option><option>SPMO leadership</option><option>Sector leadership</option><option>Program Controls</option><option>Functional lead</option></select></div>
+                <div class="uw-field uw-span-4"><label for="uw-decision-owner">Follow-up owner</label><input id="uw-decision-owner" value="Healthcare Sector Lead"></div>
+                <div class="uw-field uw-span-4"><label for="uw-decision-date">Decision required by</label><input id="uw-decision-date" type="date" value="2026-09-14"></div>
+              </div>
+            </div>
+
+            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-2">Back</button><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-4">Continue to Outlook & Submit</button></div>
+          </section>
+
+          <section class="uw-step-panel" id="uw-step-4" role="tabpanel" hidden>
+            <div class="uw-section">
+              <div class="uw-section-title">Milestones and next-week outcomes</div>
+              <div class="uw-repeat">
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-4"><label for="uw-milestone">Milestone</label><input id="uw-milestone" value="Civil subcontractor mobilization"></div>
+                  <div class="uw-field uw-span-2"><label for="uw-milestone-state">Status</label><select id="uw-milestone-state"><option>At risk</option><option>On track</option><option>Achieved</option><option>Missed</option></select></div>
+                  <div class="uw-field uw-span-3"><label for="uw-baseline-date">Baseline date</label><input id="uw-baseline-date" type="date" value="2026-09-21"></div>
+                  <div class="uw-field uw-span-3"><label for="uw-current-date">Current forecast</label><input id="uw-current-date" type="date" value="2026-09-28"></div>
+                  <div class="uw-field uw-span-12"><label for="uw-milestone-reason">Reason for variance / action to recover</label><input id="uw-milestone-reason" value="Utility verification may shift mobilization; resequencing options are under review."></div>
+                </div>
+              </div>
+              <div class="uw-grid" style="margin-top:12px">
+                <div class="uw-field uw-span-6"><label for="uw-next-week">Outcome expected by next week <span class="uw-required">*</span></label><textarea id="uw-next-week">Utility alignment confirmed and civil mobilization released to proceed against the approved construction sequence.</textarea><div class="uw-hint">Describe the condition that will be true—not merely the activities the team will perform.</div></div>
+                <div class="uw-field uw-span-6"><label for="uw-blockers">Success measure and dependencies</label><textarea id="uw-blockers">Success is evidenced by the approved field sketch and notice to mobilize. Dependencies are the utility coordination decision and field verification.</textarea></div>
+              </div>
+            </div>
+
+            <div class="uw-section">
+              <div class="uw-section-title">30 / 60 / 90-day outlook</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-4"><label for="uw-30">Expected outcome by 30 days</label><textarea id="uw-30">Civil work fully mobilized, utility conflict closed, and drainage installation advancing to plan.</textarea></div>
+                <div class="uw-field uw-span-4"><label for="uw-60">Expected outcome by 60 days</label><textarea id="uw-60">Initial sitework accepted and the 60% design package ready for stakeholder decision.</textarea></div>
+                <div class="uw-field uw-span-4"><label for="uw-90">Expected outcome by 90 days</label><textarea id="uw-90">Structural package aligned across disciplines and long-lead procurement authorized for release.</textarea></div>
+              </div>
+            </div>
+
+            <div class="uw-section">
+              <div class="uw-section-title">Submission check</div>
+              <div class="uw-summary">
+                <div class="uw-summary-item"><div class="uw-summary-label">Required fields</div><div class="uw-summary-value">Complete</div></div>
+                <div class="uw-summary-item"><div class="uw-summary-label">Coordination outcomes</div><div class="uw-summary-value">1</div></div>
+                <div class="uw-summary-item"><div class="uw-summary-label">Open risks / issues</div><div class="uw-summary-value">1</div></div>
+                <div class="uw-summary-item"><div class="uw-summary-label">Leadership decisions</div><div class="uw-summary-value">1</div></div>
+              </div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-6"><label for="uw-certify">Project Manager certification</label><select id="uw-certify"><option>I confirm this report reflects material project changes and is ready for Sector review</option><option>Not ready - save as draft</option></select></div>
+                <div class="uw-field uw-span-6"><label for="uw-supporting">Supporting file (optional)</label><input id="uw-supporting" type="file"><div class="uw-hint">Attach only records needed to support the weekly update; detailed source records remain in their system of record.</div></div>
+              </div>
+              <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="draft">Save draft</button><button class="uw-button uw-button-primary" type="button" data-demo="submit">Submit for Sector Review</button><button class="uw-button" type="button">Cancel</button></div>
+              <div class="uw-toast" aria-live="polite"></div>
+            </div>
+
+            <div class="uw-history">
+              <div class="uw-history-head"><h3>My Weekly Reports</h3><span class="uw-help">Reports may cover one project, selected projects, or a saved bundle</span></div>
+              <div class="uw-table-wrap"><table><thead><tr><th>Week ending</th><th>Reporting coverage</th><th>Overall</th><th>Primary outcome / change</th><th>Decision required</th><th>Status</th><th>View</th></tr></thead><tbody>
+                <tr><td>9/11/2026</td><td>Healthcare Recovery Bundle (3)</td><td>Green</td><td>Utility exposure defined; recovery decision requested</td><td>Yes</td><td>Draft</td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+                <tr><td>9/4/2026</td><td>Juan F. Luis Hospital</td><td>Green</td><td>Phasing plan accepted; mobilization path cleared</td><td>No</td><td><span class="uw-status-text approved">Approved</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+                <tr><td>8/28/2026</td><td>Juan F. Luis Hospital</td><td>Amber</td><td>Permit response date established; design release remains at risk</td><td>No</td><td><span class="uw-status-text approved">Approved</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+              </tbody></table></div>
+            </div>
+
+            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-3">Back</button></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="uw-view" id="uw-functional" role="tabpanel" hidden>
+        <div class="uw-surface">
+          <div class="uw-form-head">
+            <div><h2>Create Functional Work Record</h2><div class="uw-help">Record meaningful work while it is fresh. If the work produced a material outcome, it can also feed the weekly and monthly reports.</div></div>
+            <div class="uw-workflow" aria-label="Workflow: Draft, Submitted record, Reporting use">
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Draft</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Submitted record</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Reporting use</span>
+            </div>
+          </div>
+
+          <div class="uw-reuse-note">
+            <span><strong>One submission, two purposes:</strong> every entry creates a searchable work record. Only entries with a material outcome move into leadership reporting.</span>
+            <span class="uw-reuse-flow"><span class="uw-reuse-item">Work record</span><span>&gt;</span><span class="uw-reuse-item">Reportable outcome?</span><span>&gt;</span><span class="uw-reuse-item">Weekly / monthly</span></span>
+          </div>
+
+          <div class="uw-section">
+            <div class="uw-section-title">Which statement best describes what happened?</div>
+            <div class="uw-grid">
+              <div class="uw-field uw-span-12">
+                <div class="uw-purpose-grid" role="radiogroup" aria-label="Which statement best describes what happened?">
+                  <label class="uw-purpose-choice"><input type="radio" name="uf-entry-type" value="record" data-functional-entry-type checked><span class="uw-purpose-copy"><strong>I completed or supported work</strong><span>Select this when none of the work items below needs to appear in the leadership report. The work will still be retained and searchable.</span></span></label>
+                  <label class="uw-purpose-choice"><input type="radio" name="uf-entry-type" value="outcome" data-functional-entry-type><span class="uw-purpose-copy"><strong>One or more work items produced a material result or change</strong><span>Select this when any item resulted in a decision, approval, accepted deliverable, resolved issue, identified risk, commitment, or schedule, cost, funding, or forecast change.</span></span></label>
+                </div>
+                <div class="uw-hint"><strong>Not sure?</strong> Choose “I completed or supported work.” Your entry will still be retained and searchable, and it can be identified later as a reporting candidate without changing the original work record.</div>
+              </div>
+              <div class="uw-field uw-span-6"><label>Current status</label><div class="uw-readonly" data-functional-entry-status>Draft — not yet submitted</div></div>
+              <div class="uw-field uw-span-6"><label>Record ID</label><div class="uw-readonly">Assigned automatically when submitted</div></div>
+            </div>
+          </div>
+
+          <div class="uw-section">
+            <div class="uw-section-title">Submission details</div>
+            <div class="uw-grid">
+              <div class="uw-field uw-span-4"><label for="uf-function">Function <span class="uw-required">*</span></label><select id="uf-function"><option>Supply Chain</option><option>Program Controls</option><option>Quality Management</option><option>Grants Compliance</option><option>Document Control</option><option>Commercial Management</option><option>GIS / Environmental</option><option>Resource Management</option><option>Program Administration</option><option>Design Management</option><option>Kahua / Systems Support</option></select></div>
+              <div class="uw-field uw-span-4"><label for="uf-period">Week ending <span class="uw-required">*</span></label><input id="uf-period" type="date" value="2026-09-11"></div>
+              <div class="uw-field uw-span-4"><label>Submitted by</label><div class="uw-readonly">A. Functional Contributor</div></div>
+              <div class="uw-field uw-span-12"><div class="uw-hint">The work date and affected projects or sectors are selected separately for each work item below.</div></div>
+            </div>
+          </div>
+
+          <div class="uw-section">
+            <div class="uw-section-title">Work performed and supporting records</div>
+            <div class="uw-rule">Add a separate work item for each category, project-specific issue, or distinct piece of work. Function, reporting week, and submitter are shared; date and affected projects or sectors are recorded for each item.</div>
+            <div data-functional-work-items>
+              <div class="uw-repeat" data-functional-work-item>
+                <div class="uw-repeat-head"><span data-work-item-title>Work item 1</span><span class="uw-type-tag" data-work-item-tag>Analysis or technical review</span><button class="uw-link" type="button" data-remove-functional-work hidden>Remove</button></div>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-4"><label data-label-for="date">Work date <span class="uw-required">*</span></label><input type="date" data-work-field="date" value="2026-09-09"></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="category">Work category <span class="uw-required">*</span></label><select data-work-field="category"><option selected>Analysis or technical review</option><option>Document or deliverable preparation</option><option>Coordination or stakeholder engagement</option><option>Compliance or grant support</option><option>Procurement or commercial support</option><option>Data, system, or records update</option><option>Decision support</option><option>Issue or risk response</option><option>Other functional support</option></select></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="requested-by">Requested by / reason for work</label><input data-work-field="requested-by" value="Program leadership request to evaluate workforce-housing options."></div>
+                  <div class="uw-field uw-span-12"><label data-label-for="affected">Affected project(s) or sector(s) <span class="uw-required">*</span></label><div class="uw-work-scope-picker" data-work-scope-picker data-selected-work-scope="Juan F. Luis Hospital|Roy L. Schneider Hospital"><select data-work-field="affected" data-work-scope-add><option value="">Add another project or sector</option><option>All 54 projects</option><option>Healthcare sector</option><option>Infrastructure sector</option><option>Education sector</option><option>PMO</option><option>Juan F. Luis Hospital</option><option>Roy L. Schneider Hospital</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>St. Thomas Wastewater</option><option>Charlotte Amalie High School</option><option>Julius E. Sprauve School</option><option>Program Reporting Transformation</option></select><div class="uw-work-scope-tags" data-work-scope-tags></div></div><div class="uw-hint">Add one or more projects or sectors. Production SPFx would search all 54 projects from the Master Project List.</div></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="record-link">Supporting record or SharePoint link</label><input data-work-field="record-link" value="Workforce Housing / Options Analysis v2"></div>
+                  <div class="uw-field uw-span-8"><label data-label-for="work-performed">What was done? <span class="uw-required">*</span></label><textarea data-work-field="work-performed">Reviewed workforce projections, compared available housing approaches, validated cost and capacity assumptions, and prepared an options analysis for program leadership.</textarea><div class="uw-hint">Use factual language. Include the document, analysis, coordination, direction, or service performed—not just a meeting count.</div></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="work-product">Work product or record created</label><textarea data-work-field="work-product">Updated options comparison and decision-support package.</textarea></div>
+                  <div class="uw-field uw-span-6"><label data-label-for="direction">Direction, decision, or information received</label><textarea data-work-field="direction">Leadership asked the team to retain two viable options and confirm the information needed for a selection.</textarea></div>
+                  <div class="uw-field uw-span-6"><label data-label-for="followup">Follow-up, owner, and due date</label><textarea data-work-field="followup">Supply Chain to present the comparison to program leadership by September 18.</textarea></div>
+                </div>
+              </div>
+            </div>
+            <div class="uw-step-actions"><button class="uw-button uw-button-blue" type="button" data-add-functional-work>Add Another Work Item</button></div>
+            <template data-functional-work-template>
+              <div class="uw-repeat" data-functional-work-item>
+                <div class="uw-repeat-head"><span data-work-item-title>Work item</span><span class="uw-type-tag" data-work-item-tag>Choose a category</span><button class="uw-link" type="button" data-remove-functional-work>Remove</button></div>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-4"><label data-label-for="date">Work date <span class="uw-required">*</span></label><input type="date" data-work-field="date" value="2026-09-09"></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="category">Work category <span class="uw-required">*</span></label><select data-work-field="category"><option value="" selected>Choose a work category</option><option>Analysis or technical review</option><option>Document or deliverable preparation</option><option>Coordination or stakeholder engagement</option><option>Compliance or grant support</option><option>Procurement or commercial support</option><option>Data, system, or records update</option><option>Decision support</option><option>Issue or risk response</option><option>Other functional support</option></select></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="requested-by">Requested by / reason for work</label><input data-work-field="requested-by" placeholder="Who requested the work or why was it needed?"></div>
+                  <div class="uw-field uw-span-12"><label data-label-for="affected">Affected project(s) or sector(s) <span class="uw-required">*</span></label><div class="uw-work-scope-picker" data-work-scope-picker data-selected-work-scope=""><select data-work-field="affected" data-work-scope-add><option value="">Add a project or sector</option><option>All 54 projects</option><option>Healthcare sector</option><option>Infrastructure sector</option><option>Education sector</option><option>PMO</option><option>Juan F. Luis Hospital</option><option>Roy L. Schneider Hospital</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>St. Thomas Wastewater</option><option>Charlotte Amalie High School</option><option>Julius E. Sprauve School</option><option>Program Reporting Transformation</option></select><div class="uw-work-scope-tags" data-work-scope-tags></div></div><div class="uw-hint">Add one or more projects or sectors. Production SPFx would search all 54 projects from the Master Project List.</div></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="record-link">Supporting record or SharePoint link</label><input data-work-field="record-link" placeholder="Document, email, tracker, or SharePoint link"></div>
+                  <div class="uw-field uw-span-8"><label data-label-for="work-performed">What was done? <span class="uw-required">*</span></label><textarea data-work-field="work-performed" placeholder="Describe the analysis, coordination, review, update, or support performed."></textarea><div class="uw-hint">Use factual language. Include the work performed—not just a meeting count.</div></div>
+                  <div class="uw-field uw-span-4"><label data-label-for="work-product">Work product or record created</label><textarea data-work-field="work-product" placeholder="What document, analysis, update, or record was produced?"></textarea></div>
+                  <div class="uw-field uw-span-6"><label data-label-for="direction">Direction, decision, or information received</label><textarea data-work-field="direction" placeholder="Record any material direction or information received."></textarea></div>
+                  <div class="uw-field uw-span-6"><label data-label-for="followup">Follow-up, owner, and due date</label><textarea data-work-field="followup" placeholder="What happens next, who owns it, and when is it due?"></textarea></div>
+                </div>
+              </div>
+            </template>
+          </div>
+
+          <div class="uw-section" data-functional-outcome-fields hidden>
+            <div class="uw-section-title">Reportable outcome, impact, and evidence</div>
+            <div class="uw-grid">
+              <div class="uw-field uw-span-4"><label for="uf-type">Outcome type <span class="uw-required">*</span></label><select id="uf-type"><option>Decision or approval obtained</option><option selected>Deliverable completed or accepted</option><option>Commitment made</option><option>Issue resolved / constraint removed</option><option>Risk identified or escalated</option><option>Forecast, schedule, or cost changed</option><option>Procurement status changed</option><option>Compliance requirement addressed</option><option>Process or system improvement implemented</option><option>Leadership support required</option></select></div>
+              <div class="uw-field uw-span-4"><label for="uf-status">Functional status</label><select id="uf-status"><option>Green - Outcome achieved / on track</option><option selected>Amber - Attention or dependency</option><option>Red - Leadership intervention required</option></select></div>
+              <div class="uw-field uw-span-4"><label for="uf-materiality">Recommended reporting use</label><select id="uf-materiality"><option>Weekly report candidate</option><option selected>Weekly and monthly report candidate</option></select><div class="uw-hint">Final inclusion is a reporting-curation decision, not an approval of the work record.</div></div>
+              <div class="uw-field uw-span-7"><label for="uf-outcome">What outcome or material change occurred? <span class="uw-required">*</span></label><textarea id="uf-outcome">The workforce-housing analysis narrowed the available approach to two viable options and established the information leadership needs to select a preferred path.</textarea><div class="uw-hint">State the condition achieved or changed. “Attended meeting,” “reviewed document,” or “updated tracker” is not an outcome.</div></div>
+              <div class="uw-field uw-span-5"><label for="uf-impact">Why does this matter? <span class="uw-required">*</span></label><textarea id="uf-impact">Selecting an option by September 18 is necessary to protect workforce-readiness planning for upcoming construction mobilization across Healthcare and Education.</textarea></div>
+              <div class="uw-field uw-span-12"><label for="uf-evidence">Evidence or measure of success <span class="uw-required">*</span></label><textarea id="uf-evidence">Completed options comparison, documented cost and capacity assumptions, and leadership decision package issued for review.</textarea><div class="uw-hint">Examples: accepted deliverable, approval, resolved item, updated forecast, issued recommendation, system record, or measurable improvement.</div></div>
+            </div>
+          </div>
+
+          <div class="uw-section" data-functional-outcome-fields hidden>
+            <div class="uw-section-title">Commitments, dependencies, and leadership support</div>
+            <div class="uw-grid">
+              <div class="uw-field uw-span-6"><label for="uf-action">Enabling commitment / next action</label><input id="uf-action" value="Present the two options and recommended path to program leadership."></div>
+              <div class="uw-field uw-span-3"><label for="uf-owner">Accountable owner</label><input id="uf-owner" value="Supply Chain Lead"></div>
+              <div class="uw-field uw-span-3"><label for="uf-due">Target date</label><input id="uf-due" type="date" value="2026-09-18"></div>
+              <div class="uw-field uw-span-6"><label for="uf-dependencies">Dependencies or affected groups</label><textarea id="uf-dependencies">Resource Management must confirm the workforce forecast; Commercial Management must validate the cost assumptions.</textarea></div>
+              <div class="uw-field uw-span-3"><label for="uf-support">Leadership decision or support needed?</label><select id="uf-support" data-functional-leadership><option value="yes" selected>Yes</option><option value="no">No</option></select></div>
+              <div class="uw-field uw-span-3"><label for="uf-from">Decision needed from</label><select id="uf-from"><option>Program leadership</option><option>ODR / Client</option><option>Sector leadership</option><option>Functional leadership</option></select></div>
+            </div>
+            <div class="uw-exception" data-functional-leadership-details>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-6"><label for="uf-decision">Decision or support required <span class="uw-required">*</span></label><textarea id="uf-decision">Select the preferred workforce-housing option and authorize the team to proceed with commercial validation.</textarea></div>
+                <div class="uw-field uw-span-3"><label for="uf-decision-date">Required by</label><input id="uf-decision-date" type="date" value="2026-09-18"></div>
+                <div class="uw-field uw-span-3"><label for="uf-consequence">Consequence if delayed</label><textarea id="uf-consequence">Workforce-readiness planning will remain provisional and may affect mobilization assumptions.</textarea></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uw-reuse-note" style="margin-top:14px;margin-bottom:0">
+            <span><strong>Direct submission:</strong> no functional lead approval is required. SharePoint records the submitter and time; later corrections retain version history and a correction reason.</span>
+          </div>
+          <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="functional-draft">Save draft</button><button class="uw-button uw-button-primary" type="button" data-demo="functional-submit">Submit Work Record</button><button class="uw-button" type="button">Cancel</button></div>
+          <div class="uw-toast" aria-live="polite"></div>
+
+          <div class="uw-history">
+            <div class="uw-history-head"><h3>My Functional Work Records</h3><span class="uw-help">Submitted records remain searchable; material outcomes can feed leadership reporting</span></div>
+            <div class="uw-table-wrap"><table><thead><tr><th>Work date</th><th>Function</th><th>Applies to</th><th>Work recorded</th><th>Reportable outcome?</th><th>Status</th><th>View</th></tr></thead><tbody>
+              <tr><td>9/9/2026</td><td>Supply Chain</td><td>Healthcare + Education</td><td>Housing options analysis and decision package prepared</td><td>Yes</td><td>Draft</td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+              <tr><td>9/4/2026</td><td>Document Control</td><td>All 54 projects</td><td>Document-routing records updated and standard issued</td><td>Yes</td><td><span class="uw-status-text approved">Included in Weekly Report</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+              <tr><td>8/28/2026</td><td>Grants Compliance</td><td>Infrastructure</td><td>Eligibility records reviewed and funding file updated</td><td>No</td><td><span class="uw-status-text approved">Submitted</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
+            </tbody></table></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="uw-view" id="uw-monthly" role="tabpanel" hidden>
+        <div class="uw-surface">
+          <div class="uw-form-head">
+            <div><h2>September 2026 Monthly Program Report</h2><div class="uw-help">Generated from approved Healthcare weekly outcomes, material updates, risks, decisions, milestones, and status exceptions.</div></div>
+            <div class="uw-workflow" aria-label="Monthly workflow: weekly approved, monthly generated, leadership ready">
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>4 weekly reports approved</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Monthly generated</span><span class="uw-workflow-line"></span>
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Leadership ready</span>
+            </div>
+          </div>
+
+          <div class="uw-reuse-note">
+            <span><strong>Generated—not retyped:</strong> the system consolidates approved weekly outcomes. The Sector Lead curates the executive narrative, confirms exceptions, and removes duplication.</span>
+            <span class="uw-reuse-flow"><span class="uw-reuse-item">Weekly outcomes</span><span>&gt;</span><span class="uw-reuse-item">Monthly synthesis</span><span>&gt;</span><span class="uw-reuse-item">12-15 page report</span></span>
+          </div>
+
+          <nav class="uw-month-nav" aria-label="Generated monthly report sections">
+            <button class="uw-month-tab" type="button" aria-pressed="true" data-month-view="uw-month-summary">Executive Summary</button>
+            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-outcomes">Outcomes & Evidence</button>
+            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-decisions">Risks & Decisions</button>
+            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-outlook">30 / 60 / 90 Outlook</button>
+            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-pages">Report Page Map</button>
+          </nav>
+
+          <section class="uw-month-panel" id="uw-month-summary">
+            <div class="uw-kpi-grid">
+              <div class="uw-kpi"><div class="uw-kpi-label">Approved weekly inputs</div><div class="uw-kpi-value">4</div><div class="uw-kpi-detail">September reporting cycle</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Material outcomes</div><div class="uw-kpi-value">8</div><div class="uw-kpi-detail">4 elevated to executive view</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Leadership decisions</div><div class="uw-kpi-value">1</div><div class="uw-kpi-detail">Required by September 14</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Open high risks</div><div class="uw-kpi-value">1</div><div class="uw-kpi-detail">Utility alignment exposure</div></div>
+            </div>
+            <div class="uw-report-grid">
+              <div class="uw-report-block">
+                <h3>Generated executive narrative</h3>
+                <p class="uw-report-copy">Healthcare delivery advanced during September as the revised construction phasing plan was accepted, clearing the path for civil mobilization. Expedited field verification was authorized to resolve the north service corridor utility conflict. Overall performance remains Green; Schedule and Risk remain Amber until the utility alignment is confirmed and the recovery sequence is approved.</p>
+                <div class="uw-source-note">Synthesized from four approved weekly reports. Sector Lead edits only the narrative, materiality, and exceptions.</div>
+              </div>
+              <div class="uw-report-block">
+                <h3>Monthly health</h3>
+                <div class="uw-rag-row">
+                  <div class="uw-rag">Overall<strong>Green</strong></div>
+                  <div class="uw-rag amber">Schedule<strong>Amber</strong></div>
+                  <div class="uw-rag">Cost / funding<strong>Green</strong></div>
+                  <div class="uw-rag amber">Risk / issues<strong>Amber</strong></div>
+                </div>
+                <div class="uw-source-note">Amber statuses retain the weekly reason, impact, recovery commitment, owner, and target date.</div>
+              </div>
+            </div>
+            <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="refresh-month">Refresh from approved weekly reports</button><button class="uw-button uw-button-primary" type="button" data-demo="generate-month">Generate leadership report</button></div>
+            <div class="uw-toast" aria-live="polite"></div>
+          </section>
+
+          <section class="uw-month-panel" id="uw-month-outcomes" hidden>
+            <div class="uw-section-title">Executive outcomes carried forward from weekly reporting</div>
+            <div class="uw-outcome-list">
+              <div class="uw-outcome-row"><strong>Decision</strong><span>Revised construction phasing plan accepted.</span><span>Cleared the approved path for site logistics and civil mobilization.</span><span class="uw-outcome-source">Week ending 9/4</span></div>
+              <div class="uw-outcome-row"><strong>Commitment</strong><span>Expedited field verification authorized.</span><span>Removed the approval barrier to the utility alignment go/no-go decision.</span><span class="uw-outcome-source">Week ending 9/11</span></div>
+              <div class="uw-outcome-row"><strong>Resolution</strong><span>Infection-control review requirements confirmed.</span><span>Allowed early works planning to proceed with an agreed compliance basis.</span><span class="uw-outcome-source">Week ending 9/18</span></div>
+              <div class="uw-outcome-row"><strong>Milestone</strong><span>Initial site access package approved.</span><span>Enabled mobilization preparations without changing the approved forecast.</span><span class="uw-outcome-source">Week ending 9/25</span></div>
+            </div>
+            <div class="uw-source-note">Each outcome retains its project, source week, owner, evidence, decision, and follow-on commitment for drill-through in Power BI.</div>
+          </section>
+
+          <section class="uw-month-panel" id="uw-month-decisions" hidden>
+            <div class="uw-report-grid">
+              <div class="uw-report-block">
+                <h3>Leadership decision required</h3>
+                <p class="uw-report-copy"><strong>Decision:</strong> Confirm the accountable owner for expedited utility coordination and authorize the final recovery sequence.</p>
+                <p class="uw-report-copy"><strong>Needed from:</strong> ODR / Client by September 14, 2026.</p>
+                <p class="uw-report-copy"><strong>Consequence of delay:</strong> Civil mobilization may move by five working days and create downstream drainage-sequence exposure.</p>
+                <div class="uw-source-note">Source: approved weekly report ending September 11.</div>
+              </div>
+              <div class="uw-report-block">
+                <h3>Active high risk</h3>
+                <p class="uw-report-copy"><strong>Underground utility conflict:</strong> field conditions differ from available record information in the north service corridor.</p>
+                <p class="uw-report-copy"><strong>Recovery outcome:</strong> verified alignment, approved field sketch, and confirmed civil mobilization date.</p>
+                <p class="uw-report-copy"><strong>Owner:</strong> Design Manager &nbsp; <strong>Target:</strong> September 14.</p>
+                <div class="uw-source-note">The monthly report carries only material open exposure; closed weekly issues remain available in detail.</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="uw-month-panel" id="uw-month-outlook" hidden>
+            <div class="uw-grid">
+              <div class="uw-report-block uw-span-4"><h3>30-day outcome</h3><p class="uw-report-copy">Civil work fully mobilized, utility conflict closed, and drainage installation advancing to the approved sequence.</p><div class="uw-source-note">Evidence: approved field sketch, notice to mobilize, and installed drainage quantity.</div></div>
+              <div class="uw-report-block uw-span-4"><h3>60-day outcome</h3><p class="uw-report-copy">Initial sitework accepted and the 60% design package ready for stakeholder decision.</p><div class="uw-source-note">Evidence: acceptance record and issued review package.</div></div>
+              <div class="uw-report-block uw-span-4"><h3>90-day outcome</h3><p class="uw-report-copy">Structural package aligned across disciplines and long-lead procurement authorized for release.</p><div class="uw-source-note">Evidence: coordination closeout and approved procurement release.</div></div>
+            </div>
+            <div class="uw-reuse-note" style="margin-top:14px;margin-bottom:0"><span><strong>Outcome framing:</strong> the monthly outlook describes the future condition and evidence of success. Supporting tasks remain with the accountable owner and are not presented as the result.</span></div>
+          </section>
+
+          <section class="uw-month-panel" id="uw-month-pages" hidden>
+            <div class="uw-section-title">Proposed 12-15 page leadership report generated from the same approved data</div>
+            <div class="uw-page-map">
+              <div class="uw-page-item"><strong>1. Cover & reporting period</strong>Program, reporting month, approval status.</div>
+              <div class="uw-page-item"><strong>2. Executive summary</strong>Material outcomes, changes, and overall RAG.</div>
+              <div class="uw-page-item"><strong>3. Leadership decisions</strong>Decision, impact, owner, and required-by date.</div>
+              <div class="uw-page-item"><strong>4-5. Sector portfolio</strong>Healthcare project status and outcome roll-up.</div>
+              <div class="uw-page-item"><strong>6-7. Outcomes & milestones</strong>Results, evidence, schedule movement, recovery.</div>
+              <div class="uw-page-item"><strong>8. Risks & issues</strong>Material open exposure and mitigation outcomes.</div>
+              <div class="uw-page-item"><strong>9. Cost & funding</strong>Forecast, funding, and exception commentary.</div>
+              <div class="uw-page-item"><strong>10. Safety & compliance</strong>Metrics and reportable exceptions.</div>
+              <div class="uw-page-item"><strong>11. Procurement & grants</strong>Material changes and leadership attention.</div>
+              <div class="uw-page-item"><strong>12. 30 / 60 / 90 outlook</strong>Expected outcomes and evidence of success.</div>
+              <div class="uw-page-item"><strong>13-15. Exception pages</strong>Added only when material program conditions require them.</div>
+              <div class="uw-page-item"><strong>Power BI drill-through</strong>All approved weekly detail remains accessible without expanding the PDF.</div>
+            </div>
+            <div class="uw-submit-actions"><button class="uw-button uw-button-blue" type="button" data-demo="preview-month">Preview 12-15 page report</button></div>
+            <div class="uw-toast" aria-live="polite"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.getElementById('usvi-weekly-capture-mockup');
+      const topTabs = [...root.querySelectorAll('.uw-tabs [role="tab"]')];
+      const topViews = [...root.querySelectorAll('.uw-view')];
+      const showTopView = (id) => {
+        topTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
+        topViews.forEach((view) => { view.hidden = view.id !== id; });
+        const functional = id === 'uw-functional';
+        root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : 'Project Manager view';
+        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : 'Healthcare Sector';
       };
-      root.querySelectorAll(&#x27;[data-status-picker]&#x27;).forEach((picker) =&gt; {
-        const applyStatus = () =&gt; {
-          const statusField = picker.closest(&#x27;.spfx-status-field&#x27;);
-          statusField.classList.remove(&#x27;amber&#x27;, &#x27;red&#x27;, &#x27;neutral&#x27;);
-          if (picker.value !== &#x27;green&#x27;) statusField.classList.add(picker.value);
-          updateException(picker.closest(&#x27;[role=&quot;tabpanel&quot;]&#x27;));
+      topTabs.forEach((tab) => tab.addEventListener('click', () => showTopView(tab.getAttribute('aria-controls'))));
+
+      const stepTabs = [...root.querySelectorAll('.uw-step-nav [role="tab"]')];
+      const stepPanels = [...root.querySelectorAll('.uw-step-panel')];
+      const showStep = (id) => {
+        stepTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
+        stepPanels.forEach((panel) => { panel.hidden = panel.id !== id; });
+      };
+      stepTabs.forEach((tab) => tab.addEventListener('click', () => showStep(tab.getAttribute('aria-controls'))));
+      root.querySelectorAll('[data-next-step]').forEach((button) => button.addEventListener('click', () => showStep(button.getAttribute('data-next-step'))));
+
+      const monthTabs = [...root.querySelectorAll('[data-month-view]')];
+      const monthPanels = [...root.querySelectorAll('.uw-month-panel')];
+      const showMonthPanel = (id) => {
+        monthTabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.getAttribute('data-month-view') === id)));
+        monthPanels.forEach((panel) => { panel.hidden = panel.id !== id; });
+      };
+      monthTabs.forEach((tab) => tab.addEventListener('click', () => showMonthPanel(tab.getAttribute('data-month-view'))));
+
+      const weeklyReportMode = root.querySelector('[data-weekly-report-mode]');
+      const weeklySinglePanel = root.querySelector('[data-weekly-single-panel]');
+      const weeklyMultiplePanel = root.querySelector('[data-weekly-multiple-panel]');
+      const weeklyBundlePanel = root.querySelector('[data-weekly-bundle-panel]');
+      const weeklyProjectAdd = root.querySelector('[data-weekly-project-add]');
+      const weeklyProjectTags = root.querySelector('[data-weekly-project-tags]');
+      let weeklySelectedProjects = ['Juan F. Luis Hospital', 'Roy L. Schneider Hospital', 'Charles Harwood Medical Complex'];
+      const renderWeeklyProjectTags = () => {
+        weeklyProjectTags.textContent = '';
+        weeklySelectedProjects.forEach((project) => {
+          const tag = document.createElement('span');
+          tag.className = 'uw-project-tag';
+          const text = document.createElement('span');
+          text.textContent = project;
+          const remove = document.createElement('button');
+          remove.type = 'button';
+          remove.textContent = 'Remove';
+          remove.setAttribute('aria-label', `Remove ${project}`);
+          remove.setAttribute('data-remove-weekly-project', project);
+          tag.append(text, remove);
+          weeklyProjectTags.appendChild(tag);
+        });
+      };
+      weeklyProjectAdd.addEventListener('change', () => {
+        const project = weeklyProjectAdd.value;
+        if (project && !weeklySelectedProjects.includes(project)) weeklySelectedProjects.push(project);
+        weeklyProjectAdd.value = '';
+        renderWeeklyProjectTags();
+      });
+      weeklyProjectTags.addEventListener('click', (event) => {
+        const remove = event.target.closest('[data-remove-weekly-project]');
+        if (!remove) return;
+        weeklySelectedProjects = weeklySelectedProjects.filter((project) => project !== remove.getAttribute('data-remove-weekly-project'));
+        renderWeeklyProjectTags();
+      });
+      renderWeeklyProjectTags();
+
+      const weeklyBundles = {
+        'healthcare-recovery': ['Juan F. Luis Hospital', 'Roy L. Schneider Hospital', 'Charles Harwood Medical Complex'],
+        'st-croix-capital': ['Juan F. Luis Hospital', 'St. Croix Underground Power', 'Program Reporting Transformation'],
+        'education-north': ['Charlotte Amalie High School', 'Julius E. Sprauve School']
+      };
+      const weeklyBundle = root.querySelector('[data-weekly-bundle]');
+      const weeklyBundleTags = root.querySelector('[data-weekly-bundle-tags]');
+      const weeklyBundleCount = root.querySelector('[data-weekly-bundle-count]');
+      const renderWeeklyBundle = () => {
+        const members = weeklyBundles[weeklyBundle.value] || [];
+        weeklyBundleTags.textContent = '';
+        members.forEach((project) => {
+          const tag = document.createElement('span');
+          tag.className = 'uw-project-tag';
+          tag.textContent = project;
+          weeklyBundleTags.appendChild(tag);
+        });
+        weeklyBundleCount.textContent = `${members.length} ${members.length === 1 ? 'project' : 'projects'}`;
+      };
+      weeklyBundle.addEventListener('change', renderWeeklyBundle);
+      renderWeeklyBundle();
+
+      const updateWeeklyReportMode = () => {
+        weeklySinglePanel.hidden = weeklyReportMode.value !== 'single';
+        weeklyMultiplePanel.hidden = weeklyReportMode.value !== 'multiple';
+        weeklyBundlePanel.hidden = weeklyReportMode.value !== 'bundle';
+      };
+      weeklyReportMode.addEventListener('change', updateWeeklyReportMode);
+      updateWeeklyReportMode();
+
+      const updateStatusException = () => {
+        const needsExplanation = [...root.querySelectorAll('[data-weekly-status]')].some((picker) => picker.value === 'amber' || picker.value === 'red');
+        root.querySelector('[data-status-exception]').hidden = !needsExplanation;
+      };
+      root.querySelectorAll('[data-weekly-status]').forEach((picker) => {
+        const applyStatus = () => {
+          const status = picker.closest('.uw-status');
+          status.classList.remove('amber', 'red', 'neutral');
+          if (picker.value !== 'green') status.classList.add(picker.value);
+          updateStatusException();
         };
-        picker.addEventListener(&#x27;change&#x27;, applyStatus);
+        picker.addEventListener('change', applyStatus);
         applyStatus();
       });
-    })();
-  &lt;/script&gt;
-&lt;/div&gt;
 
-&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  if (window.FloatingUIDOM == null) {
-    return;
-  }
-  const { autoUpdate, computePosition, flip, offset, shift, size } =
-    window.FloatingUIDOM;
-  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
-  const tooltipId = `codex-visualization-tooltip-${
-    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
-  }`;
-  const tooltipGap = 5;
-  const hoverDelay = 700;
-  const skipDelay = 300;
-  let activeTrigger = null;
-  let pendingTrigger = null;
-  let tooltip = null;
-  let openTimeout = null;
-  let autoUpdateCleanup = null;
-  let positionRequest = 0;
-  let skipDelayUntil = 0;
-  let lastPointerWasTouch = false;
-  let pinnedByTouch = false;
+      const functionalEntryTypes = [...root.querySelectorAll('[data-functional-entry-type]')];
+      const functionalOutcomeFields = [...root.querySelectorAll('[data-functional-outcome-fields]')];
+      const updateFunctionalEntryType = () => {
+        const reportable = functionalEntryTypes.find((choice) => choice.checked)?.value === 'outcome';
+        functionalOutcomeFields.forEach((section) => { section.hidden = !reportable; });
+      };
+      functionalEntryTypes.forEach((choice) => choice.addEventListener('change', updateFunctionalEntryType));
+      updateFunctionalEntryType();
 
-  const getTrigger = (target) =&gt;
-    target?.nodeType === Node.ELEMENT_NODE
-      ? target.closest(&quot;[data-tooltip]&quot;)
-      : null;
-  const containsTarget = (trigger, target) =&gt;
-    target?.nodeType != null &amp;&amp; trigger.contains(target);
-  const getContent = (trigger) =&gt;
-    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
-  const getPlacement = (trigger) =&gt; {
-    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
-    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
-  };
-  const getTooltip = () =&gt; {
-    if (tooltip == null) {
-      tooltip = document.createElement(&quot;div&quot;);
-      tooltip.id = tooltipId;
-      tooltip.className = &quot;tooltip&quot;;
-      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
-    }
-    return tooltip;
-  };
-  const setDescribedBy = (trigger, described) =&gt; {
-    const ids = new Set(
-      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
-        .split(/\s+/)
-        .filter(Boolean),
-    );
-    if (described) {
-      ids.add(tooltipId);
-    } else {
-      ids.delete(tooltipId);
-    }
-    if (ids.size === 0) {
-      trigger.removeAttribute(&quot;aria-describedby&quot;);
-    } else {
-      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
-    }
-  };
-  const clearOpenTimeout = () =&gt; {
-    if (openTimeout != null) {
-      window.clearTimeout(openTimeout);
-      openTimeout = null;
-    }
-    pendingTrigger = null;
-  };
-  const closeTooltip = (activateSkipDelay = true) =&gt; {
-    clearOpenTimeout();
-    pinnedByTouch = false;
-    positionRequest += 1;
-    autoUpdateCleanup?.();
-    autoUpdateCleanup = null;
-    if (activeTrigger == null) {
-      return;
-    }
-    setDescribedBy(activeTrigger, false);
-    activeTrigger = null;
-    tooltip?.remove();
-    if (activateSkipDelay) {
-      skipDelayUntil = Date.now() + skipDelay;
-    }
-  };
-  const updatePosition = (trigger, floating) =&gt; {
-    const request = ++positionRequest;
-    void computePosition(trigger, floating, {
-      middleware: [
-        offset(tooltipGap),
-        flip({ padding: tooltipGap }),
-        shift({ padding: tooltipGap }),
-        size({
-          padding: tooltipGap,
-          apply({ availableHeight, availableWidth, elements }) {
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-width&quot;,
-              `${Math.max(0, availableWidth)}px`,
-            );
-            elements.floating.style.setProperty(
-              &quot;--tooltip-available-height&quot;,
-              `${Math.max(0, availableHeight)}px`,
-            );
-          },
-        }),
-      ],
-      placement: getPlacement(trigger),
-      strategy: &quot;fixed&quot;,
-    })
-      .then(({ x, y }) =&gt; {
-        if (activeTrigger !== trigger || request !== positionRequest) {
+      const functionalWorkItems = root.querySelector('[data-functional-work-items]');
+      const functionalWorkTemplate = root.querySelector('[data-functional-work-template]');
+      const renderFunctionalWorkScopes = (item) => {
+        const tags = item.querySelector('[data-work-scope-tags]');
+        tags.textContent = '';
+        item.workScopes.forEach((scope) => {
+          const tag = document.createElement('span');
+          tag.className = 'uw-project-tag';
+          const text = document.createElement('span');
+          text.textContent = scope;
+          const remove = document.createElement('button');
+          remove.type = 'button';
+          remove.textContent = 'Remove';
+          remove.setAttribute('aria-label', `Remove ${scope}`);
+          remove.setAttribute('data-remove-work-scope', scope);
+          tag.append(text, remove);
+          tags.appendChild(tag);
+        });
+      };
+      const refreshFunctionalWorkItems = () => {
+        const items = [...functionalWorkItems.querySelectorAll('[data-functional-work-item]')];
+        items.forEach((item, index) => {
+          item.querySelector('[data-work-item-title]').textContent = `Work item ${index + 1}`;
+          const remove = item.querySelector('[data-remove-functional-work]');
+          remove.hidden = items.length === 1;
+          item.querySelectorAll('[data-work-field]').forEach((field) => {
+            const key = field.getAttribute('data-work-field');
+            const id = `uf-work-${index + 1}-${key}`;
+            field.id = id;
+            const label = item.querySelector(`[data-label-for="${key}"]`);
+            if (label) label.htmlFor = id;
+          });
+          const category = item.querySelector('[data-work-field="category"]');
+          const tag = item.querySelector('[data-work-item-tag]');
+          const updateTag = () => { tag.textContent = category.value || 'Choose a category'; };
+          if (!category.dataset.tagBound) {
+            category.addEventListener('change', updateTag);
+            category.dataset.tagBound = 'true';
+          }
+          updateTag();
+          if (!item.workScopes) {
+            item.workScopes = (item.querySelector('[data-work-scope-picker]').dataset.selectedWorkScope || '').split('|').filter(Boolean);
+          }
+          const scopeAdd = item.querySelector('[data-work-scope-add]');
+          if (!scopeAdd.dataset.scopeBound) {
+            scopeAdd.addEventListener('change', () => {
+              const scope = scopeAdd.value;
+              if (!scope) return;
+              if (scope === 'All 54 projects') item.workScopes = [scope];
+              else {
+                item.workScopes = item.workScopes.filter((value) => value !== 'All 54 projects');
+                if (!item.workScopes.includes(scope)) item.workScopes.push(scope);
+              }
+              scopeAdd.value = '';
+              renderFunctionalWorkScopes(item);
+            });
+            scopeAdd.dataset.scopeBound = 'true';
+          }
+          renderFunctionalWorkScopes(item);
+        });
+      };
+      root.querySelector('[data-add-functional-work]').addEventListener('click', () => {
+        functionalWorkItems.appendChild(functionalWorkTemplate.content.cloneNode(true));
+        refreshFunctionalWorkItems();
+      });
+      functionalWorkItems.addEventListener('click', (event) => {
+        const scopeRemove = event.target.closest('[data-remove-work-scope]');
+        if (scopeRemove) {
+          const item = scopeRemove.closest('[data-functional-work-item]');
+          item.workScopes = item.workScopes.filter((scope) => scope !== scopeRemove.getAttribute('data-remove-work-scope'));
+          renderFunctionalWorkScopes(item);
           return;
         }
-        const scale = window.devicePixelRatio || 1;
-        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
-        floating.style.visibility = &quot;visible&quot;;
-      })
-      .catch(() =&gt; {
-        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
-          closeTooltip(false);
-        }
+        const remove = event.target.closest('[data-remove-functional-work]');
+        if (!remove) return;
+        remove.closest('[data-functional-work-item]').remove();
+        refreshFunctionalWorkItems();
       });
-  };
-  const openTooltip = (trigger) =&gt; {
-    const content = getContent(trigger);
-    if (!trigger.isConnected || content.length === 0) {
-      return;
-    }
-    clearOpenTimeout();
-    if (activeTrigger === trigger) {
-      return;
-    }
-    closeTooltip();
-    const floating = getTooltip();
-    floating.textContent = content;
-    floating.style.visibility = &quot;hidden&quot;;
-    floating.style.transform = &quot;translate(0, 0)&quot;;
-    document.body.appendChild(floating);
-    activeTrigger = trigger;
-    setDescribedBy(trigger, true);
-    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
-      updatePosition(trigger, floating);
-    });
-  };
-  const requestOpen = (trigger, immediate = false) =&gt; {
-    if (
-      getContent(trigger).length === 0 ||
-      activeTrigger === trigger ||
-      pendingTrigger === trigger
-    ) {
-      return;
-    }
-    clearOpenTimeout();
-    pendingTrigger = trigger;
-    const delay =
-      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
-        ? 0
-        : hoverDelay;
-    if (delay === 0) {
-      openTooltip(trigger);
-      return;
-    }
-    openTimeout = window.setTimeout(() =&gt; {
-      openTimeout = null;
-      pendingTrigger = null;
-      openTooltip(trigger);
-    }, delay);
-  };
-  const handlePointerOpen = (event) =&gt; {
-    if (event.pointerType === &quot;touch&quot;) {
-      return;
-    }
-    const trigger = getTrigger(event.target);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    requestOpen(trigger);
-  };
-  const handlePointer = (event) =&gt; {
-    lastPointerWasTouch =
-      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
-  };
-  const handleTouchClick = (event) =&gt; {
-    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
-    lastPointerWasTouch = false;
-    if (!isTouch || event.detail === 0) {
-      return;
-    }
-    const trigger = getTrigger(event.target);
-    if (
-      trigger == null ||
-      !trigger.isConnected ||
-      getContent(trigger).length === 0 ||
-      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
-    ) {
-      if (pinnedByTouch) {
-        closeTooltip();
-      }
-      return;
-    }
-    openTooltip(trigger);
-    pinnedByTouch = activeTrigger === trigger;
-    window.setTimeout(() =&gt; {
-      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
-        closeTooltip(false);
-      }
-    }, 0);
-  };
-  const handleLeave = (event) =&gt; {
-    if (pinnedByTouch) {
-      return;
-    }
-    const trigger = getTrigger(event.target);
-    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
-      return;
-    }
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const handleFocusIn = (event) =&gt; {
-    const trigger = getTrigger(event.target);
-    if (trigger?.matches(&quot;:focus-visible&quot;)) {
-      requestOpen(trigger, true);
-    }
-  };
-  const handleKeyDown = (event) =&gt; {
-    if (event.key === &quot;Escape&quot;) {
-      closeTooltip();
-    }
-  };
-  const handleContextMenu = (event) =&gt; {
-    lastPointerWasTouch = false;
-    const trigger = getTrigger(event.target);
-    if (activeTrigger === trigger || pendingTrigger === trigger) {
-      closeTooltip();
-    }
-  };
-  const destroy = () =&gt; {
-    closeTooltip(false);
-    lastPointerWasTouch = false;
-    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
-    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
-    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
-    document.removeEventListener(&quot;click&quot;, handleTouchClick);
-    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
-    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
-    document.removeEventListener(&quot;focusout&quot;, handleLeave);
-    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
-    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
-    tooltip = null;
-  };
+      refreshFunctionalWorkItems();
 
-  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
-  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
-  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
-  document.addEventListener(&quot;click&quot;, handleTouchClick);
-  document.addEventListener(&quot;pointerout&quot;, handleLeave);
-  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
-  document.addEventListener(&quot;focusout&quot;, handleLeave);
-  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
-  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
-  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
-})();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const initialize = () =&gt; {
-    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
-  };
-  if (globalThis.lucide != null) {
-    initialize();
-    return;
-  }
-  document
-    .getElementById(&quot;codex-visualization-lucide&quot;)
-    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
-})();
-&lt;/script&gt;
+      const functionalLeadership = root.querySelector('[data-functional-leadership]');
+      const functionalLeadershipDetails = root.querySelector('[data-functional-leadership-details]');
+      const updateFunctionalLeadership = () => { functionalLeadershipDetails.hidden = functionalLeadership.value !== 'yes'; };
+      functionalLeadership.addEventListener('change', updateFunctionalLeadership);
+      updateFunctionalLeadership();
 
-&lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
-</body>
-</html>
+      root.querySelectorAll('[data-demo]').forEach((button) => button.addEventListener('click', () => {
+        const view = button.closest('.uw-view');
+        const toast = button.closest('.uw-month-panel')?.querySelector('.uw-toast') || view.querySelector('.uw-toast');
+        const action = button.getAttribute('data-demo');
+        const messages = {
+          submit: 'Mockup response: the weekly report would route to the Healthcare Sector Lead for completeness, accuracy, materiality, and status review.',
+          draft: 'Mockup response: the weekly report would be saved without starting the review workflow.',
+          'functional-draft': 'The functional work record would remain in Draft status and would not yet be treated as an official submitted record.',
+          'functional-submit': (() => {
+            const workItemCount = root.querySelectorAll('[data-functional-work-item]').length;
+            return `${workItemCount} ${workItemCount === 1 ? 'work item' : 'work items'} submitted directly. No functional lead approval is required. SharePoint would timestamp the submission, preserve version history, and make reportable outcomes available for weekly and monthly curation.`;
+          })(),
+          'refresh-month': 'Monthly view refreshed from four approved Healthcare weekly reports and material updates.',
+          'generate-month': 'Leadership report generated from approved outcome data and routed for PMO quality review.',
+          'preview-month': 'The production solution would open the generated 12-15 page PDF preview.',
+          'add-outcome': 'Mockup response: another structured coordination outcome would be added.',
+          'add-risk': 'Mockup response: another risk or issue record would be added.'
+        };
+        toast.textContent = messages[action] || 'Mockup response: the selected record would be added.';
+        toast.classList.add('show');
+      }));
+    })();
+  </script>
+</div>
+</body></html>
