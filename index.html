@@ -21,7 +21,7 @@
     #usvi-weekly-capture-mockup .uw-subtitle { font-size: 11px; opacity: .82; margin-top: 2px; }
     #usvi-weekly-capture-mockup .uw-user { text-align: right; font-size: 11px; white-space: nowrap; }
     #usvi-weekly-capture-mockup .uw-tabs {
-      display: flex; gap: 24px; padding: 0 20px;
+      display: flex; gap: 24px; padding: 0 20px; overflow-x: auto;
       border-bottom: 1px solid light-dark(#e1e1e1, #4a4a4a);
       background: light-dark(#ffffff, #202020);
     }
@@ -33,6 +33,27 @@
     #usvi-weekly-capture-mockup .uw-tab[aria-selected="true"] {
       color: light-dark(#005a9e, #69afe5); border-bottom-color: light-dark(#0078d4, #69afe5); font-weight: 500;
     }
+    #usvi-weekly-capture-mockup .uw-ws-layout { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.85fr); gap:16px; align-items:start; }
+    #usvi-weekly-capture-mockup .uw-ws-card { padding:15px; margin:0 0 12px; border:1px solid light-dark(#d6d6d6,#505050); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-ws-card h3 { margin-bottom:12px; }
+    #usvi-weekly-capture-mockup .uw-ws-entry { padding:12px; margin-top:10px; border:1px solid light-dark(#d6d6d6,#505050); border-left:4px solid light-dark(#0078d4,#69afe5); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-ws-entry-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:9px; font-size:11px; font-weight:500; }
+    #usvi-weekly-capture-mockup .uw-ws-remove { border:0; padding:3px 6px; color:light-dark(#a4262c,#ff8b91); background:transparent; font:inherit; cursor:pointer; }
+    #usvi-weekly-capture-mockup .uw-ws-preview { position:sticky; top:12px; }
+    #usvi-weekly-capture-mockup .uw-ws-preview h4 { margin:15px 0 5px; color:light-dark(#004578,#8fc9ee); font-size:11px; text-transform:uppercase; letter-spacing:.03em; }
+    #usvi-weekly-capture-mockup .uw-ws-preview p { margin:5px 0; white-space:pre-wrap; font-size:12px; }
+    #usvi-weekly-capture-mockup .uw-ws-preview ul { margin:5px 0; padding-left:18px; font-size:12px; }
+    #usvi-weekly-capture-mockup .uw-ws-preview li { margin:7px 0; }
+    #usvi-weekly-capture-mockup .uw-ws-preview .uw-ws-meta { padding-bottom:10px; border-bottom:1px solid light-dark(#d6d6d6,#505050); color:light-dark(#605e5c,#c8c8c8); }
+    #usvi-weekly-capture-mockup .uw-ws-note { padding:9px 11px; margin-bottom:12px; background:light-dark(#e5f3ff,#17384d); color:light-dark(#004578,#d7efff); font-size:11px; }
+    #usvi-weekly-capture-mockup .uw-ws-status { min-height:18px; color:light-dark(#107c10,#7fd17f); font-size:11px; }
+    #usvi-weekly-capture-mockup.uw-print-substantiation .uw-masthead,
+    #usvi-weekly-capture-mockup.uw-print-substantiation .uw-tabs,
+    #usvi-weekly-capture-mockup.uw-print-substantiation .uw-view:not(#uw-substantiation),
+    #usvi-weekly-capture-mockup.uw-print-substantiation #uw-substantiation form { display:none !important; }
+    #usvi-weekly-capture-mockup.uw-print-substantiation #uw-substantiation,
+    #usvi-weekly-capture-mockup.uw-print-substantiation #uw-substantiation .uw-ws-preview { display:block !important; position:static; }
+    @media print { body { padding:0!important; } #usvi-weekly-capture-mockup.uw-print-substantiation .uw-stage { padding:0; } #usvi-weekly-capture-mockup.uw-print-substantiation .uw-surface { padding:0; background:white; } }
     #usvi-weekly-capture-mockup .uw-stage { padding: 18px 20px 24px; }
     #usvi-weekly-capture-mockup .uw-view[hidden],
     #usvi-weekly-capture-mockup .uw-step-panel[hidden],
@@ -270,6 +291,8 @@
       #usvi-weekly-capture-mockup .uw-sector-options,
       #usvi-weekly-capture-mockup .uw-project-options { grid-template-columns: 1fr; }
       #usvi-weekly-capture-mockup .uw-project-picker-head { align-items: stretch; flex-direction: column; }
+      #usvi-weekly-capture-mockup .uw-ws-layout { grid-template-columns:1fr; }
+      #usvi-weekly-capture-mockup .uw-ws-preview { position:static; }
     }
   </style>
 
@@ -277,7 +300,7 @@
     <header class="uw-masthead">
       <div class="uw-brand">
         <div class="uw-mark">SP</div>
-        <div><div class="uw-title">USVI Program Reporting</div><div class="uw-subtitle">Outcome-based project and functional reporting</div></div>
+        <div><div class="uw-title">USVI Program Reporting</div><div class="uw-subtitle">Project outcomes, functional work, and consultant services</div></div>
       </div>
       <div class="uw-user"><span data-user-view>Project Manager view</span><br><strong data-user-scope>Healthcare Sector</strong></div>
     </header>
@@ -285,6 +308,7 @@
     <nav class="uw-tabs" role="tablist" aria-label="SPFx reporting uses">
       <button class="uw-tab" type="button" role="tab" aria-selected="true" aria-controls="uw-weekly">Weekly Project Report</button>
       <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-functional">Functional Work &amp; Outcomes</button>
+      <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-substantiation">Weekly Work Substantiation</button>
     </nav>
 
     <main class="uw-stage">
@@ -624,6 +648,58 @@
         </div>
       </section>
 
+      <section class="uw-view" id="uw-substantiation" role="tabpanel" hidden>
+        <div class="uw-surface">
+          <div class="uw-form-head">
+            <div><h2>Create Weekly Work Substantiation</h2><div class="uw-help">Document consultant services performed during the week for agency review and payment substantiation.</div></div>
+            <div class="uw-workflow" aria-label="Workflow: Enter work, review report, submit"><span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Enter work</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Review report</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Submit</span></div>
+          </div>
+          <div class="uw-ws-note"><strong>Service record:</strong> Describe the work performed in plain, specific terms. Include a resulting record when useful; you do not need separate fields for “service” and “work product.”</div>
+          <div class="uw-ws-layout">
+            <form id="uw-ws-form">
+              <section class="uw-ws-card">
+                <h3>Report information</h3>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-6"><label for="uw-ws-project">Project <span class="uw-required">*</span></label><select id="uw-ws-project" required><option value="">Select a project</option><option selected>Roy L. Schneider Hospital (RLSH)</option><option>Juan F. Luis Hospital (JFLH)</option><option>Charles Harwood Medical Complex</option><option>Program / multiple projects</option></select></div>
+                  <div class="uw-field uw-span-3"><label for="uw-ws-start">Period start <span class="uw-required">*</span></label><input id="uw-ws-start" type="date" value="2026-07-27" required></div>
+                  <div class="uw-field uw-span-3"><label for="uw-ws-end">Period end <span class="uw-required">*</span></label><input id="uw-ws-end" type="date" value="2026-07-31" required></div>
+                  <div class="uw-field uw-span-6"><label for="uw-ws-prepared">Prepared by</label><input id="uw-ws-prepared" value="A. Consultant" placeholder="Name"></div>
+                  <div class="uw-field uw-span-6"><label for="uw-ws-submitted">Submission date</label><input id="uw-ws-submitted" type="date"></div>
+                  <div class="uw-field uw-span-12"><label for="uw-ws-summary">Weekly summary <span class="uw-required">*</span></label><textarea id="uw-ws-summary" required>Supported RLSH procurement coordination, program controls, healthcare portfolio reporting, staffing review, and financial model discussions.</textarea><div class="uw-hint">Briefly summarize the service areas covered. Specific activities are listed below, so avoid repeating them word for word.</div></div>
+                </div>
+              </section>
+              <section class="uw-ws-card">
+                <h3>Services performed <span class="uw-required">*</span></h3>
+                <div class="uw-hint">Add one entry for each distinct service area. Be factual and specific about what the consultant did.</div>
+                <div id="uw-ws-services"></div>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-ws-add="service">+ Add service</button></div>
+              </section>
+              <section class="uw-ws-card">
+                <h3>Meetings / coordination sessions <span class="uw-help">(optional)</span></h3>
+                <div class="uw-hint">Include meeting title, date, and your role or contribution when this helps substantiate the work.</div>
+                <div id="uw-ws-meetings"></div>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-ws-add="meeting">+ Add meeting</button></div>
+              </section>
+              <section class="uw-ws-card">
+                <h3>Supporting records <span class="uw-help">(optional)</span></h3>
+                <div class="uw-field"><label for="uw-ws-records">Supporting records or references</label><textarea id="uw-ws-records" placeholder="For example: updated RLSH Action Item List; draft CMAR recommendation"></textarea><div class="uw-hint">Include hours, staff names, task codes, or attachment references only when required by contract or agency instructions.</div></div>
+              </section>
+              <div class="uw-submit-actions"><button class="uw-button" type="button" data-ws-action="save">Save draft</button><button class="uw-button" type="button" data-ws-action="clear">Clear form</button><button class="uw-button uw-button-primary" type="button" data-ws-action="print">Print / Save PDF</button><button class="uw-button uw-button-primary" type="button" data-ws-action="submit">Submit for review</button></div>
+              <div class="uw-ws-status" id="uw-ws-status" aria-live="polite"></div>
+            </form>
+            <aside class="uw-ws-card uw-ws-preview" aria-live="polite">
+              <h3>Live report preview</h3>
+              <p class="uw-ws-meta" id="uw-ws-preview-meta">Project and reporting period appear here.</p>
+              <h4>Weekly summary</h4><p id="uw-ws-preview-summary"></p>
+              <h4>Services performed</h4><ul id="uw-ws-preview-services"></ul>
+              <div id="uw-ws-preview-meetings-block" hidden><h4>Meetings / coordination sessions</h4><ul id="uw-ws-preview-meetings"></ul></div>
+              <div id="uw-ws-preview-records-block" hidden><h4>Supporting records</h4><p id="uw-ws-preview-records"></p></div>
+              <p class="uw-help" id="uw-ws-preview-prepared"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="uw-view" id="uw-monthly" role="tabpanel" hidden>
         <div class="uw-surface">
           <div class="uw-form-head">
@@ -748,8 +824,9 @@
         topTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
         topViews.forEach((view) => { view.hidden = view.id !== id; });
         const functional = id === 'uw-functional';
-        root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : 'Project Manager view';
-        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : 'Healthcare Sector';
+        const substantiation = id === 'uw-substantiation';
+        root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : substantiation ? 'Consultant view' : 'Project Manager view';
+        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : substantiation ? 'Weekly service record' : 'Healthcare Sector';
       };
       topTabs.forEach((tab) => tab.addEventListener('click', () => showTopView(tab.getAttribute('aria-controls'))));
 
@@ -946,6 +1023,110 @@
       const updateFunctionalLeadership = () => { functionalLeadershipDetails.hidden = functionalLeadership.value !== 'yes'; };
       functionalLeadership.addEventListener('change', updateFunctionalLeadership);
       updateFunctionalLeadership();
+
+      // Weekly Work Substantiation: repeatable entries, locally saved drafts, and a live agency-facing preview.
+      const wsForm = root.querySelector('#uw-ws-form');
+      const wsServices = root.querySelector('#uw-ws-services');
+      const wsMeetings = root.querySelector('#uw-ws-meetings');
+      const wsStatus = root.querySelector('#uw-ws-status');
+      const localDate = () => {
+        const now = new Date();
+        return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+      };
+      const wsDateLabel = (value) => {
+        if (!value) return '';
+        const [year, month, day] = value.split('-').map(Number);
+        return new Date(year, month-1, day).toLocaleDateString(undefined, {month:'long', day:'numeric', year:'numeric'});
+      };
+      const wsValue = (selector) => root.querySelector(selector).value.trim();
+      let wsFieldId=0;
+      const wsMakeField = (label, className, tagName='input', placeholder='') => {
+        const wrap = document.createElement('div'); wrap.className = 'uw-field uw-span-12';
+        const field = document.createElement(tagName); field.className = className; field.id=`uw-ws-field-${++wsFieldId}`;
+        const lab = document.createElement('label'); lab.htmlFor=field.id; lab.textContent = label; wrap.appendChild(lab);
+        if (placeholder) field.placeholder = placeholder;
+        wrap.appendChild(field); return wrap;
+      };
+      const wsAddEntry = (type, values={}) => {
+        const host = type === 'service' ? wsServices : wsMeetings;
+        const row = document.createElement('div'); row.className = 'uw-ws-entry'; row.dataset.wsEntry = type;
+        const head = document.createElement('div'); head.className = 'uw-ws-entry-head';
+        const title = document.createElement('span'); title.textContent = `${type === 'service' ? 'Service' : 'Meeting'} ${host.children.length+1}`;
+        const remove = document.createElement('button'); remove.type='button'; remove.className='uw-ws-remove'; remove.dataset.wsRemove=''; remove.textContent='Remove';
+        head.append(title,remove); row.appendChild(head);
+        if (type === 'service') {
+          const grid=document.createElement('div'); grid.className='uw-grid';
+          const areaWrap=wsMakeField('Service area','uw-ws-area','select'); areaWrap.className='uw-field uw-span-4';
+          const area=areaWrap.querySelector('select');
+          ['', 'Procurement Support','Program Controls','Program / Portfolio Coordination','Staffing Coordination','Financial Coordination','Project Management','Other'].forEach((v,i)=>{const o=document.createElement('option');o.value=v;o.textContent=v||'Select service area';if(v===values.area)o.selected=true;area.appendChild(o);});
+          const descWrap=wsMakeField('Description of work performed','uw-ws-description','textarea','Describe the consultant’s work performed.'); descWrap.className='uw-field uw-span-8';
+          descWrap.querySelector('textarea').value=values.description||''; grid.append(areaWrap,descWrap); row.appendChild(grid);
+        } else {
+          const grid=document.createElement('div'); grid.className='uw-grid';
+          const nameWrap=wsMakeField('Meeting or session name','uw-ws-meeting-name','input','Meeting name'); nameWrap.className='uw-field uw-span-5'; nameWrap.querySelector('input').value=values.name||'';
+          const dateWrap=wsMakeField('Date','uw-ws-meeting-date','input'); dateWrap.className='uw-field uw-span-3'; dateWrap.querySelector('input').type='date'; dateWrap.querySelector('input').value=values.date||'';
+          const roleWrap=wsMakeField('Consultant role or work performed','uw-ws-meeting-role','input','Role, contribution, or follow-up'); roleWrap.className='uw-field uw-span-4'; roleWrap.querySelector('input').value=values.role||'';
+          grid.append(nameWrap,dateWrap,roleWrap); row.appendChild(grid);
+        }
+        host.appendChild(row); wsUpdatePreview();
+      };
+      const wsReadEntries = (host, type) => [...host.querySelectorAll('[data-ws-entry]')].map((row) => type === 'service'
+        ? {area:row.querySelector('.uw-ws-area').value, description:row.querySelector('.uw-ws-description').value.trim()}
+        : {name:row.querySelector('.uw-ws-meeting-name').value.trim(), date:row.querySelector('.uw-ws-meeting-date').value, role:row.querySelector('.uw-ws-meeting-role').value.trim()});
+      const wsUpdatePreview = () => {
+        const project=wsValue('#uw-ws-project')||'Project not entered';
+        const start=wsDateLabel(wsValue('#uw-ws-start')), end=wsDateLabel(wsValue('#uw-ws-end'));
+        root.querySelector('#uw-ws-preview-meta').textContent=`${project}${start||end ? ` · ${start}${start&&end?' – ':''}${end}`:''}`;
+        root.querySelector('#uw-ws-preview-summary').textContent=wsValue('#uw-ws-summary')||'Weekly summary will appear here.';
+        const serviceList=root.querySelector('#uw-ws-preview-services'); serviceList.textContent='';
+        const activeServices=wsReadEntries(wsServices,'service').filter(x=>x.area||x.description);
+        if (!activeServices.length) { const li=document.createElement('li');li.textContent='Add a service performed to preview it here.';serviceList.appendChild(li); }
+        activeServices.forEach((item)=>{const li=document.createElement('li');if(item.area){const strong=document.createElement('strong');strong.textContent=`${item.area}: `;li.appendChild(strong);}li.append(document.createTextNode(item.description||'Description not entered.'));serviceList.appendChild(li);});
+        const activeMeetings=wsReadEntries(wsMeetings,'meeting').filter(x=>x.name||x.date||x.role);
+        const meetingBlock=root.querySelector('#uw-ws-preview-meetings-block'), meetingList=root.querySelector('#uw-ws-preview-meetings');
+        meetingBlock.hidden=!activeMeetings.length; meetingList.textContent='';
+        activeMeetings.forEach((item)=>{const li=document.createElement('li');li.textContent=[item.name||'Meeting / session',wsDateLabel(item.date),item.role].filter(Boolean).join(' · ');meetingList.appendChild(li);});
+        const records=wsValue('#uw-ws-records'); root.querySelector('#uw-ws-preview-records-block').hidden=!records;root.querySelector('#uw-ws-preview-records').textContent=records;
+        const prepared=wsValue('#uw-ws-prepared'), submitted=wsDateLabel(wsValue('#uw-ws-submitted'));
+        root.querySelector('#uw-ws-preview-prepared').textContent=[prepared?`Prepared by ${prepared}`:'',submitted?`Submitted ${submitted}`:''].filter(Boolean).join(' · ');
+      };
+      const wsState = () => ({
+        fields:Object.fromEntries(['project','start','end','prepared','submitted','summary','records'].map((key)=>[key,root.querySelector(`#uw-ws-${key}`).value])),
+        services:wsReadEntries(wsServices,'service'), meetings:wsReadEntries(wsMeetings,'meeting')
+      });
+      const wsRestore = (state) => {
+        if (!state) return;
+        Object.entries(state.fields||{}).forEach(([key,value])=>{const input=root.querySelector(`#uw-ws-${key}`);if(input)input.value=value;});
+        wsServices.textContent='';wsMeetings.textContent='';
+        (state.services||[]).forEach((entry)=>wsAddEntry('service',entry));
+        (state.meetings||[]).forEach((entry)=>wsAddEntry('meeting',entry));
+        if (!wsServices.children.length) wsAddEntry('service');
+        wsUpdatePreview();
+      };
+      root.querySelector('#uw-ws-submitted').value=localDate();
+      wsAddEntry('service',{area:'Procurement Support',description:'Coordinated CMAR selection activities and prepared a draft recommendation for stakeholder review.'});
+      wsAddEntry('service',{area:'Program Controls',description:'Updated the RLSH action item list and maintained project tracking and reporting information.'});
+      wsAddEntry('service',{area:'Program / Portfolio Coordination',description:'Supported healthcare reviews and portfolio updates with current project and procurement information.'});
+      wsAddEntry('service',{area:'Staffing Coordination',description:'Participated in the Year 3 task order staffing review.'});
+      wsAddEntry('service',{area:'Financial Coordination',description:'Participated in financial model discussions for Juan F. Luis Hospital and RLSH.'});
+      ['JFLH and RLSH Action Items Update','Healthcare Check-In','USVI Healthcare Review and Updates','Year 3 Task Order Staffing Review','USVI Financial Model Summary – JFLH and RLSH','Healthcare Portfolio Update'].forEach(name=>wsAddEntry('meeting',{name,date:'2026-07-28'}));
+      wsUpdatePreview();
+      try { const saved=localStorage.getItem('usvi-weekly-work-substantiation'); if(saved) wsRestore(JSON.parse(saved)); } catch (_) { /* local storage may be disabled */ }
+      root.querySelectorAll('[data-ws-add]').forEach(button=>button.addEventListener('click',()=>wsAddEntry(button.dataset.wsAdd)));
+      wsForm.addEventListener('input',wsUpdatePreview);wsForm.addEventListener('change',wsUpdatePreview);
+      wsForm.addEventListener('click',(event)=>{if(event.target.closest('[data-ws-remove]')){event.target.closest('[data-ws-entry]').remove();wsUpdatePreview();}});
+      root.querySelectorAll('[data-ws-action]').forEach((button)=>button.addEventListener('click',()=>{
+        const action=button.dataset.wsAction;
+        if(action==='save'){localStorage.setItem('usvi-weekly-work-substantiation',JSON.stringify(wsState()));wsStatus.textContent='Draft saved in this browser.';}
+        if(action==='clear'){wsForm.reset();['project','start','end','prepared','summary','records'].forEach(key=>root.querySelector(`#uw-ws-${key}`).value='');root.querySelector('#uw-ws-submitted').value=localDate();wsServices.textContent='';wsMeetings.textContent='';wsAddEntry('service');wsUpdatePreview();wsStatus.textContent='Form cleared. Add the work performed for this reporting period.';}
+        if(action==='submit'){
+          const hasService=wsReadEntries(wsServices,'service').some(x=>x.description);
+          if(!wsForm.reportValidity()) return;
+          if(!hasService){wsStatus.textContent='Add at least one description under Services performed before submitting.';return;}
+          wsStatus.textContent='Mockup: report is complete and ready for agency review. No information was transmitted.';
+        }
+        if(action==='print'){root.classList.add('uw-print-substantiation');const cleanup=()=>{root.classList.remove('uw-print-substantiation');window.removeEventListener('afterprint',cleanup);};window.addEventListener('afterprint',cleanup);window.print();setTimeout(cleanup,1000);}
+      }));
 
       root.querySelectorAll('[data-demo]').forEach((button) => button.addEventListener('click', () => {
         const view = button.closest('.uw-view');
