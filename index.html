@@ -79,6 +79,10 @@
     #usvi-weekly-capture-mockup .uw-project-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
     #usvi-weekly-capture-mockup .uw-project-tags .uw-project-tag { display:inline-flex; align-items:center; gap:7px; }
     #usvi-weekly-capture-mockup .uw-project-tags button { border:0; padding:0; color:inherit; background:transparent; font:inherit; cursor:pointer; }
+    #usvi-weekly-capture-mockup .uw-bundle-updates { display:grid; gap:10px; margin-top:12px; }
+    #usvi-weekly-capture-mockup .uw-bundle-project { padding:13px; border:1px solid light-dark(#d6d6d6,#505050); border-left:4px solid light-dark(#0078d4,#69afe5); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-bundle-project h3 { margin-bottom:10px; font-size:13px; }
+    #usvi-weekly-capture-mockup [data-pm-single-only][hidden],#usvi-weekly-capture-mockup [data-pm-bundle-panel][hidden] { display:none!important; }
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-masthead,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-tabs,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-view:not(#uw-substantiation),
@@ -378,26 +382,27 @@
           <div class="uw-pr-layout">
             <form id="uw-project-report-form">
               <nav class="uw-report-tabs" role="tablist" aria-label="Monthly report contributors"><button class="uw-report-tab" type="button" role="tab" data-report-tab="sector" aria-selected="true" aria-controls="uw-sector-update-panel">Sector Lead <span>Monthly portfolio synthesis</span></button><button class="uw-report-tab" type="button" role="tab" data-report-tab="program" aria-selected="false" aria-controls="uw-program-update-panel">Functional Lead <span>Monthly function update</span></button><button class="uw-report-tab" type="button" role="tab" data-report-tab="project" aria-selected="false" aria-controls="uw-project-update-panel">Project Manager <span>Weekly project pulse</span></button></nav>
-              <div class="uw-owner-boundary"><strong>Three inputs, three levels:</strong> PMs submit project facts and exceptions. Sector Leads review those PM updates, select the material portfolio changes and sector-level asks, and do not re-enter every project narrative. Functional Leads report shared results and constraints that cross projects or sectors. Project updates are submitted weekly; sector and function contributions are submitted once per monthly cycle. Detailed consultant service records remain in Weekly Work Substantiation.</div>
+              <div class="uw-owner-boundary"><strong>Three inputs, three levels:</strong> PMs submit project facts and exceptions, individually even when they choose a bundle. Sector Leads review those PM updates, select the material portfolio changes and sector-level asks, and do not re-enter every project narrative. Functional Leads report shared results and constraints that cross projects or sectors. Project updates are submitted weekly; sector and function contributions are submitted once per monthly cycle. Detailed consultant service records remain in Weekly Work Substantiation.</div>
               <div id="uw-project-update-panel" role="tabpanel" data-report-mode-panel="project">
                 <section class="uw-section uw-compact-section">
                   <div class="uw-section-title">Project and health</div>
                   <div class="uw-grid">
                     <div class="uw-field uw-span-3"><label for="uw-week">Week ending <span class="uw-required">*</span></label><input id="uw-week" type="date" value="2026-09-11"></div>
-                    <div class="uw-field uw-span-6"><label for="uw-project">Project / contract <span class="uw-required">*</span></label><select id="uw-project"><option value="jfl" data-sector="Healthcare" data-project-id="HC-0017" data-phase="Design">Juan F. Luis Hospital — Rebuild</option><option value="rlsh" data-sector="Healthcare" data-project-id="HC-0021" data-phase="Construction">Roy L. Schneider Hospital — Recovery</option><option value="chmc" data-sector="Healthcare" data-project-id="HC-0034" data-phase="Design">Charles Harwood Medical Complex</option><option value="mks" data-sector="Healthcare" data-project-id="HC-0019" data-phase="Programming">Myrah Keating Smith Community Health Center</option><option value="sc-power" data-sector="Infrastructure" data-project-id="IN-0012" data-phase="Construction">St. Croix Underground Power</option><option value="cahs" data-sector="Education" data-project-id="ED-0008" data-phase="Design">Charlotte Amalie High School</option></select></div>
-                    <div class="uw-field uw-span-3"><label>Update owner</label><div class="uw-readonly">A. Project Manager</div></div>
-                    <div class="uw-field uw-span-4"><label>Sector</label><div class="uw-readonly" data-project-sector>Healthcare</div></div>
-                    <div class="uw-field uw-span-4"><label>Project ID</label><div class="uw-readonly" data-project-id>HC-0017</div></div>
-                    <div class="uw-field uw-span-4"><label>Project phase</label><div class="uw-readonly" data-project-phase>Design</div></div>
-                    <div class="uw-field uw-span-4"><label for="uw-overall">Overall status</label><select id="uw-overall" data-weekly-status><option value="green" selected>Green — On track</option><option value="amber">Amber — Attention needed</option><option value="red">Red — Off track</option><option value="hold">On hold</option></select></div>
-                    <div class="uw-field uw-span-4"><label for="uw-status-trend">Since last update</label><select id="uw-status-trend"><option>Unchanged</option><option selected>Improved</option><option>Worsened</option><option>New</option></select></div>
-                    <div class="uw-field uw-span-4"><label for="uw-milestone-achieved">Planned milestone</label><select id="uw-milestone-achieved" data-milestone-achieved><option selected>Achieved</option><option>Partially achieved</option><option>Not achieved</option><option>Not applicable</option></select></div>
-                    <div class="uw-field uw-span-12"><label for="uw-change">What changed this week, and what is the project impact? <span class="uw-required">*</span></label><textarea id="uw-change">The 90% design package advanced after resolution of three agency design comments.</textarea><div class="uw-hint">Report the project result and effect on delivery. Record consultant services performed in Weekly Work Substantiation.</div></div>
+                    <div class="uw-field uw-span-6"><label for="uw-project">Project or bundle <span class="uw-required">*</span></label><select id="uw-project"><optgroup label="Individual projects"><option value="jfl" data-sector="Healthcare" data-project-id="HC-0017" data-phase="Design">Juan F. Luis Hospital — Rebuild</option><option value="rlsh" data-sector="Healthcare" data-project-id="HC-0021" data-phase="Construction">Roy L. Schneider Hospital — Recovery</option><option value="chmc" data-sector="Healthcare" data-project-id="HC-0034" data-phase="Design">Charles Harwood Medical Complex</option><option value="mks" data-sector="Healthcare" data-project-id="HC-0019" data-phase="Programming">Myrah Keating Smith Community Health Center</option><option value="sc-power" data-sector="Infrastructure" data-project-id="IN-0012" data-phase="Construction">St. Croix Underground Power</option><option value="cahs" data-sector="Education" data-project-id="ED-0008" data-phase="Design">Charlotte Amalie High School</option></optgroup><optgroup label="Project bundles"><option value="bundle-healthcare-portfolio" data-sector="Healthcare" data-project-ids="jfl,rlsh,chmc,mks" data-bundle="true">Sample: Healthcare Recovery Bundle (4 projects)</option><option value="bundle-healthcare-hospitals" data-sector="Healthcare" data-project-ids="jfl,rlsh" data-bundle="true">Sample: Healthcare Hospitals Bundle (2 projects)</option></optgroup></select><div class="uw-hint">Choose a single project or a named bundle. Bundle names and membership here are examples; each included project still gets its own update.</div></div>
+                    <div class="uw-field uw-span-3" data-pm-single-only><label>Update owner</label><div class="uw-readonly">A. Project Manager</div></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label>Sector</label><div class="uw-readonly" data-project-sector>Healthcare</div></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label>Project ID</label><div class="uw-readonly" data-project-id>HC-0017</div></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label>Project phase</label><div class="uw-readonly" data-project-phase>Design</div></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label for="uw-overall">Overall status</label><select id="uw-overall" data-weekly-status><option value="green" selected>Green — On track</option><option value="amber">Amber — Attention needed</option><option value="red">Red — Off track</option><option value="hold">On hold</option></select></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label for="uw-status-trend">Since last update</label><select id="uw-status-trend"><option>Unchanged</option><option selected>Improved</option><option>Worsened</option><option>New</option></select></div>
+                    <div class="uw-field uw-span-4" data-pm-single-only><label for="uw-milestone-achieved">Planned milestone</label><select id="uw-milestone-achieved" data-milestone-achieved><option selected>Achieved</option><option>Partially achieved</option><option>Not achieved</option><option>Not applicable</option></select></div>
+                    <div class="uw-field uw-span-12" data-pm-single-only><label for="uw-change">What changed this week, and what is the project impact? <span class="uw-required">*</span></label><textarea id="uw-change">The 90% design package advanced after resolution of three agency design comments.</textarea><div class="uw-hint">Report the project result and effect on delivery. Record consultant services performed in Weekly Work Substantiation.</div></div>
+                    <div class="uw-field uw-span-12" data-pm-bundle-panel hidden><div class="uw-section-title">Separate status update for each project</div><p class="uw-help">Complete each project independently. The bundle name groups the submission; it does not combine project status or narrative.</p><div class="uw-bundle-updates" data-bundle-updates></div></div>
                   </div>
-                  <div class="uw-field" data-milestone-not-achieved hidden style="margin-top:10px"><label for="uw-milestone-notes">What prevented completion?</label><input id="uw-milestone-notes" value=""></div>
+                  <div class="uw-field" data-milestone-not-achieved data-pm-single-only hidden style="margin-top:10px"><label for="uw-milestone-notes">What prevented completion?</label><input id="uw-milestone-notes" value=""></div>
                 </section>
 
-                <section class="uw-section uw-compact-section">
+                <section class="uw-section uw-compact-section" data-pm-single-only>
                   <div class="uw-section-title">Next commitment</div>
                   <div class="uw-grid">
                     <div class="uw-field uw-span-5"><label for="uw-milestone">Milestone or decision <span class="uw-required">*</span></label><input id="uw-milestone" value="Submit 90% design package for agency review"></div>
@@ -410,13 +415,13 @@
                   <details class="uw-optional-details"><summary>More details (only if changed or relevant)</summary><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-6"><label for="uw-change-evidence">Evidence or measurable result</label><textarea id="uw-change-evidence" placeholder="Brief result, metric, or approval"></textarea></div><div class="uw-field uw-span-6"><label for="uw-milestone-prerequisite">What must happen first?</label><input id="uw-milestone-prerequisite" placeholder="Only if this milestone depends on another action"></div><div class="uw-field uw-span-6"><label for="uw-next-week">Expected result by next week</label><textarea id="uw-next-week" placeholder="What should be complete next reporting period?"></textarea></div><div class="uw-field uw-span-4"><label for="uw-project-schedule-signal">Schedule signal</label><select id="uw-project-schedule-signal"><option>Unchanged / on track</option><option>At risk</option><option>Slipped</option></select></div><div class="uw-field uw-span-4"><label for="uw-project-cost-signal">Cost / funding signal</label><select id="uw-project-cost-signal"><option>Unchanged / on plan</option><option>Forecast pressure</option><option>Funding gap</option></select></div><div class="uw-field uw-span-4"><label for="uw-cost-source">Source record link</label><input id="uw-cost-source" type="url" placeholder="Schedule, Kahua, risk, cost, or approval record"></div><div class="uw-field uw-span-12"><label class="uw-check"><input type="checkbox" data-cost-details-toggle> Project cost or funding changed and needs visibility</label></div><div class="uw-field uw-span-12" data-cost-details hidden><div class="uw-grid"><div class="uw-field uw-span-4"><label for="uw-current-forecast">Current forecast / EAC</label><input id="uw-current-forecast" placeholder="$"></div><div class="uw-field uw-span-4"><label for="uw-cost-variance">Variance and explanation</label><input id="uw-cost-variance" placeholder="Amount and reason"></div><div class="uw-field uw-span-4"><label for="uw-funding-deadline">Funding deadline at risk</label><input id="uw-funding-deadline" placeholder="Date or brief note"></div></div></div></div></details>
                 </section>
 
-                <details class="uw-section uw-optional-details uw-exceptions-disclosure">
+                <details class="uw-section uw-optional-details uw-exceptions-disclosure" data-pm-single-only>
                   <summary>Blocker or decision to raise <span class="uw-help">(add only when help or escalation is needed)</span></summary>
                   <div class="uw-rule">Project-specific constraints belong here. Shared program metrics and functional updates go in the Functional Lead tab.</div>
                   <div id="uw-exceptions-list"><article class="uw-repeat uw-exception-card"><div class="uw-repeat-head"><span data-ex-title>Blocker 1</span><button class="uw-link" type="button" data-ex-remove hidden>Remove</button></div><div class="uw-grid"><div class="uw-field uw-span-3"><label>Type<select data-ex-type><option>Issue</option><option>Risk</option><option>Dependency</option><option>Decision needed</option></select></label></div><div class="uw-field uw-span-9"><label>What is blocked or at risk?<input data-ex-description value=""></label></div><div class="uw-field uw-span-6"><label>Impact on this project<input data-ex-impact value=""></label></div><div class="uw-field uw-span-6"><label>Response underway<input data-ex-response value=""></label></div><div class="uw-field uw-span-6"><label>Leadership or agency action needed?<select data-ex-action><option value="no" selected>No — managed by project team</option><option value="yes">Yes — decision or support needed</option></select></label></div><div class="uw-field uw-span-12" data-ex-action-details><div class="uw-grid"><div class="uw-field uw-span-6"><label>Requested action<input data-ex-request value=""></label></div><div class="uw-field uw-span-3"><label>Decision owner<select data-ex-owner><option>ODR / Client</option><option selected>Healthcare Sector Lead</option><option>SPMO leadership</option><option>Other</option></select></label></div><div class="uw-field uw-span-3"><label>Date needed<input type="date" data-ex-date value="2026-09-14"></label></div></div></div><details class="uw-field uw-span-12"><summary>Risk rating and source link</summary><div class="uw-grid"><div class="uw-field uw-span-4" data-risk-only hidden><label>Likelihood<select data-ex-likelihood><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-4" data-risk-only hidden><label>Severity<select data-ex-severity><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-12"><label>Official record link<input type="url" data-ex-link placeholder="Optional link"></label></div></div></details></div></article></div>
                   <div class="uw-submit-actions"><button class="uw-button" type="button" data-add-exception>Add another blocker</button></div>
                 </details>
-                <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit">Submit project update</button></div>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit" data-pm-submit-label>Submit project update</button></div>
                 <div class="uw-toast" aria-live="polite"></div>
               </div>
               <div id="uw-program-update-panel" role="tabpanel" class="uw-program-owner-form" data-report-mode-panel="program" hidden>
@@ -904,14 +909,53 @@
       monthTabs.forEach((tab) => tab.addEventListener('click', () => showMonthPanel(tab.getAttribute('data-month-view'))));
 
       const projectPicker = root.querySelector('#uw-project');
+      const bundlePanel = root.querySelector('[data-pm-bundle-panel]');
+      const bundleUpdatesContainer = root.querySelector('[data-bundle-updates]');
+      const isBundleOption = option => option?.dataset.bundle === 'true';
+      const bundleProjectIds = option => (option?.dataset.projectIds || '').split(',').filter(Boolean);
+      const bundleProjectOption = id => [...projectPicker.options].find(option=>option.value===id);
+      const bundleField = (card,label,fieldName,tagName='input',placeholder='') => {
+        const wrap=document.createElement('div');wrap.className='uw-field '+(fieldName==='change'||fieldName==='blocker'?'uw-span-6':'uw-span-3');
+        const lab=document.createElement('label');lab.textContent=label;const field=document.createElement(tagName);field.dataset.bundleField=fieldName;
+        if(placeholder)field.placeholder=placeholder;
+        wrap.append(lab,field);card.querySelector('.uw-grid').appendChild(wrap);return field;
+      };
+      const renderBundleUpdates = (saved=[]) => {
+        const option=projectPicker.selectedOptions[0];bundleUpdatesContainer.textContent='';
+        if(!isBundleOption(option)) return;
+        const savedByProject=Object.fromEntries(saved.map(item=>[item.project,item]));
+        bundleProjectIds(option).forEach(id=>{
+          const project=bundleProjectOption(id);if(!project)return;
+          const card=document.createElement('article');card.className='uw-bundle-project';card.dataset.bundleProject=id;
+          const title=document.createElement('h3');title.textContent=project.textContent;card.appendChild(title);
+          const grid=document.createElement('div');grid.className='uw-grid';card.appendChild(grid);
+          const status=bundleField(card,'Overall status','status','select');[['Green','Green — On track'],['Amber','Amber — Attention needed'],['Red','Red — Off track'],['On hold','On hold']].forEach(([value,label])=>{const opt=document.createElement('option');opt.value=value;opt.textContent=label;status.appendChild(opt);});
+          const trend=bundleField(card,'Since last update','trend','select');['Unchanged','Improved','Worsened','New'].forEach(value=>{const opt=document.createElement('option');opt.value=value;opt.textContent=value;trend.appendChild(opt);});
+          const change=bundleField(card,'What changed this week? *','change','textarea','Brief project-specific change and delivery impact');change.required=true;
+          const milestone=bundleField(card,'Next milestone / decision *','milestone','input','Milestone or decision');milestone.required=true;
+          const target=bundleField(card,'Target date','targetDate','input');target.type='date';
+          const blocker=bundleField(card,'Constraint / decision needed','blocker','textarea','Explain material issue or support needed');
+          const prior=savedByProject[id];if(prior){status.value=prior.status||'Green';trend.value=prior.trend||'Unchanged';change.value=prior.change||'';milestone.value=prior.milestone||'';target.value=prior.targetDate||'';blocker.value=prior.blocker||'';}
+          bundleUpdatesContainer.appendChild(card);
+        });
+      };
+      const readBundleUpdates = () => [...bundleUpdatesContainer.querySelectorAll('[data-bundle-project]')].map(card=>({project:card.dataset.bundleProject,...Object.fromEntries([...card.querySelectorAll('[data-bundle-field]')].map(field=>[field.dataset.bundleField,field.value.trim()]))}));
+      const updatePmEntryMode = (saved=[]) => {
+        const bundle=isBundleOption(projectPicker.selectedOptions[0]);
+        root.querySelectorAll('[data-pm-single-only]').forEach(section=>{section.hidden=bundle;});
+        bundlePanel.hidden=!bundle;
+        root.querySelector('[data-pm-submit-label]').textContent=bundle?'Submit bundle updates':'Submit project update';
+        if(bundle)renderBundleUpdates(saved);else bundleUpdatesContainer.textContent='';
+      };
       const updateProjectMetadata = () => {
         const option = projectPicker.selectedOptions[0];
         root.querySelector('[data-project-sector]').textContent = option.dataset.sector || '—';
-        root.querySelector('[data-project-id]').textContent = option.dataset.projectId || '—';
-        root.querySelector('[data-project-phase]').textContent = option.dataset.phase || '—';
+        root.querySelector('[data-project-id]').textContent = isBundleOption(option) ? `${bundleProjectIds(option).length} bundled projects` : option.dataset.projectId || '—';
+        root.querySelector('[data-project-phase]').textContent = isBundleOption(option) ? 'Individual project updates' : option.dataset.phase || '—';
       };
-      projectPicker.addEventListener('change', updateProjectMetadata);
+      projectPicker.addEventListener('change', () => { updateProjectMetadata();updatePmEntryMode();syncMonthlySnapshot(); });
       updateProjectMetadata();
+      updatePmEntryMode();
 
       const reportTabs = [...root.querySelectorAll('[data-report-tab]')];
       const setReportMode = (mode) => {
@@ -925,7 +969,7 @@
         const labels = {
           sector: ['Sector Lead Update', 'Confirm the portfolio picture from PM submissions; elevate material sector movement, exceptions, next milestones, and decisions.', 'Sector Lead view', 'Sector synthesis'],
           program: ['Functional Lead Update', 'Report shared function results and constraints that affect multiple projects or sectors. Use existing trackers for detail.', 'Functional Lead view', 'Monthly synthesis'],
-          project: ['Project Manager Check-in', 'One update per project: record status, material movement, next milestone, and project-specific blockers.', 'Project Manager view', 'Sector review']
+          project: ['Project Manager Check-in', 'Choose a project or bundle. For a bundle, record each project’s status, movement, next milestone, and constraint separately.', 'Project Manager view', 'Sector review']
         };
         const [title, help, userLabel, workflowLabel] = labels[mode] || labels.project;
         root.querySelector('#uw-weekly .uw-form-head h2').textContent = title;
@@ -982,12 +1026,28 @@
         });
       };
       const syncMonthlySnapshot = () => {
+        const projectOption=root.querySelector('#uw-project').selectedOptions[0];
+        if(isBundleOption(projectOption)){
+          const updates=readBundleUpdates();
+          root.querySelector('[data-pr-status]').textContent='Bundle';
+          root.querySelector('[data-pr-dot]').className='uw-pr-dot neutral';
+          root.querySelector('[data-pr-trend]').textContent='Separate status by project';
+          root.querySelector('[data-pr-project]').textContent=`${projectOption.textContent} · ${updates.length} projects`;
+          root.querySelector('[data-pr-change]').textContent=updates.map(item=>`${bundleProjectOption(item.project)?.textContent||item.project} — ${item.status}: ${item.change||'Update needed'}`).join('\n')||'Enter a separate update for each project in the selected bundle.';
+          root.querySelector('[data-pr-evidence]').textContent='The bundle groups this submission; each project retains its own status update.';
+          root.querySelector('[data-pr-milestone]').textContent=updates.map(item=>`${bundleProjectOption(item.project)?.textContent||item.project}: ${item.milestone||'Milestone needed'}`).join('\n');
+          root.querySelector('[data-pr-milestone-meta]').textContent=updates.map(item=>item.targetDate?`${bundleProjectOption(item.project)?.textContent||item.project}: ${item.targetDate}`:'').filter(Boolean).join(' · ');
+          const blockers=updates.filter(item=>item.blocker).map(item=>`${bundleProjectOption(item.project)?.textContent||item.project}: ${item.blocker}`);
+          root.querySelector('[data-pr-exceptions-block]').hidden=!blockers.length;
+          root.querySelector('[data-pr-exception]').textContent=blockers.join('\n');
+          root.querySelector('[data-pr-action]').textContent=blockers.length?'Review the project-specific constraints above.':'No project constraints entered.';
+          return;
+        }
         const status=root.querySelector('#uw-overall');
         const statusText=status.options[status.selectedIndex].text;
         root.querySelector('[data-pr-status]').textContent=statusText.split(/[—-]/)[0].trim();
         const dot=root.querySelector('[data-pr-dot]');dot.className=`uw-pr-dot ${status.value}`;
         root.querySelector('[data-pr-trend]').textContent=root.querySelector('#uw-status-trend').value;
-        const projectOption=root.querySelector('#uw-project').selectedOptions[0];
         const coverage=projectOption.textContent;
         root.querySelector('[data-pr-project]').textContent=`${coverage} · ${projectOption.dataset.sector} · ${projectOption.dataset.projectId}`;
         root.querySelector('[data-pr-change]').textContent=root.querySelector('#uw-change').value||'No material change entered.';
@@ -1165,7 +1225,7 @@
       const captureWeeklyReportState = () => {
         const fields = Object.fromEntries([...weeklyForm.querySelectorAll('input[id],select[id],textarea[id]')].map(el => [el.id, {value:el.value, checked:el.type==='checkbox'?el.checked:undefined}]));
         const exceptions = [...exceptionList.querySelectorAll('.uw-exception-card')].map(card => Object.fromEntries([...card.querySelectorAll('[data-ex-type],[data-ex-description],[data-ex-projects],[data-ex-impact],[data-ex-likelihood],[data-ex-severity],[data-ex-response],[data-ex-unresolved],[data-ex-action],[data-ex-link],[data-ex-request],[data-ex-owner],[data-ex-date],[data-ex-delay]')].map(el => [el.dataset.exType!==undefined?'type':el.dataset.exDescription!==undefined?'description':el.dataset.exProjects!==undefined?'projects':el.dataset.exImpact!==undefined?'impact':el.dataset.exLikelihood!==undefined?'likelihood':el.dataset.exSeverity!==undefined?'severity':el.dataset.exResponse!==undefined?'response':el.dataset.exUnresolved!==undefined?'unresolved':el.dataset.exAction!==undefined?'action':el.dataset.exLink!==undefined?'link':el.dataset.exRequest!==undefined?'request':el.dataset.exOwner!==undefined?'owner':el.dataset.exDate!==undefined?'date':'delay',el.value])));
-        return {fields, exceptions, mode:root.dataset.weeklyReportMode, pmIncluded:Object.fromEntries([...rollupRows.querySelectorAll('[data-pm-project]')].map(row=>[row.dataset.pmProject,Boolean(row.querySelector('[data-include-pm]')?.checked)]))};
+        return {fields, exceptions, mode:root.dataset.weeklyReportMode, pmIncluded:Object.fromEntries([...rollupRows.querySelectorAll('[data-pm-project]')].map(row=>[row.dataset.pmProject,Boolean(row.querySelector('[data-include-pm]')?.checked)])),bundleUpdates:readBundleUpdates()};
       };
       const restoreWeeklyReportState = saved => {
         if(!saved) return;
@@ -1173,7 +1233,7 @@
         if(saved.exceptions?.length){exceptionList.textContent='';saved.exceptions.forEach(entry=>{exceptionList.insertAdjacentHTML('beforeend',exceptionMarkup());const card=exceptionList.lastElementChild;Object.entries(entry).forEach(([key,value])=>{const el=card.querySelector(`[data-ex-${key}]`);if(el)el.value=value;});});}
         Object.entries(saved.pmIncluded||{}).forEach(([project,checked])=>{const row=[...rollupRows.querySelectorAll('[data-pm-project]')].find(item=>item.dataset.pmProject===project);if(row){const checkbox=row.querySelector('[data-include-pm]');if(checkbox)checkbox.checked=checked;}});
         setReportMode(['project','program','sector'].includes(saved.mode)?saved.mode:'project');
-        updateProjectMetadata();updateProgramDetails();updateProgramPreview();filterSectorProjects();updateSectorPreview();
+        updateProjectMetadata();updatePmEntryMode(saved.bundleUpdates||[]);updateProgramDetails();updateProgramPreview();filterSectorProjects();updateSectorPreview();syncMonthlySnapshot();
         root.querySelector('[data-program-action-details]').hidden=root.querySelector('#uw-program-action').value!=='yes';
         root.querySelector('[data-sector-action-details]').hidden=root.querySelector('#uw-sector-action').value!=='yes';
         updateStatusException();updateMilestoneStatus();dateChangeDetails.hidden=!dateChanged.checked;costDetails.hidden=!costDetailsToggle.checked;
@@ -1212,10 +1272,26 @@
           toast.classList.add('show');
         }
         if(button.dataset.weeklyAction==='submit'){
-          const required=[['uw-week','Select a week ending date.'],['uw-change','Enter the material change for this week, or state that there was no material change.'],['uw-milestone','Enter the next milestone or decision.']];
+          const bundle=isBundleOption(projectPicker.selectedOptions[0]);
+          const required=bundle?[['uw-week','Select a week ending date.']]:[['uw-week','Select a week ending date.'],['uw-change','Enter the material change for this week, or state that there was no material change.'],['uw-milestone','Enter the next milestone or decision.']];
           const missing=required.find(([id])=>!root.querySelector(`#${id}`).value.trim());
           const statusNeedsFollowup=[...root.querySelectorAll('[data-weekly-status]')].some(select=>['amber','red','hold'].includes(select.value));
           if(missing){toast.textContent=missing[1];root.querySelector(`#${missing[0]}`).focus();}
+          else if(bundle){
+            const updates=readBundleUpdates();
+            const incomplete=updates.find(item=>!item.change||!item.milestone);
+            const missingBlocker=updates.find(item=>['Amber','Red','On hold'].includes(item.status)&&!item.blocker);
+            if(incomplete){toast.textContent=`Complete the change and next milestone for ${bundleProjectOption(incomplete.project)?.textContent||'each project'}.`;bundleUpdatesContainer.querySelector(`[data-bundle-project="${incomplete.project}"] [data-bundle-field="change"]`).focus();}
+            else if(missingBlocker){toast.textContent=`Add the project-specific constraint or action needed for ${bundleProjectOption(missingBlocker.project)?.textContent||'the non-green project'}.`;bundleUpdatesContainer.querySelector(`[data-bundle-project="${missingBlocker.project}"] [data-bundle-field="blocker"]`).focus();}
+            else {
+              const latest=readPmRollup().filter(item=>!updates.some(update=>update.project===item.project));
+              updates.forEach(item=>latest.push({project:item.project,status:item.status,change:item.change,milestone:item.milestone,trend:item.trend,targetDate:item.targetDate,blocker:item.blocker,week:root.querySelector('#uw-week').value,bundle:projectPicker.value}));
+              localStorage.setItem('usvi-sector-pm-rollup',JSON.stringify(latest));
+              addInputHistory('weekly-project',weeklyHistoryLabel('project'),captureWeeklyReportState(),'Submitted');
+              renderPmRollup();filterSectorProjects();updateSectorPreview();syncMonthlySnapshot();
+              toast.textContent=`${updates.length} independent project updates saved under ${projectPicker.selectedOptions[0].textContent} and added to the Sector Lead roll-up. No information was transmitted.`;
+            }
+          }
           else if(statusNeedsFollowup&&!([...exceptionList.querySelectorAll('.uw-exception-card')].some(card=>card.querySelector('[data-ex-description]').value.trim()&&card.querySelector('[data-ex-impact]').value.trim()&&card.querySelector('[data-ex-response]').value.trim()))){toast.textContent='For an amber, red, or on-hold project, add one blocker with its impact and response.';root.querySelector('.uw-exceptions-disclosure').open=true;exceptionList.querySelector('[data-ex-description]').focus();}
           else {
             const option=projectPicker.selectedOptions[0];
