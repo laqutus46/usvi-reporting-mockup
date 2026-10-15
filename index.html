@@ -47,6 +47,27 @@
     #usvi-weekly-capture-mockup .uw-ws-preview .uw-ws-meta { padding-bottom:10px; border-bottom:1px solid light-dark(#d6d6d6,#505050); color:light-dark(#605e5c,#c8c8c8); }
     #usvi-weekly-capture-mockup .uw-ws-note { padding:9px 11px; margin-bottom:12px; background:light-dark(#e5f3ff,#17384d); color:light-dark(#004578,#d7efff); font-size:11px; }
     #usvi-weekly-capture-mockup .uw-ws-status { min-height:18px; color:light-dark(#107c10,#7fd17f); font-size:11px; }
+    #usvi-weekly-capture-mockup .uw-pr-layout { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(250px,.65fr); gap:20px; align-items:start; }
+    #usvi-weekly-capture-mockup .uw-report-tabs { display:flex; gap:6px; margin:0 0 12px; padding:4px; background:light-dark(#e8e8e8,#303030); }
+    #usvi-weekly-capture-mockup .uw-report-tab { flex:1; min-width:0; border:1px solid transparent; padding:10px 12px; background:transparent; color:inherit; font:inherit; font-size:12px; text-align:left; cursor:pointer; }
+    #usvi-weekly-capture-mockup .uw-report-tab span { display:block; margin-top:3px; color:light-dark(#605e5c,#c8c8c8); font-size:10px; }
+    #usvi-weekly-capture-mockup .uw-report-tab[aria-selected="true"] { border-color:light-dark(#c7e0f4,#365c78); background:light-dark(#fff,#191919); color:light-dark(#005a9e,#8fc9ee); }
+    #usvi-weekly-capture-mockup .uw-owner-boundary { padding:10px 12px; margin-bottom:12px; background:light-dark(#e5f3ff,#17384d); color:light-dark(#004578,#d7efff); font-size:11px; line-height:1.5; }
+    #usvi-weekly-capture-mockup [data-report-mode-panel][hidden], #usvi-weekly-capture-mockup [data-preview-mode][hidden] { display:none; }
+    #usvi-weekly-capture-mockup .uw-pr-preview { position:sticky; top:12px; }
+    #usvi-weekly-capture-mockup .uw-pr-preview h4 { margin:17px 0 5px; color:light-dark(#004578,#8fc9ee); font-size:11px; text-transform:uppercase; letter-spacing:.03em; }
+    #usvi-weekly-capture-mockup .uw-pr-preview p { margin:5px 0; font-size:11px; white-space:pre-wrap; }
+    #usvi-weekly-capture-mockup .uw-pr-health { display:flex; align-items:center; gap:9px; padding:10px; background:light-dark(#fff,#191919); border:1px solid light-dark(#d6d6d6,#505050); }
+    #usvi-weekly-capture-mockup .uw-pr-dot { width:12px; height:12px; border-radius:50%; background:#107c10; flex:0 0 auto; }
+    #usvi-weekly-capture-mockup .uw-pr-dot.amber { background:#ca5010; }
+    #usvi-weekly-capture-mockup .uw-pr-dot.red { background:#a4262c; }
+    #usvi-weekly-capture-mockup .uw-pr-dot.hold,
+    #usvi-weekly-capture-mockup .uw-pr-dot.neutral { background:#8a8886; }
+    #usvi-weekly-capture-mockup .uw-pr-trend { margin-left:auto; padding:3px 7px; background:light-dark(#e5f3ff,#17384d); font-size:10px; }
+    #usvi-weekly-capture-mockup .uw-optional-details { margin:12px 0; padding:12px; border:1px solid light-dark(#d6d6d6,#505050); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-optional-details summary,
+    #usvi-weekly-capture-mockup .uw-pr-more summary { cursor:pointer; font-size:12px; font-weight:500; }
+    #usvi-weekly-capture-mockup .uw-pr-more { margin-top:14px; }
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-masthead,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-tabs,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-view:not(#uw-substantiation),
@@ -97,6 +118,11 @@
     #usvi-weekly-capture-mockup .uw-section {
       padding: 16px 0; border-top: 1px solid light-dark(#d6d6d6, #505050);
     }
+    #usvi-weekly-capture-mockup .uw-compact-section { padding:15px; margin:0 0 12px; border:1px solid light-dark(#d6d6d6,#505050); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-compact-section .uw-section-title { margin-bottom:12px; color:light-dark(#004578,#8fc9ee); }
+    #usvi-weekly-capture-mockup .uw-exceptions-disclosure { display:block; margin:0 0 12px; padding:13px 15px; border:1px solid light-dark(#d6d6d6,#505050); background:light-dark(#fff,#191919); }
+    #usvi-weekly-capture-mockup .uw-exceptions-disclosure > summary { cursor:pointer; font-size:13px; font-weight:500; }
+    #usvi-weekly-capture-mockup .uw-exceptions-disclosure[open] > summary { margin-bottom:12px; }
     #usvi-weekly-capture-mockup .uw-section:first-child { padding-top: 0; border-top: 0; }
     #usvi-weekly-capture-mockup .uw-section-title { font-size: 13px; font-weight: 500; margin-bottom: 11px; }
     #usvi-weekly-capture-mockup .uw-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 13px 15px; }
@@ -293,6 +319,8 @@
       #usvi-weekly-capture-mockup .uw-project-picker-head { align-items: stretch; flex-direction: column; }
       #usvi-weekly-capture-mockup .uw-ws-layout { grid-template-columns:1fr; }
       #usvi-weekly-capture-mockup .uw-ws-preview { position:static; }
+      #usvi-weekly-capture-mockup .uw-pr-layout { grid-template-columns:1fr; }
+      #usvi-weekly-capture-mockup .uw-pr-preview { position:static; }
     }
   </style>
 
@@ -300,14 +328,14 @@
     <header class="uw-masthead">
       <div class="uw-brand">
         <div class="uw-mark">SP</div>
-        <div><div class="uw-title">USVI Program Reporting</div><div class="uw-subtitle">Project outcomes, functional work, and consultant services</div></div>
+        <div><div class="uw-title">USVI Program Reporting</div><div class="uw-subtitle">Monthly report inputs and consultant work substantiation</div></div>
       </div>
       <div class="uw-user"><span data-user-view>Project Manager view</span><br><strong data-user-scope>Healthcare Sector</strong></div>
     </header>
 
     <nav class="uw-tabs" role="tablist" aria-label="SPFx reporting uses">
-      <button class="uw-tab" type="button" role="tab" aria-selected="true" aria-controls="uw-weekly">Weekly Project Report</button>
-      <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-functional">Functional Work &amp; Outcomes</button>
+      <button class="uw-tab" type="button" role="tab" aria-selected="true" aria-controls="uw-weekly">Monthly Report Inputs</button>
+      <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-monthly">Monthly Report Preview</button>
       <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-substantiation">Weekly Work Substantiation</button>
     </nav>
 
@@ -315,209 +343,140 @@
       <section class="uw-view" id="uw-weekly" role="tabpanel">
         <div class="uw-surface">
           <div class="uw-form-head">
-            <div><h2>Create Weekly Project Report</h2><div class="uw-help">Capture outcomes and measurable change—not a list of meetings, activities, or completed tasks.</div></div>
-            <div class="uw-workflow" aria-label="Workflow: Draft, Sector review, PMO report ready">
-              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Draft</span><span class="uw-workflow-line"></span>
-              <span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Sector review</span><span class="uw-workflow-line"></span>
-              <span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Report ready</span>
-            </div>
+            <div><h2>Monthly Report Inputs</h2><div class="uw-help">PMs submit brief weekly project pulses. Sector and Functional Leads add monthly synthesis and cross-program exceptions.</div></div>
+            <div class="uw-workflow" aria-label="Workflow: Project and function inputs, Sector synthesis, Monthly report"><span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Role-based inputs</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Sector synthesis</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Monthly report</span></div>
           </div>
+          <div class="uw-reuse-note"><span><strong>One report, three contributor roles:</strong> PM project updates feed the sector portfolio. Functional Leads report cross-sector results. The report owner assembles the executive summary and links to detailed source records.</span><span class="uw-reuse-flow"><span class="uw-reuse-item">PM weekly pulse</span><span>&gt;</span><span class="uw-reuse-item">Lead synthesis</span><span>&gt;</span><span class="uw-reuse-item">Monthly report</span></span></div>
 
-          <div class="uw-reuse-note">
-            <span><strong>Outcome-first reporting:</strong> state what changed or was achieved, the value or impact, and the evidence. Actions are captured only as commitments that enable the outcome.</span>
-            <span class="uw-reuse-flow"><span class="uw-reuse-item">Weekly PDF</span><span>&gt;</span><span class="uw-reuse-item">Monthly 12-15 pages</span><span>&gt;</span><span class="uw-reuse-item">Power BI</span></span>
+          <div class="uw-pr-layout">
+            <form id="uw-project-report-form">
+              <nav class="uw-report-tabs" role="tablist" aria-label="Monthly report contributors"><button class="uw-report-tab" type="button" role="tab" data-report-tab="sector" aria-selected="true" aria-controls="uw-sector-update-panel">Sector Lead <span>Monthly portfolio synthesis</span></button><button class="uw-report-tab" type="button" role="tab" data-report-tab="program" aria-selected="false" aria-controls="uw-program-update-panel">Functional Lead <span>Monthly function update</span></button><button class="uw-report-tab" type="button" role="tab" data-report-tab="project" aria-selected="false" aria-controls="uw-project-update-panel">Project Manager <span>Weekly project pulse</span></button></nav>
+              <div class="uw-owner-boundary"><strong>Three inputs, three levels:</strong> PMs submit project facts and exceptions. Sector Leads review those PM updates, select the material portfolio changes and sector-level asks, and do not re-enter every project narrative. Functional Leads report shared results and constraints that cross projects or sectors. Project updates are submitted weekly; sector and function contributions are submitted once per monthly cycle. Detailed consultant service records remain in Weekly Work Substantiation.</div>
+              <div id="uw-project-update-panel" role="tabpanel" data-report-mode-panel="project">
+                <section class="uw-section uw-compact-section">
+                  <div class="uw-section-title">Project and health</div>
+                  <div class="uw-grid">
+                    <div class="uw-field uw-span-3"><label for="uw-week">Week ending <span class="uw-required">*</span></label><input id="uw-week" type="date" value="2026-09-11"></div>
+                    <div class="uw-field uw-span-6"><label for="uw-project">Project / contract <span class="uw-required">*</span></label><select id="uw-project"><option value="jfl" data-sector="Healthcare" data-project-id="HC-0017" data-phase="Design">Juan F. Luis Hospital — Rebuild</option><option value="rlsh" data-sector="Healthcare" data-project-id="HC-0021" data-phase="Construction">Roy L. Schneider Hospital — Recovery</option><option value="chmc" data-sector="Healthcare" data-project-id="HC-0034" data-phase="Design">Charles Harwood Medical Complex</option><option value="mks" data-sector="Healthcare" data-project-id="HC-0019" data-phase="Programming">Myrah Keating Smith Community Health Center</option><option value="sc-power" data-sector="Infrastructure" data-project-id="IN-0012" data-phase="Construction">St. Croix Underground Power</option><option value="cahs" data-sector="Education" data-project-id="ED-0008" data-phase="Design">Charlotte Amalie High School</option></select></div>
+                    <div class="uw-field uw-span-3"><label>Update owner</label><div class="uw-readonly">A. Project Manager</div></div>
+                    <div class="uw-field uw-span-4"><label>Sector</label><div class="uw-readonly" data-project-sector>Healthcare</div></div>
+                    <div class="uw-field uw-span-4"><label>Project ID</label><div class="uw-readonly" data-project-id>HC-0017</div></div>
+                    <div class="uw-field uw-span-4"><label>Project phase</label><div class="uw-readonly" data-project-phase>Design</div></div>
+                    <div class="uw-field uw-span-4"><label for="uw-overall">Overall status</label><select id="uw-overall" data-weekly-status><option value="green" selected>Green — On track</option><option value="amber">Amber — Attention needed</option><option value="red">Red — Off track</option><option value="hold">On hold</option></select></div>
+                    <div class="uw-field uw-span-4"><label for="uw-status-trend">Since last update</label><select id="uw-status-trend"><option>Unchanged</option><option selected>Improved</option><option>Worsened</option><option>New</option></select></div>
+                    <div class="uw-field uw-span-4"><label for="uw-milestone-achieved">Planned milestone</label><select id="uw-milestone-achieved" data-milestone-achieved><option selected>Achieved</option><option>Partially achieved</option><option>Not achieved</option><option>Not applicable</option></select></div>
+                    <div class="uw-field uw-span-12"><label for="uw-change">What changed this week, and what is the project impact? <span class="uw-required">*</span></label><textarea id="uw-change">The 90% design package advanced after resolution of three agency design comments.</textarea><div class="uw-hint">Report the project result and effect on delivery. Record consultant services performed in Weekly Work Substantiation.</div></div>
+                  </div>
+                  <div class="uw-field" data-milestone-not-achieved hidden style="margin-top:10px"><label for="uw-milestone-notes">What prevented completion?</label><input id="uw-milestone-notes" value=""></div>
+                </section>
+
+                <section class="uw-section uw-compact-section">
+                  <div class="uw-section-title">Next commitment</div>
+                  <div class="uw-grid">
+                    <div class="uw-field uw-span-5"><label for="uw-milestone">Milestone or decision <span class="uw-required">*</span></label><input id="uw-milestone" value="Submit 90% design package for agency review"></div>
+                    <div class="uw-field uw-span-3"><label for="uw-milestone-owner">Owner</label><input id="uw-milestone-owner" value="Design Manager"></div>
+                    <div class="uw-field uw-span-2"><label for="uw-current-date">Target date</label><input id="uw-current-date" type="date" value="2026-09-28"></div>
+                    <div class="uw-field uw-span-2"><label for="uw-forecast-confidence">Confidence</label><select id="uw-forecast-confidence"><option selected>High</option><option>Medium</option><option>Low</option></select></div>
+                    <div class="uw-field uw-span-12"><label class="uw-check"><input type="checkbox" id="uw-date-changed" data-date-changed> Date changed</label></div>
+                  </div>
+                  <div class="uw-exception" data-date-change-details hidden><div class="uw-grid"><div class="uw-field uw-span-4"><label for="uw-baseline-date">Previous date</label><input id="uw-baseline-date" type="date" value="2026-09-21"></div><div class="uw-field uw-span-8"><label for="uw-milestone-reason">Reason for change</label><input id="uw-milestone-reason" value=""></div></div></div>
+                  <details class="uw-optional-details"><summary>More details (only if changed or relevant)</summary><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-6"><label for="uw-change-evidence">Evidence or measurable result</label><textarea id="uw-change-evidence" placeholder="Brief result, metric, or approval"></textarea></div><div class="uw-field uw-span-6"><label for="uw-milestone-prerequisite">What must happen first?</label><input id="uw-milestone-prerequisite" placeholder="Only if this milestone depends on another action"></div><div class="uw-field uw-span-6"><label for="uw-next-week">Expected result by next week</label><textarea id="uw-next-week" placeholder="What should be complete next reporting period?"></textarea></div><div class="uw-field uw-span-4"><label for="uw-project-schedule-signal">Schedule signal</label><select id="uw-project-schedule-signal"><option>Unchanged / on track</option><option>At risk</option><option>Slipped</option></select></div><div class="uw-field uw-span-4"><label for="uw-project-cost-signal">Cost / funding signal</label><select id="uw-project-cost-signal"><option>Unchanged / on plan</option><option>Forecast pressure</option><option>Funding gap</option></select></div><div class="uw-field uw-span-4"><label for="uw-cost-source">Source record link</label><input id="uw-cost-source" type="url" placeholder="Schedule, Kahua, risk, cost, or approval record"></div><div class="uw-field uw-span-12"><label class="uw-check"><input type="checkbox" data-cost-details-toggle> Project cost or funding changed and needs visibility</label></div><div class="uw-field uw-span-12" data-cost-details hidden><div class="uw-grid"><div class="uw-field uw-span-4"><label for="uw-current-forecast">Current forecast / EAC</label><input id="uw-current-forecast" placeholder="$"></div><div class="uw-field uw-span-4"><label for="uw-cost-variance">Variance and explanation</label><input id="uw-cost-variance" placeholder="Amount and reason"></div><div class="uw-field uw-span-4"><label for="uw-funding-deadline">Funding deadline at risk</label><input id="uw-funding-deadline" placeholder="Date or brief note"></div></div></div></div></details>
+                </section>
+
+                <details class="uw-section uw-optional-details uw-exceptions-disclosure">
+                  <summary>Blocker or decision to raise <span class="uw-help">(add only when help or escalation is needed)</span></summary>
+                  <div class="uw-rule">Project-specific constraints belong here. Shared program metrics and functional updates go in the Functional Lead tab.</div>
+                  <div id="uw-exceptions-list"><article class="uw-repeat uw-exception-card"><div class="uw-repeat-head"><span data-ex-title>Blocker 1</span><button class="uw-link" type="button" data-ex-remove hidden>Remove</button></div><div class="uw-grid"><div class="uw-field uw-span-3"><label>Type<select data-ex-type><option>Issue</option><option>Risk</option><option>Dependency</option><option>Decision needed</option></select></label></div><div class="uw-field uw-span-9"><label>What is blocked or at risk?<input data-ex-description value=""></label></div><div class="uw-field uw-span-6"><label>Impact on this project<input data-ex-impact value=""></label></div><div class="uw-field uw-span-6"><label>Response underway<input data-ex-response value=""></label></div><div class="uw-field uw-span-6"><label>Leadership or agency action needed?<select data-ex-action><option value="no" selected>No — managed by project team</option><option value="yes">Yes — decision or support needed</option></select></label></div><div class="uw-field uw-span-12" data-ex-action-details><div class="uw-grid"><div class="uw-field uw-span-6"><label>Requested action<input data-ex-request value=""></label></div><div class="uw-field uw-span-3"><label>Decision owner<select data-ex-owner><option>ODR / Client</option><option selected>Healthcare Sector Lead</option><option>SPMO leadership</option><option>Other</option></select></label></div><div class="uw-field uw-span-3"><label>Date needed<input type="date" data-ex-date value="2026-09-14"></label></div></div></div><details class="uw-field uw-span-12"><summary>Risk rating and source link</summary><div class="uw-grid"><div class="uw-field uw-span-4" data-risk-only hidden><label>Likelihood<select data-ex-likelihood><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-4" data-risk-only hidden><label>Severity<select data-ex-severity><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-12"><label>Official record link<input type="url" data-ex-link placeholder="Optional link"></label></div></div></details></div></article></div>
+                  <div class="uw-submit-actions"><button class="uw-button" type="button" data-add-exception>Add another blocker</button></div>
+                </details>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit">Submit project update</button></div>
+                <div class="uw-toast" aria-live="polite"></div>
+              </div>
+              <div id="uw-program-update-panel" role="tabpanel" class="uw-program-owner-form" data-report-mode-panel="program" hidden>
+              <section class="uw-section">
+                <div class="uw-section-title">Functional Lead update</div>
+                <p class="uw-help">Use this path for shared or cross-project reporting. PMs submit project-specific status in the Project Manager tab.</p>
+                <div class="uw-grid">
+                  <div class="uw-field uw-span-3"><label for="uw-program-period">Reporting month <span class="uw-required">*</span></label><input id="uw-program-period" type="month" value="2026-09"></div>
+                  <div class="uw-field uw-span-5"><label for="uw-program-area">Program function <span class="uw-required">*</span></label><select id="uw-program-area" data-program-area><option>Program Controls — schedule and cost</option><option>Health and Safety</option><option>Environmental / Permitting</option><option>HMGP Grant Compliance</option><option>CDBG-DR Match Compliance</option><option>Program Risk</option><option>Commercial and Procurement</option><option>Governance and Compliance</option><option>Kahua / Digital Systems</option><option>Workforce Housing</option><option>Logistics, Warehousing and Debris Removal</option><option>FF&amp;E Procurement</option><option>SPMO Task Orders</option><option>Other Program Operations</option></select></div>
+                  <div class="uw-field uw-span-4"><label for="uw-program-scope">Reporting scope</label><select id="uw-program-scope"><option>Program-wide</option><option>Multi-sector</option><option>Education</option><option>Healthcare</option><option>Infrastructure</option><option>Public Buildings</option></select></div>
+                  <div class="uw-field uw-span-6"><label for="uw-program-owner">Update owner and role <span class="uw-required">*</span></label><input id="uw-program-owner" placeholder="Name — function / role"></div>
+                  <div class="uw-field uw-span-3"><label for="uw-program-status">Function status</label><select id="uw-program-status"><option>Green — On track</option><option>Amber — Attention needed</option><option>Red — Leadership action needed</option><option>On hold</option><option>Not applicable</option></select></div>
+                  <div class="uw-field uw-span-3"><label for="uw-program-trend">Since previous report</label><select id="uw-program-trend"><option>Unchanged</option><option>Improved</option><option>Worsened</option><option>New</option></select></div>
+                  <div class="uw-field uw-span-12"><label for="uw-program-projects">Projects / sectors affected</label><input id="uw-program-projects" placeholder="Only if this does not apply program-wide"></div>
+                  <div class="uw-field uw-span-12"><label for="uw-program-change">What is the material result or exception, and its program impact? <span class="uw-required">*</span></label><textarea id="uw-program-change" placeholder="State the changed result, quantified measure when available, and impact. If there was no material change, link to the source record and say so."></textarea></div>
+                  <div class="uw-field uw-span-8"><label for="uw-program-next">Next step, accountable owner, and due date</label><input id="uw-program-next" placeholder="Action — owner — date"></div>
+                  <div class="uw-field uw-span-4"><label for="uw-program-action">Leadership / agency action needed?</label><select id="uw-program-action" data-program-action><option value="no">No</option><option value="yes">Yes</option></select></div>
+                  <div class="uw-field uw-span-12" data-program-action-details hidden><label for="uw-program-request">Requested decision or support, owner, and date</label><input id="uw-program-request" placeholder="Decision/support — owner — needed by"></div>
+                  <div class="uw-field uw-span-12"><label for="uw-program-source">Source record link <span class="uw-help">(optional)</span></label><input id="uw-program-source" type="url" placeholder="Link to schedule, tracker, risk register, Kahua record, or source report"></div>
+                </div>
+                <details class="uw-optional-details"><summary>Function-specific details <span class="uw-help">(shown for the selected function)</span></summary>
+                  <div data-program-detail="safety" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-3"><label for="uw-safety-month">Incidents this month</label><input id="uw-safety-month" type="number" min="0" placeholder="0"></div><div class="uw-field uw-span-3"><label for="uw-safety-ytd">Incidents year to date</label><input id="uw-safety-ytd" type="number" min="0" placeholder="0"></div><div class="uw-field uw-span-3"><label for="uw-safety-trir">TRIR</label><input id="uw-safety-trir" type="number" min="0" step="0.1" placeholder="Current rate"></div><div class="uw-field uw-span-3"><label for="uw-safety-dart">DART</label><input id="uw-safety-dart" type="number" min="0" step="0.1" placeholder="Current rate"></div><div class="uw-field uw-span-12"><label for="uw-safety-matrix">Incident types / material corrective action</label><input id="uw-safety-matrix" placeholder="Brief summary or link to incident matrix"></div></div></div>
+                  <div data-program-detail="environment" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-env-requirement">Approval / permit or tracker link</label><input id="uw-env-requirement" placeholder="Permit type or source record"></div><div class="uw-field uw-span-4"><label for="uw-env-stage">Current stage</label><select id="uw-env-stage"><option>Not started</option><option>In preparation</option><option>Submitted</option><option>Under review</option><option>Approved</option><option>Returned</option><option>Delayed</option></select></div><div class="uw-field uw-span-4"><label for="uw-env-decision-date">Expected decision date</label><input id="uw-env-decision-date" type="date"></div><div class="uw-field uw-span-4"><label for="uw-env-submitted">Submission / latest action date</label><input id="uw-env-submitted" type="date"></div><div class="uw-field uw-span-4"><label for="uw-env-days">Average approval days / change</label><input id="uw-env-days" type="number" min="0" placeholder="If tracked"></div><div class="uw-field uw-span-4"><label for="uw-env-party">Next-action owner</label><input id="uw-env-party" placeholder="Agency / project / functional owner"></div><div class="uw-field uw-span-12"><label class="uw-check"><input id="uw-env-gate" type="checkbox"> This approval gates construction, funding, or another milestone</label></div></div></div>
+                  <div data-program-detail="procurement" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-proc-package">Procurement / contract / solicitation</label><input id="uw-proc-package" placeholder="Package or contract"></div><div class="uw-field uw-span-4"><label for="uw-proc-stage">Current stage</label><select id="uw-proc-stage"><option>Planned</option><option>Solicitation</option><option>Evaluation</option><option>Pre-award</option><option>Award</option><option>Executed</option><option>On hold</option></select></div><div class="uw-field uw-span-4"><label for="uw-proc-target">Target date for next step</label><input id="uw-proc-target" type="date"></div></div></div>
+                  <div data-program-detail="program-controls" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-pc-schedule">Schedule progress / forecast change</label><input id="uw-pc-schedule" placeholder="Sector or program movement"></div><div class="uw-field uw-span-4"><label for="uw-pc-cost">Cost / funding change</label><input id="uw-pc-cost" placeholder="Forecast, variance, or funding pressure"></div><div class="uw-field uw-span-4"><label for="uw-pc-project-changes">Managed project additions / deletions</label><input id="uw-pc-project-changes" placeholder="If any this month"></div></div></div>
+                  <div data-program-detail="grant" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-grant-program">Program / grant</label><input id="uw-grant-program" placeholder="HMGP phase or CDBG-DR match"></div><div class="uw-field uw-span-4"><label for="uw-grant-deadline">Period of Performance / deadline</label><input id="uw-grant-deadline" type="date"></div><div class="uw-field uw-span-4"><label for="uw-grant-at-risk">Funding or projects at risk</label><input id="uw-grant-at-risk" placeholder="Amount or project count, if verified"></div><div class="uw-field uw-span-12"><label for="uw-grant-gap">Eligibility, documentation, or approval gap</label><input id="uw-grant-gap" placeholder="Current exception and affected projects"></div></div></div>
+                  <div data-program-detail="risk" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-risk-id">Official risk / issue ID</label><input id="uw-risk-id" placeholder="Link to source register"></div><div class="uw-field uw-span-4"><label for="uw-risk-rating">Current rating</label><select id="uw-risk-rating"><option>Very High</option><option>High</option><option>Medium</option><option>Low</option></select></div><div class="uw-field uw-span-4"><label for="uw-risk-exposure">Exposure at risk</label><input id="uw-risk-exposure" placeholder="Funding, schedule, cost, or delivery"></div><div class="uw-field uw-span-12"><label for="uw-risk-mitigation">Mitigation change / unresolved decision</label><input id="uw-risk-mitigation" placeholder="What changed in response this month?"></div></div></div>
+                  <div data-program-detail="governance" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-governance-measure">Measure or workflow</label><input id="uw-governance-measure" placeholder="Approval aging, Kahua adoption, workflow stage"></div><div class="uw-field uw-span-4"><label for="uw-governance-current">Current result</label><input id="uw-governance-current" placeholder="Current value or status"></div><div class="uw-field uw-span-4"><label for="uw-governance-prior">Prior period / target</label><input id="uw-governance-prior" placeholder="Prior value or agreed target"></div></div></div>
+                  <div data-program-detail="operations" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-ops-capacity">Capacity / availability</label><input id="uw-ops-capacity" placeholder="Housing, port, storage, disposal, or supplier capacity"></div><div class="uw-field uw-span-4"><label for="uw-ops-readiness">Readiness / procurement stage</label><input id="uw-ops-readiness" placeholder="Current stage and target date"></div><div class="uw-field uw-span-4"><label for="uw-ops-impact">Projects or milestones affected</label><input id="uw-ops-impact" placeholder="Material cross-sector impact"></div></div></div>
+
+                  <div data-program-detail="task-orders" hidden><div class="uw-grid" style="margin-top:12px"><div class="uw-field uw-span-4"><label for="uw-to-status">Task order status</label><select id="uw-to-status"><option>Executed</option><option>Pending</option><option>Expiring</option><option>Extended</option><option>Action required</option></select></div><div class="uw-field uw-span-4"><label for="uw-to-date">Expiration / action date</label><input id="uw-to-date" type="date"></div><div class="uw-field uw-span-4"><label for="uw-to-value">Value at risk (when relevant)</label><input id="uw-to-value" placeholder="$ / optional"></div></div></div>
+                </details>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit-program">Submit Functional Lead update</button></div>
+                <div class="uw-toast" aria-live="polite"></div>
+              </section>
+              </div>
+              <div id="uw-sector-update-panel" role="tabpanel" class="uw-sector-owner-form" data-report-mode-panel="sector" hidden>
+                <section class="uw-section uw-compact-section">
+                  <div class="uw-section-title">Sector portfolio update</div>
+                  <p class="uw-help">Review PM submissions for your sector, confirm the portfolio picture, and report only the changes, exceptions, and actions that matter for the monthly report.</p>
+                  <div class="uw-grid">
+                    <div class="uw-field uw-span-3"><label for="uw-sector-period">Reporting month <span class="uw-required">*</span></label><input id="uw-sector-period" type="month" value="2026-09"></div>
+                    <div class="uw-field uw-span-4"><label for="uw-sector-name">Sector <span class="uw-required">*</span></label><select id="uw-sector-name"><option>Education</option><option selected>Healthcare</option><option>Infrastructure</option><option>Public Buildings</option></select></div>
+                    <div class="uw-field uw-span-5"><label for="uw-sector-owner">Sector Lead / role <span class="uw-required">*</span></label><input id="uw-sector-owner" value="Healthcare Sector Lead"></div>
+                    <div class="uw-field uw-span-4"><label for="uw-sector-status">Portfolio health</label><select id="uw-sector-status"><option>Green — On track</option><option selected>Amber — Attention needed</option><option>Red — Leadership action needed</option><option>On hold</option></select></div>
+                    <div class="uw-field uw-span-4"><label for="uw-sector-trend">Compared with last month</label><select id="uw-sector-trend"><option>Improved</option><option selected>Unchanged</option><option>Worsened</option><option>New</option></select></div>
+                    <div class="uw-field uw-span-4"><label for="uw-sector-confidence">Portfolio forecast confidence</label><select id="uw-sector-confidence"><option>High</option><option selected>Medium</option><option>Low</option></select></div>
+                    <div class="uw-field uw-span-12"><label for="uw-sector-change">What materially changed across the sector? <span class="uw-required">*</span></label><textarea id="uw-sector-change">Healthcare advanced CMAR coordination and design optimization. Cost alignment at JFLH and contaminated soil at CHMC continue to govern near-term delivery confidence.</textarea><div class="uw-hint">Synthesize the PM updates into a few sentences. Lead with movement and impact, not a list of routine activities.</div></div>
+                    <div class="uw-field uw-span-12"><label>Projects selected for the monthly exception view</label><div id="uw-sector-selected-exceptions" class="uw-readonly">Choose the exception rows below to add their PM status, movement, and milestone to the report preview.</div><div class="uw-hint">Select the few projects that change the sector outlook or require a decision. Their submitted PM details are reused below; do not retype the project narrative.</div></div>
+                    <div class="uw-field uw-span-12"><label for="uw-sector-next">Next 30–90 day sector milestones or outlook</label><textarea id="uw-sector-next">Resolve CHMC commercial and remediation strategy; confirm JFLH optimization and funding approach; advance RLSH CMAR procurement.</textarea></div>
+                    <div class="uw-field uw-span-6"><label for="uw-sector-action">Does the sector need leadership or agency action?</label><select id="uw-sector-action" data-sector-action><option value="no">No</option><option value="yes" selected>Yes</option></select></div>
+                    <div class="uw-field uw-span-6"><label for="uw-sector-source">Schedule, portfolio tracker, or source link</label><input id="uw-sector-source" type="url" placeholder="Link to sector roll-up or official source record"></div>
+                    <div class="uw-field uw-span-12" data-sector-action-details><div class="uw-grid">
+                      <div class="uw-field uw-span-6"><label for="uw-sector-request">Decision or support requested <span class="uw-required">*</span></label><input id="uw-sector-request" value="Confirm the JFLH cost and optimization path; resolve CHMC commercial strategy."></div>
+                      <div class="uw-field uw-span-3"><label for="uw-sector-action-owner">Action owner</label><input id="uw-sector-action-owner" value="ODR / Client"></div>
+                      <div class="uw-field uw-span-3"><label for="uw-sector-due">Needed by</label><input id="uw-sector-due" type="date" value="2026-10-15"></div>
+                    </div></div>
+                  </div>
+                </section>
+                <details class="uw-optional-details"><summary>PM project status roll-up <span class="uw-help">(review submissions; verify before monthly synthesis)</span></summary>
+                  <div class="uw-rule">Sample portfolio records are shown here. PM submissions made in this browser demo are added to this roll-up. The Sector Lead confirms the roll-up and selects exceptions above.</div>
+                  <div class="uw-rag-row">
+                    <div class="uw-rag">Green projects<strong>2</strong></div><div class="uw-rag amber">Amber projects<strong>4</strong></div><div class="uw-rag amber">Red projects<strong>1</strong></div><div class="uw-rag">PM updates received<strong>6 of 7</strong></div>
+                  </div>
+                  <div class="uw-table-wrap"><table><thead><tr><th>Project</th><th>PM status</th><th>Monthly movement</th><th>Next milestone</th><th>Include in report</th></tr></thead><tbody id="uw-sector-rollup-rows">
+                    <tr data-pm-project="chmc"><td>Charles Harwood Medical Complex</td><td>Red</td><td>GMP / remediation activity</td><td>Foundation restart</td><td><label class="uw-check"><input type="checkbox" data-include-pm checked> Include</label></td></tr>
+                    <tr data-pm-project="jfl"><td>Governor Juan F. Luis Hospital</td><td>Red</td><td>Optimization / enabling work</td><td>Optimization decision</td><td><label class="uw-check"><input type="checkbox" data-include-pm checked> Include</label></td></tr>
+                    <tr data-pm-project="rlsh"><td>Roy L. Schneider Hospital</td><td>Amber</td><td>CMAR procurement / programming</td><td>CMAR award</td><td><label class="uw-check"><input type="checkbox" data-include-pm> Include</label></td></tr>
+                    <tr data-pm-project="mks"><td>Myrah Keating Smith Community Health Center</td><td>Amber</td><td>Scope / cost alignment</td><td>Programming refinement</td><td><label class="uw-check"><input type="checkbox" data-include-pm> Include</label></td></tr>
+                  </tbody></table></div>
+                </details>
+                <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit-sector">Submit Sector Lead update</button></div>
+                <div class="uw-toast" aria-live="polite"></div>
+              </div>
+            </form>
+
+            <aside class="uw-ws-card uw-pr-preview" aria-live="polite">
+              <div id="uw-project-report-preview" role="tabpanel" data-preview-mode="project"><h3>Monthly report snapshot</h3>
+              <div class="uw-pr-health"><span class="uw-pr-dot" data-pr-dot></span><span><strong data-pr-status>Green</strong><br><span class="uw-help" data-pr-project>Healthcare Recovery Bundle</span></span><span class="uw-pr-trend" data-pr-trend>Unchanged</span></div>
+              <h4>What changed</h4><p data-pr-change></p><h4>Evidence / result</h4><p data-pr-evidence></p>
+              <h4>Next milestone</h4><p><strong data-pr-milestone></strong></p><p class="uw-help" data-pr-milestone-meta></p>
+              <div data-pr-exceptions-block><h4>Material constraint / action</h4><p data-pr-exception></p><p class="uw-help" data-pr-action></p></div>
+              <details class="uw-pr-more"><summary>Other reporting signals</summary><p data-pr-more></p></details></div>
+              <div id="uw-program-report-preview" role="tabpanel" data-preview-mode="program" hidden><h3>Functional Lead snapshot</h3><div class="uw-pr-health"><span class="uw-pr-dot" data-program-pr-dot></span><span><strong data-program-pr-status>Green</strong><br><span class="uw-help" data-program-pr-owner>Function owner</span></span><span class="uw-pr-trend" data-program-pr-trend>Unchanged</span></div><h4>Function / reporting scope</h4><p data-program-pr-area></p><h4>What changed and why it matters</h4><p data-program-pr-change></p><h4>Next step</h4><p data-program-pr-next></p><div data-program-pr-action-block hidden><h4>Leadership action needed</h4><p data-program-pr-request></p></div></div>
+              <div id="uw-sector-report-preview" role="tabpanel" data-preview-mode="sector"><h3>Sector report snapshot</h3><div class="uw-pr-health"><span class="uw-pr-dot amber" data-sector-pr-dot></span><span><strong data-sector-pr-status>Amber</strong><br><span class="uw-help" data-sector-pr-owner>Healthcare Sector Lead</span></span><span class="uw-pr-trend" data-sector-pr-trend>Unchanged</span></div><h4>Sector movement</h4><p data-sector-pr-change></p><h4>Selected project exceptions</h4><p data-sector-pr-exceptions></p><h4>Near-term outlook</h4><p data-sector-pr-next></p><div data-sector-pr-action-block><h4>Leadership / agency action</h4><p data-sector-pr-request></p><p class="uw-help" data-sector-pr-owner-date></p></div></div>
+            </aside>
           </div>
-
-          <nav class="uw-step-nav" role="tablist" aria-label="Weekly report steps">
-            <button class="uw-step" type="button" role="tab" aria-selected="true" aria-controls="uw-step-1"><span class="uw-step-number">STEP 1</span><span class="uw-step-label">Project & Status</span></button>
-            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-2"><span class="uw-step-number">STEP 2</span><span class="uw-step-label">Results & Outcomes</span></button>
-            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-3"><span class="uw-step-number">STEP 3</span><span class="uw-step-label">Risks & Decisions</span></button>
-            <button class="uw-step" type="button" role="tab" aria-selected="false" aria-controls="uw-step-4"><span class="uw-step-number">STEP 4</span><span class="uw-step-label">Outlook & Submit</span></button>
-          </nav>
-
-          <section class="uw-step-panel" id="uw-step-1" role="tabpanel">
-            <div class="uw-section">
-              <div class="uw-section-title">Report identification</div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-4"><label for="uw-report-mode">How are you reporting this week? <span class="uw-required">*</span></label><select id="uw-report-mode" data-weekly-report-mode><option value="single">One project</option><option value="multiple">Several selected projects</option><option value="bundle" selected>A saved project bundle</option></select><div class="uw-hint">Choose a saved bundle for projects you report together regularly, or select projects for an ad hoc group.</div></div>
-                <div class="uw-field uw-span-4"><label for="uw-week">Week ending <span class="uw-required">*</span></label><input id="uw-week" type="date" value="2026-09-11"></div>
-                <div class="uw-field uw-span-4"><label>Prepared by</label><div class="uw-readonly">A. Project Manager</div></div>
-
-                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-single-panel hidden>
-                  <label for="uw-single-project">Project <span class="uw-required">*</span></label><select id="uw-single-project"><option>Juan F. Luis Hospital - Rebuild</option><option>Roy L. Schneider Hospital - Recovery</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>Charlotte Amalie High School</option></select>
-                  <div class="uw-grid" style="margin-top:10px"><div class="uw-field uw-span-3"><label>Sector</label><div class="uw-readonly">Healthcare</div></div><div class="uw-field uw-span-3"><label>Island</label><div class="uw-readonly">St. Croix</div></div><div class="uw-field uw-span-3"><label>Project ID</label><div class="uw-readonly">HC-0017</div></div><div class="uw-field uw-span-3"><label>Project phase</label><div class="uw-readonly">Construction</div></div></div>
-                </div>
-
-                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-multiple-panel hidden>
-                  <label for="uw-multi-project-add">Projects included in this report <span class="uw-required">*</span></label>
-                  <div class="uw-work-scope-picker"><select id="uw-multi-project-add" data-weekly-project-add><option value="">Add another project</option><option>Juan F. Luis Hospital</option><option>Roy L. Schneider Hospital</option><option>Charles Harwood Medical Complex</option><option>St. Croix Underground Power</option><option>St. Thomas Wastewater</option><option>Charlotte Amalie High School</option><option>Julius E. Sprauve School</option><option>Program Reporting Transformation</option></select><div class="uw-work-scope-tags" data-weekly-project-tags></div></div>
-                  <div class="uw-hint">Production SPFx would search the PM's assigned projects from the 54-project Master Project List.</div>
-                </div>
-
-                <div class="uw-field uw-span-12 uw-weekly-scope-panel" data-weekly-bundle-panel>
-                  <div class="uw-grid"><div class="uw-field uw-span-6"><label for="uw-bundle">Saved project bundle <span class="uw-required">*</span></label><select id="uw-bundle" data-weekly-bundle><option value="healthcare-recovery" selected>Healthcare Recovery Bundle</option><option value="st-croix-capital">St. Croix Capital Projects</option><option value="education-north">Education North Bundle</option></select></div><div class="uw-field uw-span-3"><label>Bundle owner</label><div class="uw-readonly">A. Project Manager</div></div><div class="uw-field uw-span-3"><label>Projects covered</label><div class="uw-readonly" data-weekly-bundle-count>3 projects</div></div></div>
-                  <div class="uw-selected-label" style="margin-top:10px">Bundle members</div><div class="uw-work-scope-tags" data-weekly-bundle-tags></div>
-                  <div class="uw-hint">Bundle membership is maintained centrally so the PM does not rebuild the same project group every week.</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Project / bundle health</div>
-              <div class="uw-rule">Choose one rating for each category. Amber and Red require a reason, impact, recovery action, owner, and target date.</div>
-              <div class="uw-status-grid">
-                <div class="uw-status"><label for="uw-overall">Overall</label><select id="uw-overall" data-weekly-status><option value="green" selected>Green - On track</option><option value="amber">Amber - Attention needed</option><option value="red">Red - Off track</option><option value="neutral">N/A</option></select></div>
-                <div class="uw-status amber"><label for="uw-schedule">Schedule</label><select id="uw-schedule" data-weekly-status><option value="green">Green - On track</option><option value="amber" selected>Amber - Milestone at risk</option><option value="red">Red - Milestone missed</option><option value="neutral">N/A</option></select></div>
-                <div class="uw-status"><label for="uw-cost">Cost / funding</label><select id="uw-cost" data-weekly-status><option value="green" selected>Green - On plan</option><option value="amber">Amber - Forecast pressure</option><option value="red">Red - Funding gap</option><option value="neutral">N/A</option></select></div>
-                <div class="uw-status amber"><label for="uw-risk">Risk / issues</label><select id="uw-risk" data-weekly-status><option value="green">Green - Controlled</option><option value="amber" selected>Amber - Active constraint</option><option value="red">Red - Escalation required</option><option value="neutral">N/A</option></select></div>
-              </div>
-              <div class="uw-exception" data-status-exception>
-                <div class="uw-grid">
-                  <div class="uw-field uw-span-6"><label for="uw-status-reason">Amber / Red reason and impact <span class="uw-required">*</span></label><textarea id="uw-status-reason">Underground utility conflict creates a potential five-working-day delay to civil mobilization.</textarea></div>
-                  <div class="uw-field uw-span-6"><label for="uw-status-recovery">Recovery action, owner, and target date <span class="uw-required">*</span></label><textarea id="uw-status-recovery">Design Manager to complete field verification and confirm the recovery sequence by September 14.</textarea></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Material change this week</div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-8"><label for="uw-change">What materially changed since the previous report? <span class="uw-required">*</span></label><textarea id="uw-change">A previously undocumented utility alignment was confirmed in the north service corridor, creating a near-term schedule exposure.</textarea><div class="uw-hint">Describe the change and why it matters. Do not repeat unchanged background information.</div></div>
-                <div class="uw-field uw-span-4"><label for="uw-change-area">Primary area affected</label><select id="uw-change-area"><option>Schedule</option><option>Scope</option><option>Cost / funding</option><option>Design</option><option>Permitting / compliance</option><option>Procurement</option><option>Field operations</option><option>Safety / quality</option></select></div>
-              </div>
-            </div>
-
-            <div class="uw-step-actions"><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-2">Continue to Results & Outcomes</button></div>
-          </section>
-
-          <section class="uw-step-panel" id="uw-step-2" role="tabpanel" hidden>
-            <div class="uw-section">
-              <div class="uw-section-title">Results achieved and value created</div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-7"><label for="uw-accomplishment">What outcome was achieved or materially advanced? <span class="uw-required">*</span></label><textarea id="uw-accomplishment">The revised construction phasing plan was accepted, clearing the path for civil subcontractor mobilization.</textarea><div class="uw-hint">Do not enter “held meeting,” “reviewed document,” or another task by itself. State the result produced.</div></div>
-                <div class="uw-field uw-span-5"><label for="uw-accomplishment-value">Value, impact, or evidence <span class="uw-required">*</span></label><textarea id="uw-accomplishment-value">The accepted sequence protects the planned mobilization window and provides an approved basis for site logistics.</textarea></div>
-              </div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Key coordination outcomes</div>
-              <div class="uw-rule"><strong>Outcome test:</strong> report coordination only if it produced at least one of these results.</div>
-              <div class="uw-outcome-test" aria-label="Reportable coordination outcomes"><div class="uw-outcome-type">Decision</div><div class="uw-outcome-type">Commitment</div><div class="uw-outcome-type">Resolution</div><div class="uw-outcome-type">Change</div><div class="uw-outcome-type">Escalation</div><div class="uw-outcome-type">Milestone</div></div>
-              <div class="uw-repeat">
-                <div class="uw-repeat-head"><span>Coordination outcome 1</span><span class="uw-type-tag">Decision</span></div>
-                <div class="uw-grid">
-                  <div class="uw-field uw-span-4"><label for="uw-engagement">Coordination / engagement</label><input id="uw-engagement" value="Utility and civil coordination review"></div>
-                  <div class="uw-field uw-span-8"><label for="uw-outcome">Outcome / decision <span class="uw-required">*</span></label><input id="uw-outcome" value="Team agreed to verify the utility alignment before civil mobilization."></div>
-                  <div class="uw-field uw-span-6"><label for="uw-resulting-action">Enabling commitment / next action</label><input id="uw-resulting-action" value="Complete field verification and issue an updated utility sketch."><div class="uw-hint">The action supports the outcome; it is not the reportable result by itself.</div></div>
-                  <div class="uw-field uw-span-3"><label for="uw-outcome-owner">Owner</label><input id="uw-outcome-owner" value="Design Manager"></div>
-                  <div class="uw-field uw-span-3"><label for="uw-outcome-due">Due date</label><input id="uw-outcome-due" type="date" value="2026-09-14"></div>
-                </div>
-              </div>
-              <div class="uw-step-actions"><button class="uw-button" type="button" data-demo="add-outcome">Add another outcome</button></div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Other material changes</div>
-              <div class="uw-check-grid">
-                <label class="uw-check"><input type="checkbox" checked>Milestone achieved or moved</label>
-                <label class="uw-check"><input type="checkbox">Cost or forecast changed</label>
-                <label class="uw-check"><input type="checkbox">Approval or permit received</label>
-                <label class="uw-check"><input type="checkbox">Scope or strategy changed</label>
-                <label class="uw-check"><input type="checkbox">Procurement status changed</label>
-                <label class="uw-check"><input type="checkbox">Safety / quality event</label>
-              </div>
-            </div>
-
-            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-1">Back</button><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-3">Continue to Risks & Decisions</button></div>
-          </section>
-
-          <section class="uw-step-panel" id="uw-step-3" role="tabpanel" hidden>
-            <div class="uw-section">
-              <div class="uw-section-title">Active risk or issue</div>
-              <div class="uw-repeat">
-                <div class="uw-repeat-head"><span>Risk / issue 1</span><span class="uw-type-tag">Issue - Open</span></div>
-                <div class="uw-grid">
-                  <div class="uw-field uw-span-3"><label for="uw-risk-type">Type</label><select id="uw-risk-type"><option>Issue</option><option>Risk</option></select></div>
-                  <div class="uw-field uw-span-9"><label for="uw-risk-title">Title <span class="uw-required">*</span></label><input id="uw-risk-title" value="Underground utility conflict at north service corridor"></div>
-                  <div class="uw-field uw-span-6"><label for="uw-risk-impact">Impact if not resolved <span class="uw-required">*</span></label><textarea id="uw-risk-impact">Civil mobilization could be delayed by five working days and may affect the drainage sequence.</textarea></div>
-                  <div class="uw-field uw-span-6"><label for="uw-risk-mitigation">Mitigation / resolution plan <span class="uw-required">*</span></label><textarea id="uw-risk-mitigation">Complete field verification, update the utility sketch, and resequence initial civil work if required.</textarea></div>
-                  <div class="uw-field uw-span-3"><label for="uw-risk-rating">Rating</label><select id="uw-risk-rating"><option>Amber - High</option><option>Green - Controlled</option><option>Red - Critical</option></select></div>
-                  <div class="uw-field uw-span-3"><label for="uw-risk-owner">Owner</label><input id="uw-risk-owner" value="Design Manager"></div>
-                  <div class="uw-field uw-span-3"><label for="uw-risk-due">Target date</label><input id="uw-risk-due" type="date" value="2026-09-14"></div>
-                  <div class="uw-field uw-span-3"><label for="uw-risk-escalation">Leadership action?</label><select id="uw-risk-escalation"><option>Yes - decision required</option><option>No - project team managing</option></select></div>
-                </div>
-              </div>
-              <div class="uw-step-actions"><button class="uw-button" type="button" data-demo="add-risk">Add another risk or issue</button></div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Decision or leadership support required</div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-6"><label for="uw-decision">What decision or support is required? <span class="uw-required">*</span></label><textarea id="uw-decision">Confirm the accountable owner for expedited utility coordination and authorize field verification before civil mobilization.</textarea></div>
-                <div class="uw-field uw-span-6"><label for="uw-decision-impact">What happens if no action is taken?</label><textarea id="uw-decision-impact">The civil start may move by five working days, increasing exposure to downstream sequencing impacts.</textarea></div>
-                <div class="uw-field uw-span-4"><label for="uw-decision-from">Decision needed from</label><select id="uw-decision-from"><option>ODR / Client</option><option>SPMO leadership</option><option>Sector leadership</option><option>Program Controls</option><option>Functional lead</option></select></div>
-                <div class="uw-field uw-span-4"><label for="uw-decision-owner">Follow-up owner</label><input id="uw-decision-owner" value="Healthcare Sector Lead"></div>
-                <div class="uw-field uw-span-4"><label for="uw-decision-date">Decision required by</label><input id="uw-decision-date" type="date" value="2026-09-14"></div>
-              </div>
-            </div>
-
-            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-2">Back</button><button class="uw-button uw-button-blue" type="button" data-next-step="uw-step-4">Continue to Outlook & Submit</button></div>
-          </section>
-
-          <section class="uw-step-panel" id="uw-step-4" role="tabpanel" hidden>
-            <div class="uw-section">
-              <div class="uw-section-title">Milestones and next-week outcomes</div>
-              <div class="uw-repeat">
-                <div class="uw-grid">
-                  <div class="uw-field uw-span-4"><label for="uw-milestone">Milestone</label><input id="uw-milestone" value="Civil subcontractor mobilization"></div>
-                  <div class="uw-field uw-span-2"><label for="uw-milestone-state">Status</label><select id="uw-milestone-state"><option>At risk</option><option>On track</option><option>Achieved</option><option>Missed</option></select></div>
-                  <div class="uw-field uw-span-3"><label for="uw-baseline-date">Baseline date</label><input id="uw-baseline-date" type="date" value="2026-09-21"></div>
-                  <div class="uw-field uw-span-3"><label for="uw-current-date">Current forecast</label><input id="uw-current-date" type="date" value="2026-09-28"></div>
-                  <div class="uw-field uw-span-12"><label for="uw-milestone-reason">Reason for variance / action to recover</label><input id="uw-milestone-reason" value="Utility verification may shift mobilization; resequencing options are under review."></div>
-                </div>
-              </div>
-              <div class="uw-grid" style="margin-top:12px">
-                <div class="uw-field uw-span-6"><label for="uw-next-week">Outcome expected by next week <span class="uw-required">*</span></label><textarea id="uw-next-week">Utility alignment confirmed and civil mobilization released to proceed against the approved construction sequence.</textarea><div class="uw-hint">Describe the condition that will be true—not merely the activities the team will perform.</div></div>
-                <div class="uw-field uw-span-6"><label for="uw-blockers">Success measure and dependencies</label><textarea id="uw-blockers">Success is evidenced by the approved field sketch and notice to mobilize. Dependencies are the utility coordination decision and field verification.</textarea></div>
-              </div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">30 / 60 / 90-day outlook</div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-4"><label for="uw-30">Expected outcome by 30 days</label><textarea id="uw-30">Civil work fully mobilized, utility conflict closed, and drainage installation advancing to plan.</textarea></div>
-                <div class="uw-field uw-span-4"><label for="uw-60">Expected outcome by 60 days</label><textarea id="uw-60">Initial sitework accepted and the 60% design package ready for stakeholder decision.</textarea></div>
-                <div class="uw-field uw-span-4"><label for="uw-90">Expected outcome by 90 days</label><textarea id="uw-90">Structural package aligned across disciplines and long-lead procurement authorized for release.</textarea></div>
-              </div>
-            </div>
-
-            <div class="uw-section">
-              <div class="uw-section-title">Submission check</div>
-              <div class="uw-summary">
-                <div class="uw-summary-item"><div class="uw-summary-label">Required fields</div><div class="uw-summary-value">Complete</div></div>
-                <div class="uw-summary-item"><div class="uw-summary-label">Coordination outcomes</div><div class="uw-summary-value">1</div></div>
-                <div class="uw-summary-item"><div class="uw-summary-label">Open risks / issues</div><div class="uw-summary-value">1</div></div>
-                <div class="uw-summary-item"><div class="uw-summary-label">Leadership decisions</div><div class="uw-summary-value">1</div></div>
-              </div>
-              <div class="uw-grid">
-                <div class="uw-field uw-span-6"><label for="uw-certify">Project Manager certification</label><select id="uw-certify"><option>I confirm this report reflects material project changes and is ready for Sector review</option><option>Not ready - save as draft</option></select></div>
-                <div class="uw-field uw-span-6"><label for="uw-supporting">Supporting file (optional)</label><input id="uw-supporting" type="file"><div class="uw-hint">Attach only records needed to support the weekly update; detailed source records remain in their system of record.</div></div>
-              </div>
-              <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="draft">Save draft</button><button class="uw-button uw-button-primary" type="button" data-demo="submit">Submit for Sector Review</button><button class="uw-button" type="button">Cancel</button></div>
-              <div class="uw-toast" aria-live="polite"></div>
-            </div>
-
-            <div class="uw-history">
-              <div class="uw-history-head"><h3>My Weekly Reports</h3><span class="uw-help">Reports may cover one project, selected projects, or a saved bundle</span></div>
-              <div class="uw-table-wrap"><table><thead><tr><th>Week ending</th><th>Reporting coverage</th><th>Overall</th><th>Primary outcome / change</th><th>Decision required</th><th>Status</th><th>View</th></tr></thead><tbody>
-                <tr><td>9/11/2026</td><td>Healthcare Recovery Bundle (3)</td><td>Green</td><td>Utility exposure defined; recovery decision requested</td><td>Yes</td><td>Draft</td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
-                <tr><td>9/4/2026</td><td>Juan F. Luis Hospital</td><td>Green</td><td>Phasing plan accepted; mobilization path cleared</td><td>No</td><td><span class="uw-status-text approved">Approved</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
-                <tr><td>8/28/2026</td><td>Juan F. Luis Hospital</td><td>Amber</td><td>Permit response date established; design release remains at risk</td><td>No</td><td><span class="uw-status-text approved">Approved</span></td><td><button class="uw-link" type="button">Open &gt;</button></td></tr>
-              </tbody></table></div>
-            </div>
-
-            <div class="uw-step-actions"><button class="uw-button" type="button" data-next-step="uw-step-3">Back</button></div>
-          </section>
         </div>
       </section>
 
@@ -654,7 +613,7 @@
             <div><h2>Create Weekly Work Substantiation</h2><div class="uw-help">Document consultant services performed during the week for agency review and payment substantiation.</div></div>
             <div class="uw-workflow" aria-label="Workflow: Enter work, review report, submit"><span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Enter work</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Review report</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Submit</span></div>
           </div>
-          <div class="uw-ws-note"><strong>Service record:</strong> Describe the work performed in plain, specific terms. Include a resulting record when useful; you do not need separate fields for “service” and “work product.”</div>
+          <div class="uw-ws-note"><strong>Service record:</strong> Enter one high-level summary of the consultant services performed for the reporting period. Add supporting records only when useful or required.</div>
           <div class="uw-ws-layout">
             <form id="uw-ws-form">
               <section class="uw-ws-card">
@@ -665,14 +624,12 @@
                   <div class="uw-field uw-span-3"><label for="uw-ws-end">Period end <span class="uw-required">*</span></label><input id="uw-ws-end" type="date" value="2026-07-31" required></div>
                   <div class="uw-field uw-span-6"><label for="uw-ws-prepared">Prepared by</label><input id="uw-ws-prepared" value="A. Consultant" placeholder="Name"></div>
                   <div class="uw-field uw-span-6"><label for="uw-ws-submitted">Submission date</label><input id="uw-ws-submitted" type="date"></div>
-                  <div class="uw-field uw-span-12"><label for="uw-ws-summary">Weekly summary <span class="uw-required">*</span></label><textarea id="uw-ws-summary" required>Supported RLSH procurement coordination, program controls, healthcare portfolio reporting, staffing review, and financial model discussions.</textarea><div class="uw-hint">Briefly summarize the service areas covered. Specific activities are listed below, so avoid repeating them word for word.</div></div>
+
                 </div>
               </section>
               <section class="uw-ws-card">
                 <h3>Services performed <span class="uw-required">*</span></h3>
-                <div class="uw-hint">Add one entry for each distinct service area. Be factual and specific about what the consultant did.</div>
-                <div id="uw-ws-services"></div>
-                <div class="uw-submit-actions"><button class="uw-button" type="button" data-ws-add="service">+ Add service</button></div>
+                <div class="uw-field"><label for="uw-ws-services-summary">High-level summary of services performed <span class="uw-required">*</span></label><textarea id="uw-ws-services-summary" required placeholder="Summarize the consulting support provided during this reporting period.">Provided project controls and procurement support for the healthcare program, including maintaining action tracking, coordinating CMAR procurement steps, supporting portfolio status reporting, and contributing to staffing and financial reviews.</textarea><div class="uw-hint">Use one concise paragraph describing the overall support provided. Add supporting records below when useful; do not separate the summary into service categories.</div></div>
               </section>
               <section class="uw-ws-card">
                 <h3>Meetings / coordination sessions <span class="uw-help">(optional)</span></h3>
@@ -682,7 +639,7 @@
               </section>
               <section class="uw-ws-card">
                 <h3>Supporting records <span class="uw-help">(optional)</span></h3>
-                <div class="uw-field"><label for="uw-ws-records">Supporting records or references</label><textarea id="uw-ws-records" placeholder="For example: updated RLSH Action Item List; draft CMAR recommendation"></textarea><div class="uw-hint">Include hours, staff names, task codes, or attachment references only when required by contract or agency instructions.</div></div>
+                <div class="uw-field"><label for="uw-ws-records">Supporting records or references</label><textarea id="uw-ws-records" placeholder="For example: updated RLSH Action Item List; draft CMAR recommendation"></textarea><div class="uw-hint">Include links or references that substantiate the summary. Add hours, staff names, or task codes only when required by contract or agency instructions.</div></div>
               </section>
               <div class="uw-submit-actions"><button class="uw-button" type="button" data-ws-action="save">Save draft</button><button class="uw-button" type="button" data-ws-action="clear">Clear form</button><button class="uw-button uw-button-primary" type="button" data-ws-action="print">Print / Save PDF</button><button class="uw-button uw-button-primary" type="button" data-ws-action="submit">Submit for review</button></div>
               <div class="uw-ws-status" id="uw-ws-status" aria-live="polite"></div>
@@ -690,8 +647,7 @@
             <aside class="uw-ws-card uw-ws-preview" aria-live="polite">
               <h3>Live report preview</h3>
               <p class="uw-ws-meta" id="uw-ws-preview-meta">Project and reporting period appear here.</p>
-              <h4>Weekly summary</h4><p id="uw-ws-preview-summary"></p>
-              <h4>Services performed</h4><ul id="uw-ws-preview-services"></ul>
+              <h4>Services performed</h4><p id="uw-ws-preview-summary"></p>
               <div id="uw-ws-preview-meetings-block" hidden><h4>Meetings / coordination sessions</h4><ul id="uw-ws-preview-meetings"></ul></div>
               <div id="uw-ws-preview-records-block" hidden><h4>Supporting records</h4><p id="uw-ws-preview-records"></p></div>
               <p class="uw-help" id="uw-ws-preview-prepared"></p>
@@ -703,22 +659,22 @@
       <section class="uw-view" id="uw-monthly" role="tabpanel" hidden>
         <div class="uw-surface">
           <div class="uw-form-head">
-            <div><h2>September 2026 Monthly Program Report</h2><div class="uw-help">Generated from approved Healthcare weekly outcomes, material updates, risks, decisions, milestones, and status exceptions.</div></div>
-            <div class="uw-workflow" aria-label="Monthly workflow: weekly approved, monthly generated, leadership ready">
-              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>4 weekly reports approved</span><span class="uw-workflow-line"></span>
+            <div><h2>June 2026 Monthly Report Preview</h2><div class="uw-help">Generated from Sector Lead synthesis, PM project updates, and Functional Lead results, exceptions, risks, decisions, and milestones.</div></div>
+            <div class="uw-workflow" aria-label="Monthly workflow: role inputs, validated metrics, report ready">
+              <span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Role inputs</span><span class="uw-workflow-line"></span>
               <span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Monthly generated</span><span class="uw-workflow-line"></span>
               <span class="uw-workflow-step"><span class="uw-workflow-dot">3</span>Leadership ready</span>
             </div>
           </div>
 
           <div class="uw-reuse-note">
-            <span><strong>Generated—not retyped:</strong> the system consolidates approved weekly outcomes. The Sector Lead curates the executive narrative, confirms exceptions, and removes duplication.</span>
-            <span class="uw-reuse-flow"><span class="uw-reuse-item">Weekly outcomes</span><span>&gt;</span><span class="uw-reuse-item">Monthly synthesis</span><span>&gt;</span><span class="uw-reuse-item">12-15 page report</span></span>
+            <span><strong>Generated—not retyped:</strong> the system consolidates PM project inputs and Functional Lead updates. Sector Leads validate their portfolio synthesis; the report owner combines material changes, cross-program constraints, measures, and actions.</span>
+            <span class="uw-reuse-flow"><span class="uw-reuse-item">Project + function data</span><span>&gt;</span><span class="uw-reuse-item">Exception synthesis</span><span>&gt;</span><span class="uw-reuse-item">10-12 page report</span></span>
           </div>
 
           <nav class="uw-month-nav" aria-label="Generated monthly report sections">
             <button class="uw-month-tab" type="button" aria-pressed="true" data-month-view="uw-month-summary">Executive Summary</button>
-            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-outcomes">Outcomes & Evidence</button>
+            <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-outcomes">Sector Portfolio</button>
             <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-decisions">Risks & Decisions</button>
             <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-outlook">30 / 60 / 90 Outlook</button>
             <button class="uw-month-tab" type="button" aria-pressed="false" data-month-view="uw-month-pages">Report Page Map</button>
@@ -726,88 +682,93 @@
 
           <section class="uw-month-panel" id="uw-month-summary">
             <div class="uw-kpi-grid">
-              <div class="uw-kpi"><div class="uw-kpi-label">Approved weekly inputs</div><div class="uw-kpi-value">4</div><div class="uw-kpi-detail">September reporting cycle</div></div>
-              <div class="uw-kpi"><div class="uw-kpi-label">Material outcomes</div><div class="uw-kpi-value">8</div><div class="uw-kpi-detail">4 elevated to executive view</div></div>
-              <div class="uw-kpi"><div class="uw-kpi-label">Leadership decisions</div><div class="uw-kpi-value">1</div><div class="uw-kpi-detail">Required by September 14</div></div>
-              <div class="uw-kpi"><div class="uw-kpi-label">Open high risks</div><div class="uw-kpi-value">1</div><div class="uw-kpi-detail">Utility alignment exposure</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">TRIR / DART</div><div class="uw-kpi-value">0.0</div><div class="uw-kpi-detail">June report; no recordable incidents</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Project portfolio</div><div class="uw-kpi-value">50+</div><div class="uw-kpi-detail">Concurrent delivery environment</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Funding exposure flagged</div><div class="uw-kpi-value">$1.4B</div><div class="uw-kpi-detail">HMGP / PA deadline risk</div></div>
+              <div class="uw-kpi"><div class="uw-kpi-label">Delivery sectors</div><div class="uw-kpi-value">4</div><div class="uw-kpi-detail">Education · Healthcare · Infrastructure · Public Buildings</div></div>
             </div>
             <div class="uw-report-grid">
               <div class="uw-report-block">
-                <h3>Generated executive narrative</h3>
-                <p class="uw-report-copy">Healthcare delivery advanced during September as the revised construction phasing plan was accepted, clearing the path for civil mobilization. Expedited field verification was authorized to resolve the north service corridor utility conflict. Overall performance remains Green; Schedule and Risk remain Amber until the utility alignment is confirmed and the recovery sequence is approved.</p>
-                <div class="uw-source-note">Synthesized from four approved weekly reports. Sector Lead edits only the narrative, materiality, and exceptions.</div>
+                <h3>Program position</h3>
+                <div class="uw-outcome-list">
+                  <div class="uw-outcome-row"><strong>Progress</strong><span>Design, pre-construction, procurement, environmental review, and controls advanced across sectors.</span><span>Construction starts remain dependent on approvals, funding, procurement, and decisions.</span><span class="uw-outcome-source">June report</span></div>
+                  <div class="uw-outcome-row"><strong>Primary exposure</strong><span>HMGP / PA funding deadlines and scope-to-budget gaps.</span><span>Up to $1.4B of funding exposure flagged; HMGP PoP cited as October 31, 2026.</span><span class="uw-outcome-source">Risk section</span></div>
+                  <div class="uw-outcome-row"><strong>Readiness</strong><span>Workforce housing, waste management, and FF&amp;E planning progressed.</span><span>Permitting, port capacity, long-lead procurement, and logistics remain dependencies.</span><span class="uw-outcome-source">Operations</span></div>
+                </div>
               </div>
               <div class="uw-report-block">
-                <h3>Monthly health</h3>
+                <h3>Program health signals</h3>
                 <div class="uw-rag-row">
-                  <div class="uw-rag">Overall<strong>Green</strong></div>
-                  <div class="uw-rag amber">Schedule<strong>Amber</strong></div>
-                  <div class="uw-rag">Cost / funding<strong>Green</strong></div>
-                  <div class="uw-rag amber">Risk / issues<strong>Amber</strong></div>
+                  <div class="uw-rag">Safety<strong>TRIR / DART 0.0</strong></div>
+                  <div class="uw-rag amber">Schedule<strong>Approval-gated</strong></div>
+                  <div class="uw-rag amber">Cost / funding<strong>Scope gaps</strong></div>
+                  <div class="uw-rag amber">Environmental<strong>Critical path</strong></div>
+                  <div class="uw-rag">Procurement<strong>Active / awards pending</strong></div>
+                  <div class="uw-rag amber">Logistics<strong>Readiness constraints</strong></div>
                 </div>
-                <div class="uw-source-note">Amber statuses retain the weekly reason, impact, recovery commitment, owner, and target date.</div>
+                <div class="uw-source-note">Use approved program control thresholds to assign final RAG. The status labels here summarize the June report, not a replacement for official trackers.</div>
               </div>
             </div>
-            <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="refresh-month">Refresh from approved weekly reports</button><button class="uw-button uw-button-primary" type="button" data-demo="generate-month">Generate leadership report</button></div>
+            <div class="uw-submit-actions"><button class="uw-button" type="button" data-demo="refresh-month">Refresh from submitted role updates</button><button class="uw-button uw-button-primary" type="button" data-demo="generate-month">Generate leadership report</button></div>
             <div class="uw-toast" aria-live="polite"></div>
           </section>
 
           <section class="uw-month-panel" id="uw-month-outcomes" hidden>
-            <div class="uw-section-title">Executive outcomes carried forward from weekly reporting</div>
-            <div class="uw-outcome-list">
-              <div class="uw-outcome-row"><strong>Decision</strong><span>Revised construction phasing plan accepted.</span><span>Cleared the approved path for site logistics and civil mobilization.</span><span class="uw-outcome-source">Week ending 9/4</span></div>
-              <div class="uw-outcome-row"><strong>Commitment</strong><span>Expedited field verification authorized.</span><span>Removed the approval barrier to the utility alignment go/no-go decision.</span><span class="uw-outcome-source">Week ending 9/11</span></div>
-              <div class="uw-outcome-row"><strong>Resolution</strong><span>Infection-control review requirements confirmed.</span><span>Allowed early works planning to proceed with an agreed compliance basis.</span><span class="uw-outcome-source">Week ending 9/18</span></div>
-              <div class="uw-outcome-row"><strong>Milestone</strong><span>Initial site access package approved.</span><span>Enabled mobilization preparations without changing the approved forecast.</span><span class="uw-outcome-source">Week ending 9/25</span></div>
-            </div>
-            <div class="uw-source-note">Each outcome retains its project, source week, owner, evidence, decision, and follow-on commitment for drill-through in Power BI.</div>
+            <div class="uw-section-title">Sector portfolio pulse | movement, constraint, next milestone</div>
+            <div class="uw-table-wrap"><table><thead><tr><th>Sector</th><th>What moved</th><th>Primary constraint / impact</th><th>What the report carries</th></tr></thead><tbody>
+              <tr><td>Education</td><td>Design and early works preparation advanced; STX Educational Complex continued repair-based field work.</td><td>Budget alignment, FEMA / permitting, payment workflow, and paused projects.</td><td>Portfolio status, top project exceptions, next construction-readiness milestone.</td></tr>
+              <tr><td>Healthcare</td><td>CMAR coordination, procurement, and design optimization progressed.</td><td>CHMC contaminated soil / commercial resolution; JFLH budget and enabling works.</td><td>Projects with schedule-critical constraints and next decision dates.</td></tr>
+              <tr><td>Infrastructure</td><td>Baseline scheduling, design coordination, and bundle procurement progressed.</td><td>Permitting, utility coordination, FEMA approvals, and agency review capacity.</td><td>Critical-path changes, bundle milestone forecast, cross-agency actions.</td></tr>
+              <tr><td>Public Buildings</td><td>WAPA generator procurement, GMP validation, and payment workflows advanced.</td><td>Fire Stations paused; funding, approvals, contracts, and long-lead equipment.</td><td>WAPA execution milestones and paused-project leadership actions.</td></tr>
+            </tbody></table></div>
+            <div class="uw-source-note">PMs provide project facts. Sector Leads verify the roll-up and select exceptions; detailed project narratives remain available through the source records.</div>
           </section>
 
           <section class="uw-month-panel" id="uw-month-decisions" hidden>
             <div class="uw-report-grid">
               <div class="uw-report-block">
-                <h3>Leadership decision required</h3>
-                <p class="uw-report-copy"><strong>Decision:</strong> Confirm the accountable owner for expedited utility coordination and authorize the final recovery sequence.</p>
-                <p class="uw-report-copy"><strong>Needed from:</strong> ODR / Client by September 14, 2026.</p>
-                <p class="uw-report-copy"><strong>Consequence of delay:</strong> Civil mobilization may move by five working days and create downstream drainage-sequence exposure.</p>
-                <div class="uw-source-note">Source: approved weekly report ending September 11.</div>
+                <h3>Leadership attention requested</h3>
+                <div class="uw-outcome-list">
+                  <div class="uw-outcome-row"><strong>Funding</strong><span>Advance HMGP / PA extensions, appeals, or acceleration plans.</span><span>Protect funding eligibility and delivery against approaching Periods of Performance.</span><span class="uw-outcome-source">Grant / risk leads</span></div>
+                  <div class="uw-outcome-row"><strong>Approvals</strong><span>Expedite FEMA EHP, NEPA / REC, FCD, and DPNR permitting.</span><span>Unlock construction and protect schedule-critical starts.</span><span class="uw-outcome-source">Environmental lead</span></div>
+                  <div class="uw-outcome-row"><strong>Procurement</strong><span>Complete ETC and Waste Management awards; advance CMAR procurements.</span><span>Enable compliance support and execution readiness.</span><span class="uw-outcome-source">Procurement lead</span></div>
+                  <div class="uw-outcome-row"><strong>Delivery</strong><span>Resolve scope-to-budget gaps, governance roles, and logistics readiness.</span><span>Reduce rework, decision delay, and mobilization constraints.</span><span class="uw-outcome-source">Sector / program leads</span></div>
+                </div>
               </div>
               <div class="uw-report-block">
-                <h3>Active high risk</h3>
-                <p class="uw-report-copy"><strong>Underground utility conflict:</strong> field conditions differ from available record information in the north service corridor.</p>
-                <p class="uw-report-copy"><strong>Recovery outcome:</strong> verified alignment, approved field sketch, and confirmed civil mobilization date.</p>
-                <p class="uw-report-copy"><strong>Owner:</strong> Design Manager &nbsp; <strong>Target:</strong> September 14.</p>
-                <div class="uw-source-note">The monthly report carries only material open exposure; closed weekly issues remain available in detail.</div>
+                <h3>Top program exposure</h3>
+                <p class="uw-report-copy"><strong>Funding:</strong> up to $1.4B of HMGP / PA funding exposure cited in the report; HMGP Phase II work remains tied to the October 31, 2026 PoP.</p>
+                <p class="uw-report-copy"><strong>Schedule:</strong> FEMA EHP, CZM / FCD, and DPNR review timelines continue to govern construction starts.</p>
+                <p class="uw-report-copy"><strong>Cost / execution:</strong> budget deficiencies, scope changes, procurement sequencing, and inter-agency decision throughput affect multiple sectors.</p>
+                <div class="uw-source-note">Each item should link to the authoritative risk, schedule, funding, or decision record. Owner and required-by date come from that source.</div>
               </div>
             </div>
           </section>
 
           <section class="uw-month-panel" id="uw-month-outlook" hidden>
             <div class="uw-grid">
-              <div class="uw-report-block uw-span-4"><h3>30-day outcome</h3><p class="uw-report-copy">Civil work fully mobilized, utility conflict closed, and drainage installation advancing to the approved sequence.</p><div class="uw-source-note">Evidence: approved field sketch, notice to mobilize, and installed drainage quantity.</div></div>
-              <div class="uw-report-block uw-span-4"><h3>60-day outcome</h3><p class="uw-report-copy">Initial sitework accepted and the 60% design package ready for stakeholder decision.</p><div class="uw-source-note">Evidence: acceptance record and issued review package.</div></div>
-              <div class="uw-report-block uw-span-4"><h3>90-day outcome</h3><p class="uw-report-copy">Structural package aligned across disciplines and long-lead procurement authorized for release.</p><div class="uw-source-note">Evidence: coordination closeout and approved procurement release.</div></div>
+              <div class="uw-report-block uw-span-4"><h3>Next 30 days</h3><p class="uw-report-copy">Show the next verified milestone by sector and function, its owner, target date, and confidence.</p><div class="uw-source-note">Source: PM next-milestone updates and official schedule.</div></div>
+              <div class="uw-report-block uw-span-4"><h3>Next 60 days</h3><p class="uw-report-copy">Elevate milestones gated by permits, funding approvals, awards, or other cross-agency decisions.</p><div class="uw-source-note">Source: permitting, grant, procurement, and schedule trackers.</div></div>
+              <div class="uw-report-block uw-span-4"><h3>Next 90 days</h3><p class="uw-report-copy">Summarize expected portfolio movement and readiness changes; flag low-confidence dates and dependencies.</p><div class="uw-source-note">Source: validated sector and functional forecasts.</div></div>
             </div>
-            <div class="uw-reuse-note" style="margin-top:14px;margin-bottom:0"><span><strong>Outcome framing:</strong> the monthly outlook describes the future condition and evidence of success. Supporting tasks remain with the accountable owner and are not presented as the result.</span></div>
+            <div class="uw-reuse-note" style="margin-top:14px;margin-bottom:0"><span><strong>Forecast rule:</strong> generate dates and milestones from approved source records. Contributors explain changes and dependencies; they should not retype the master schedule.</span></div>
           </section>
 
           <section class="uw-month-panel" id="uw-month-pages" hidden>
-            <div class="uw-section-title">Proposed 12-15 page leadership report generated from the same approved data</div>
+            <div class="uw-section-title">Proposed 10-12 page exception-focused report generated from verified inputs</div>
             <div class="uw-page-map">
-              <div class="uw-page-item"><strong>1. Cover & reporting period</strong>Program, reporting month, approval status.</div>
-              <div class="uw-page-item"><strong>2. Executive summary</strong>Material outcomes, changes, and overall RAG.</div>
-              <div class="uw-page-item"><strong>3. Leadership decisions</strong>Decision, impact, owner, and required-by date.</div>
-              <div class="uw-page-item"><strong>4-5. Sector portfolio</strong>Healthcare project status and outcome roll-up.</div>
-              <div class="uw-page-item"><strong>6-7. Outcomes & milestones</strong>Results, evidence, schedule movement, recovery.</div>
-              <div class="uw-page-item"><strong>8. Risks & issues</strong>Material open exposure and mitigation outcomes.</div>
-              <div class="uw-page-item"><strong>9. Cost & funding</strong>Forecast, funding, and exception commentary.</div>
-              <div class="uw-page-item"><strong>10. Safety & compliance</strong>Metrics and reportable exceptions.</div>
-              <div class="uw-page-item"><strong>11. Procurement & grants</strong>Material changes and leadership attention.</div>
-              <div class="uw-page-item"><strong>12. 30 / 60 / 90 outlook</strong>Expected outcomes and evidence of success.</div>
-              <div class="uw-page-item"><strong>13-15. Exception pages</strong>Added only when material program conditions require them.</div>
-              <div class="uw-page-item"><strong>Power BI drill-through</strong>All approved weekly detail remains accessible without expanding the PDF.</div>
+              <div class="uw-page-item"><strong>1. Executive snapshot</strong>Overall position, key measures, top changes, decisions.</div>
+              <div class="uw-page-item"><strong>2-5. Sector portfolio</strong>Four sector summaries with selected project exceptions.</div>
+              <div class="uw-page-item"><strong>6. Schedule, cost & funding</strong>Source metrics; only material variances.</div>
+              <div class="uw-page-item"><strong>7. Risk, grants & approvals</strong>Top exposures, mitigation, gates, and needed decisions.</div>
+              <div class="uw-page-item"><strong>8. Procurement & operations</strong>Material awards, readiness, logistics, workforce, FF&amp;E.</div>
+              <div class="uw-page-item"><strong>9. Safety & governance</strong>Safety measures, compliance exceptions, systems.</div>
+              <div class="uw-page-item"><strong>10. 30 / 60 / 90 outlook</strong>Milestones, owners, confidence, dependencies.</div>
+              <div class="uw-page-item"><strong>Appendices by link</strong>Master schedule, risk register, labor forecast, task order tracker.</div>
+              <div class="uw-page-item"><strong>Decision log</strong>Owner, due date, impact, source record.</div>
+              <div class="uw-page-item"><strong>Exception pages</strong>Only when a material condition needs more detail.</div>
             </div>
-            <div class="uw-submit-actions"><button class="uw-button uw-button-blue" type="button" data-demo="preview-month">Preview 12-15 page report</button></div>
+            <div class="uw-submit-actions"><button class="uw-button uw-button-blue" type="button" data-demo="preview-month">Preview 10-12 page report</button></div>
             <div class="uw-toast" aria-live="polite"></div>
           </section>
         </div>
@@ -824,20 +785,14 @@
         topTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
         topViews.forEach((view) => { view.hidden = view.id !== id; });
         const functional = id === 'uw-functional';
+        const monthly = id === 'uw-monthly';
         const substantiation = id === 'uw-substantiation';
-        root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : substantiation ? 'Consultant view' : 'Project Manager view';
-        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : substantiation ? 'Weekly service record' : 'Healthcare Sector';
+        const reportMode = root.dataset.weeklyReportMode || 'project';
+        const contributor = reportMode === 'project' ? 'Project Manager view' : reportMode === 'program' ? 'Functional Lead view' : 'Sector Lead view';
+        root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : monthly ? 'Report reviewer view' : substantiation ? 'Consultant view' : contributor;
+        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : monthly ? 'Monthly report preview' : substantiation ? 'Weekly service record' : reportMode === 'sector' ? 'Sector portfolio' : reportMode === 'program' ? 'Cross-project function' : 'Project update';
       };
       topTabs.forEach((tab) => tab.addEventListener('click', () => showTopView(tab.getAttribute('aria-controls'))));
-
-      const stepTabs = [...root.querySelectorAll('.uw-step-nav [role="tab"]')];
-      const stepPanels = [...root.querySelectorAll('.uw-step-panel')];
-      const showStep = (id) => {
-        stepTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
-        stepPanels.forEach((panel) => { panel.hidden = panel.id !== id; });
-      };
-      stepTabs.forEach((tab) => tab.addEventListener('click', () => showStep(tab.getAttribute('aria-controls'))));
-      root.querySelectorAll('[data-next-step]').forEach((button) => button.addEventListener('click', () => showStep(button.getAttribute('data-next-step'))));
 
       const monthTabs = [...root.querySelectorAll('[data-month-view]')];
       const monthPanels = [...root.querySelectorAll('.uw-month-panel')];
@@ -847,87 +802,253 @@
       };
       monthTabs.forEach((tab) => tab.addEventListener('click', () => showMonthPanel(tab.getAttribute('data-month-view'))));
 
-      const weeklyReportMode = root.querySelector('[data-weekly-report-mode]');
-      const weeklySinglePanel = root.querySelector('[data-weekly-single-panel]');
-      const weeklyMultiplePanel = root.querySelector('[data-weekly-multiple-panel]');
-      const weeklyBundlePanel = root.querySelector('[data-weekly-bundle-panel]');
-      const weeklyProjectAdd = root.querySelector('[data-weekly-project-add]');
-      const weeklyProjectTags = root.querySelector('[data-weekly-project-tags]');
-      let weeklySelectedProjects = ['Juan F. Luis Hospital', 'Roy L. Schneider Hospital', 'Charles Harwood Medical Complex'];
-      const renderWeeklyProjectTags = () => {
-        weeklyProjectTags.textContent = '';
-        weeklySelectedProjects.forEach((project) => {
-          const tag = document.createElement('span');
-          tag.className = 'uw-project-tag';
-          const text = document.createElement('span');
-          text.textContent = project;
-          const remove = document.createElement('button');
-          remove.type = 'button';
-          remove.textContent = 'Remove';
-          remove.setAttribute('aria-label', `Remove ${project}`);
-          remove.setAttribute('data-remove-weekly-project', project);
-          tag.append(text, remove);
-          weeklyProjectTags.appendChild(tag);
-        });
+      const projectPicker = root.querySelector('#uw-project');
+      const updateProjectMetadata = () => {
+        const option = projectPicker.selectedOptions[0];
+        root.querySelector('[data-project-sector]').textContent = option.dataset.sector || '—';
+        root.querySelector('[data-project-id]').textContent = option.dataset.projectId || '—';
+        root.querySelector('[data-project-phase]').textContent = option.dataset.phase || '—';
       };
-      weeklyProjectAdd.addEventListener('change', () => {
-        const project = weeklyProjectAdd.value;
-        if (project && !weeklySelectedProjects.includes(project)) weeklySelectedProjects.push(project);
-        weeklyProjectAdd.value = '';
-        renderWeeklyProjectTags();
-      });
-      weeklyProjectTags.addEventListener('click', (event) => {
-        const remove = event.target.closest('[data-remove-weekly-project]');
-        if (!remove) return;
-        weeklySelectedProjects = weeklySelectedProjects.filter((project) => project !== remove.getAttribute('data-remove-weekly-project'));
-        renderWeeklyProjectTags();
-      });
-      renderWeeklyProjectTags();
+      projectPicker.addEventListener('change', updateProjectMetadata);
+      updateProjectMetadata();
 
-      const weeklyBundles = {
-        'healthcare-recovery': ['Juan F. Luis Hospital', 'Roy L. Schneider Hospital', 'Charles Harwood Medical Complex'],
-        'st-croix-capital': ['Juan F. Luis Hospital', 'St. Croix Underground Power', 'Program Reporting Transformation'],
-        'education-north': ['Charlotte Amalie High School', 'Julius E. Sprauve School']
-      };
-      const weeklyBundle = root.querySelector('[data-weekly-bundle]');
-      const weeklyBundleTags = root.querySelector('[data-weekly-bundle-tags]');
-      const weeklyBundleCount = root.querySelector('[data-weekly-bundle-count]');
-      const renderWeeklyBundle = () => {
-        const members = weeklyBundles[weeklyBundle.value] || [];
-        weeklyBundleTags.textContent = '';
-        members.forEach((project) => {
-          const tag = document.createElement('span');
-          tag.className = 'uw-project-tag';
-          tag.textContent = project;
-          weeklyBundleTags.appendChild(tag);
+      const reportTabs = [...root.querySelectorAll('[data-report-tab]')];
+      const setReportMode = (mode) => {
+        reportTabs.forEach((tab) => {
+          const selected = tab.dataset.reportTab === mode;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
         });
-        weeklyBundleCount.textContent = `${members.length} ${members.length === 1 ? 'project' : 'projects'}`;
+        root.querySelectorAll('[data-report-mode-panel]').forEach(panel => { panel.hidden = panel.dataset.reportModePanel !== mode; });
+        root.querySelectorAll('[data-preview-mode]').forEach(panel => { panel.hidden = panel.dataset.previewMode !== mode; });
+        const labels = {
+          sector: ['Sector Lead Update', 'Confirm the portfolio picture from PM submissions; elevate material sector movement, exceptions, next milestones, and decisions.', 'Sector Lead view', 'Sector synthesis'],
+          program: ['Functional Lead Update', 'Report shared function results and constraints that affect multiple projects or sectors. Use existing trackers for detail.', 'Functional Lead view', 'Monthly synthesis'],
+          project: ['Project Manager Check-in', 'One update per project: record status, material movement, next milestone, and project-specific blockers.', 'Project Manager view', 'Sector review']
+        };
+        const [title, help, userLabel, workflowLabel] = labels[mode] || labels.project;
+        root.querySelector('#uw-weekly .uw-form-head h2').textContent = title;
+        root.querySelector('#uw-weekly .uw-form-head .uw-help').textContent = help;
+        const workflow = root.querySelector('#uw-weekly .uw-workflow');
+        workflow.setAttribute('aria-label', 'Workflow: Draft, ' + workflowLabel + ', Report ready');
+        workflow.querySelectorAll('.uw-workflow-step')[1].lastChild.textContent = workflowLabel;
+        root.querySelector('[data-user-view]').textContent = userLabel;
+        root.dataset.weeklyReportMode = mode;
       };
-      weeklyBundle.addEventListener('change', renderWeeklyBundle);
-      renderWeeklyBundle();
-
-      const updateWeeklyReportMode = () => {
-        weeklySinglePanel.hidden = weeklyReportMode.value !== 'single';
-        weeklyMultiplePanel.hidden = weeklyReportMode.value !== 'multiple';
-        weeklyBundlePanel.hidden = weeklyReportMode.value !== 'bundle';
-      };
-      weeklyReportMode.addEventListener('change', updateWeeklyReportMode);
-      updateWeeklyReportMode();
+      reportTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => setReportMode(tab.dataset.reportTab));
+        tab.addEventListener('keydown', event => {
+          if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? reportTabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : reportTabs.length - 1)) % reportTabs.length;
+          reportTabs[next].focus(); reportTabs[next].click();
+        });
+      });
+      setReportMode('sector');
 
       const updateStatusException = () => {
-        const needsExplanation = [...root.querySelectorAll('[data-weekly-status]')].some((picker) => picker.value === 'amber' || picker.value === 'red');
-        root.querySelector('[data-status-exception]').hidden = !needsExplanation;
+        const needsException = ['amber','red','hold'].includes(root.querySelector('#uw-overall').value);
+        const disclosure = root.querySelector('.uw-exceptions-disclosure');
+        if (needsException) disclosure.open = true;
       };
       root.querySelectorAll('[data-weekly-status]').forEach((picker) => {
-        const applyStatus = () => {
-          const status = picker.closest('.uw-status');
-          status.classList.remove('amber', 'red', 'neutral');
-          if (picker.value !== 'green') status.classList.add(picker.value);
-          updateStatusException();
-        };
-        picker.addEventListener('change', applyStatus);
-        applyStatus();
+        picker.addEventListener('change', updateStatusException);
       });
+      updateStatusException();
+
+      const weeklyForm = root.querySelector('#uw-project-report-form');
+      const milestoneStatus = root.querySelector('[data-milestone-achieved]');
+      const milestoneNotes = root.querySelector('[data-milestone-not-achieved]');
+      const updateMilestoneStatus = () => { milestoneNotes.hidden = ['Achieved','Not applicable'].includes(milestoneStatus.value); };
+      milestoneStatus.addEventListener('change',updateMilestoneStatus); updateMilestoneStatus();
+      const dateChanged = root.querySelector('[data-date-changed]');
+      const dateChangeDetails = root.querySelector('[data-date-change-details]');
+      dateChanged.addEventListener('change',()=>{dateChangeDetails.hidden=!dateChanged.checked;});
+      const costDetailsToggle = root.querySelector('[data-cost-details-toggle]');
+      const costDetails = root.querySelector('[data-cost-details]');
+      costDetailsToggle.addEventListener('change',()=>{costDetails.hidden=!costDetailsToggle.checked;});
+
+      const exceptionList = root.querySelector('#uw-exceptions-list');
+      const exceptionMarkup = () => `<article class="uw-repeat uw-exception-card"><div class="uw-repeat-head"><span data-ex-title>Blocker</span><button class="uw-link" type="button" data-ex-remove>Remove</button></div><div class="uw-grid"><div class="uw-field uw-span-3"><label>Type<select data-ex-type><option>Issue</option><option>Risk</option><option>Dependency</option><option>Decision needed</option></select></label></div><div class="uw-field uw-span-9"><label>What is blocked or at risk?<input data-ex-description></label></div><div class="uw-field uw-span-6"><label>Impact on this project<input data-ex-impact></label></div><div class="uw-field uw-span-6"><label>Response underway<input data-ex-response></label></div><div class="uw-field uw-span-6"><label>Leadership or agency action needed?<select data-ex-action><option value="no">No — managed by project team</option><option value="yes">Yes — decision or support needed</option></select></label></div><div class="uw-field uw-span-12" data-ex-action-details hidden><div class="uw-grid"><div class="uw-field uw-span-6"><label>Requested action<input data-ex-request></label></div><div class="uw-field uw-span-3"><label>Decision owner<select data-ex-owner><option>ODR / Client</option><option>SPMO leadership</option><option>Sector leadership</option><option>Other</option></select></label></div><div class="uw-field uw-span-3"><label>Date needed<input type="date" data-ex-date></label></div></div></div><details class="uw-field uw-span-12"><summary>Risk rating and source link</summary><div class="uw-grid"><div class="uw-field uw-span-4" data-risk-only hidden><label>Likelihood<select data-ex-likelihood><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-4" data-risk-only hidden><label>Severity<select data-ex-severity><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="uw-field uw-span-12"><label>Official record link<input type="url" data-ex-link placeholder="Optional link"></label></div></div></details></div></article>`;
+      const refreshExceptions = () => {
+        const cards=[...exceptionList.querySelectorAll('.uw-exception-card')];
+        cards.forEach((card,index)=>{
+          card.querySelector('[data-ex-title]').textContent=`Material item ${index+1}`;
+          card.querySelector('[data-ex-remove]').hidden=cards.length===1;
+          const isRisk=card.querySelector('[data-ex-type]').value==='Risk';
+          card.querySelectorAll('[data-risk-only]').forEach(field=>field.hidden=!isRisk);
+          card.querySelector('[data-ex-action-details]').hidden=card.querySelector('[data-ex-action]').value!=='yes';
+        });
+      };
+      const syncMonthlySnapshot = () => {
+        const status=root.querySelector('#uw-overall');
+        const statusText=status.options[status.selectedIndex].text;
+        root.querySelector('[data-pr-status]').textContent=statusText.split(/[—-]/)[0].trim();
+        const dot=root.querySelector('[data-pr-dot]');dot.className=`uw-pr-dot ${status.value}`;
+        root.querySelector('[data-pr-trend]').textContent=root.querySelector('#uw-status-trend').value;
+        const projectOption=root.querySelector('#uw-project').selectedOptions[0];
+        const coverage=projectOption.textContent;
+        root.querySelector('[data-pr-project]').textContent=`${coverage} · ${projectOption.dataset.sector} · ${projectOption.dataset.projectId}`;
+        root.querySelector('[data-pr-change]').textContent=root.querySelector('#uw-change').value||'No material change entered.';
+        root.querySelector('[data-pr-evidence]').textContent=root.querySelector('#uw-change-evidence').value||'See linked source record / update narrative.';
+        root.querySelector('[data-pr-milestone]').textContent=root.querySelector('#uw-milestone').value||'No next milestone entered.';
+        const target=root.querySelector('#uw-current-date').value;
+        const owner=root.querySelector('#uw-milestone-owner').value;
+        const confidence=root.querySelector('#uw-forecast-confidence').value;
+        root.querySelector('[data-pr-milestone-meta]').textContent=[owner,target?new Date(`${target}T12:00:00`).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'',`Confidence: ${confidence}`].filter(Boolean).join(' · ');
+        const active=[...exceptionList.querySelectorAll('.uw-exception-card')].filter(card=>card.querySelector('[data-ex-description]').value.trim());
+        root.querySelector('[data-pr-exceptions-block]').hidden=!active.length;
+        root.querySelector('[data-pr-exception]').textContent=active.map(card=>`${card.querySelector('[data-ex-type]').value}: ${card.querySelector('[data-ex-description]').value}`).join(' | ');
+        const support=active.find(card=>card.querySelector('[data-ex-action]').value==='yes');
+        root.querySelector('[data-pr-action]').textContent=support?`Action requested: ${support.querySelector('[data-ex-request]').value||'Details needed'} · Owner: ${support.querySelector('[data-ex-owner]').value} · Needed by: ${support.querySelector('[data-ex-date]').value||'date not set'}`:'No leadership action requested.';
+        const changed = root.querySelector('#uw-milestone-achieved').value;
+        const reason = root.querySelector('#uw-milestone-notes').value;
+        const cost = root.querySelector('[data-cost-details-toggle]').checked ? `Cost/funding flagged: ${root.querySelector('#uw-current-forecast').value || 'forecast not entered'}; ${root.querySelector('#uw-cost-variance').value || 'variance not entered'}.` : 'No cost/funding change flagged.';
+        root.querySelector('[data-pr-more]').textContent = [`Planned milestone: ${changed}${reason && changed !== 'Achieved' ? ` — ${reason}` : ''}.`, `Schedule: ${root.querySelector('#uw-project-schedule-signal').value}.`, `Cost/funding: ${root.querySelector('#uw-project-cost-signal').value}.`, cost, `Evidence: ${root.querySelector('#uw-change-evidence').value || 'not entered'}.`].join(' ');
+      };
+      exceptionList.addEventListener('change',(event)=>{if(event.target.matches('[data-ex-type],[data-ex-action]'))refreshExceptions();syncMonthlySnapshot();});
+      exceptionList.addEventListener('input',syncMonthlySnapshot);
+      exceptionList.addEventListener('click',(event)=>{if(event.target.closest('[data-ex-remove]')){event.target.closest('.uw-exception-card').remove();refreshExceptions();syncMonthlySnapshot();}});
+      root.querySelector('[data-add-exception]').addEventListener('click',()=>{exceptionList.insertAdjacentHTML('beforeend',exceptionMarkup());refreshExceptions();syncMonthlySnapshot();});
+      weeklyForm.addEventListener('input',syncMonthlySnapshot);
+      weeklyForm.addEventListener('change',syncMonthlySnapshot);
+      const programArea = root.querySelector('#uw-program-area');
+      const updateProgramDetails = () => {
+        const selected = programArea.value;
+        const key = selected.startsWith('Health and Safety') ? 'safety' : selected.startsWith('Environmental') ? 'environment' : selected.startsWith('HMGP') || selected.startsWith('CDBG') ? 'grant' : selected.startsWith('Program Risk') ? 'risk' : selected.startsWith('Commercial') ? 'procurement' : selected.startsWith('Program Controls') ? 'program-controls' : selected.startsWith('SPMO Task Orders') ? 'task-orders' : ['Workforce Housing','Logistics, Warehousing and Debris Removal','FF&E Procurement'].some(name => selected.startsWith(name)) ? 'operations' : ['Governance and Compliance','Kahua / Digital Systems'].some(name => selected.startsWith(name)) ? 'governance' : '';
+        root.querySelectorAll('[data-program-detail]').forEach(section => { section.hidden = section.dataset.programDetail !== key; });
+        const detailsDisclosure = root.querySelector('#uw-program-update-panel .uw-optional-details');
+        detailsDisclosure.open = Boolean(key);
+      };
+      const updateProgramPreview = () => {
+        const status = root.querySelector('#uw-program-status').value;
+        root.querySelector('[data-program-pr-status]').textContent = status.split(' — ')[0];
+        const tone = status.startsWith('Red') ? 'red' : status.startsWith('Amber') ? 'amber' : status.startsWith('On hold') ? 'hold' : status.startsWith('Not applicable') ? 'neutral' : '';
+        root.querySelector('[data-program-pr-dot]').className = `uw-pr-dot ${tone}`;
+        root.querySelector('[data-program-pr-owner]').textContent = root.querySelector('#uw-program-owner').value || 'Function owner';
+        root.querySelector('[data-program-pr-trend]').textContent = root.querySelector('#uw-program-trend').value;
+        root.querySelector('[data-program-pr-area]').textContent = `${programArea.value} · ${root.querySelector('#uw-program-scope').value}${root.querySelector('#uw-program-projects').value ? ` · ${root.querySelector('#uw-program-projects').value}` : ''}`;
+        root.querySelector('[data-program-pr-change]').textContent = root.querySelector('#uw-program-change').value || 'No material change entered.';
+
+        root.querySelector('[data-program-pr-next]').textContent = root.querySelector('#uw-program-next').value || 'No next action entered.';
+        const actionNeeded = root.querySelector('#uw-program-action').value === 'yes';
+        root.querySelector('[data-program-pr-action-block]').hidden = !actionNeeded;
+        root.querySelector('[data-program-pr-request]').textContent = root.querySelector('#uw-program-request').value || 'Action details needed.';
+      };
+      programArea.addEventListener('change', updateProgramDetails);
+      root.querySelector('#uw-program-action').addEventListener('change', event => { root.querySelector('[data-program-action-details]').hidden = event.target.value !== 'yes'; });
+      root.querySelector('#uw-sector-action').addEventListener('change', event => { root.querySelector('[data-sector-action-details]').hidden = event.target.value !== 'yes'; });
+      weeklyForm.addEventListener('input', updateProgramPreview);
+      weeklyForm.addEventListener('change', updateProgramPreview);
+      const updateSectorPreview = () => {
+        const selectedExceptions = [...root.querySelectorAll('#uw-sector-rollup-rows tr')].filter(row => row.querySelector('[data-include-pm]')?.checked).map(row => {
+          const c = row.cells;
+          return c[0].textContent + ' — ' + c[1].textContent + '; ' + c[2].textContent + '; next: ' + c[3].textContent;
+        });
+        root.querySelector('#uw-sector-selected-exceptions').textContent = selectedExceptions.join('\n') || 'No project exceptions selected.';
+        const status = root.querySelector('#uw-sector-status').value;
+        root.querySelector('[data-sector-pr-status]').textContent = status.split(' — ')[0];
+        const tone = status.startsWith('Red') ? 'red' : status.startsWith('Amber') ? 'amber' : status.startsWith('On hold') ? 'hold' : '';
+        root.querySelector('[data-sector-pr-dot]').className = 'uw-pr-dot ' + tone;
+        root.querySelector('[data-sector-pr-owner]').textContent = root.querySelector('#uw-sector-name').value + ' · ' + (root.querySelector('#uw-sector-owner').value || 'Sector Lead');
+        root.querySelector('[data-sector-pr-trend]').textContent = root.querySelector('#uw-sector-trend').value;
+        root.querySelector('[data-sector-pr-change]').textContent = root.querySelector('#uw-sector-change').value || 'No material sector movement entered.';
+        root.querySelector('[data-sector-pr-exceptions]').textContent = root.querySelector('#uw-sector-selected-exceptions').textContent;
+        root.querySelector('[data-sector-pr-next]').textContent = root.querySelector('#uw-sector-next').value || 'No near-term outlook entered.';
+        const action = root.querySelector('#uw-sector-action').value === 'yes';
+        root.querySelector('[data-sector-pr-action-block]').hidden = !action;
+        root.querySelector('[data-sector-pr-request]').textContent = root.querySelector('#uw-sector-request').value || 'Action details needed.';
+        root.querySelector('[data-sector-pr-owner-date]').textContent = (root.querySelector('#uw-sector-action-owner').value || 'Owner not set') + ' · Needed by ' + (root.querySelector('#uw-sector-due').value || 'date not set');
+      };
+      weeklyForm.addEventListener('input', updateSectorPreview);
+      weeklyForm.addEventListener('change', updateSectorPreview);
+      updateProgramDetails();
+      updateProgramPreview();
+      updateSectorPreview();
+      const rollupRows = root.querySelector('#uw-sector-rollup-rows');
+      const readPmRollup = () => {
+        try { return JSON.parse(localStorage.getItem('usvi-sector-pm-rollup') || '[]'); } catch (_) { return []; }
+      };
+      const renderPmRollup = () => {
+        const submissions = readPmRollup();
+        submissions.forEach(item => {
+          const project = [...projectPicker.options].find(option => option.value === item.project);
+          if (!project) return;
+          const existing = [...rollupRows.querySelectorAll('[data-pm-project]')].find(row => row.dataset.pmProject === item.project);
+          const row = existing || document.createElement('tr');
+          row.dataset.pmProject = item.project;
+          if (!existing) row.innerHTML = '<td></td><td></td><td></td><td></td><td><label class=\"uw-check\"><input type=\"checkbox\" data-include-pm> Include</label></td>';
+          row.cells[0].textContent = project.textContent;
+          row.cells[1].textContent = item.status;
+          row.cells[2].textContent = item.change;
+          row.cells[3].textContent = item.milestone;
+          if (!existing) rollupRows.appendChild(row);
+        });
+      };
+      renderPmRollup();
+      updateSectorPreview();
+      rollupRows.addEventListener('change', event => { if (event.target.matches('[data-include-pm]')) updateSectorPreview(); });
+      root.querySelectorAll('[data-weekly-action]').forEach(button=>button.addEventListener('click',()=>{
+        const activeMode=root.dataset.weeklyReportMode;
+        const toast=button.dataset.weeklyAction==='submit-sector' || (button.dataset.weeklyAction==='save' && activeMode==='sector') ? root.querySelector('#uw-sector-update-panel .uw-toast') : button.dataset.weeklyAction==='submit-program' || (button.dataset.weeklyAction==='save' && activeMode==='program') ? root.querySelector('#uw-program-update-panel .uw-toast') : activeMode==='project' ? weeklyForm.querySelector('#uw-project-update-panel .uw-toast') : root.querySelector('#uw-sector-update-panel .uw-toast');
+        if(button.dataset.weeklyAction==='save'){
+          const controls=[...weeklyForm.querySelectorAll('input[id],select[id],textarea[id]')].filter(el=>el.type!=='file');
+          const fields=Object.fromEntries(controls.map(el=>[el.id,{value:el.value,checked:el.type==='checkbox'?el.checked:undefined}]));
+          const exceptions=[...exceptionList.querySelectorAll('.uw-exception-card')].map(card=>Object.fromEntries([...card.querySelectorAll('[data-ex-type],[data-ex-description],[data-ex-projects],[data-ex-impact],[data-ex-likelihood],[data-ex-severity],[data-ex-response],[data-ex-unresolved],[data-ex-action],[data-ex-link],[data-ex-request],[data-ex-owner],[data-ex-date],[data-ex-delay]')].map(el=>[el.dataset.exType!==undefined?'type':el.dataset.exDescription!==undefined?'description':el.dataset.exProjects!==undefined?'projects':el.dataset.exImpact!==undefined?'impact':el.dataset.exLikelihood!==undefined?'likelihood':el.dataset.exSeverity!==undefined?'severity':el.dataset.exResponse!==undefined?'response':el.dataset.exUnresolved!==undefined?'unresolved':el.dataset.exAction!==undefined?'action':el.dataset.exLink!==undefined?'link':el.dataset.exRequest!==undefined?'request':el.dataset.exOwner!==undefined?'owner':el.dataset.exDate!==undefined?'date':'delay',el.value])));
+          localStorage.setItem('usvi-weekly-project-report-draft',JSON.stringify({fields,exceptions,mode:root.dataset.weeklyReportMode}));toast.textContent='Draft saved in this browser.';toast.classList.add('show');
+        }
+        if(button.dataset.weeklyAction==='submit-sector'){
+          const required=[['uw-sector-period','Select the reporting month.'],['uw-sector-owner','Enter the Sector Lead and role.'],['uw-sector-change','Summarize the material sector movement.']];
+          const missing=required.find(([id])=>!root.querySelector('#'+id).value.trim());
+          const action=root.querySelector('#uw-sector-action').value==='yes';
+          const request=root.querySelector('#uw-sector-request');
+          if(missing){toast.textContent=missing[1];root.querySelector('#'+missing[0]).focus();}
+          else if(action&&!request.value.trim()){toast.textContent='Describe the requested leadership or agency action.';request.focus();}
+          else {toast.textContent='Mockup response: the Sector Lead update is ready to combine with PM and Functional Lead submissions. No information was transmitted.';}
+          toast.classList.add('show');
+        }
+        if(button.dataset.weeklyAction==='submit-program'){
+          const owner=root.querySelector('#uw-program-owner');
+          const change=root.querySelector('#uw-program-change');
+          const action=root.querySelector('#uw-program-action').value==='yes';
+          const request=root.querySelector('#uw-program-request');
+          if(!root.querySelector('#uw-program-period').value){toast.textContent='Select the reporting month.';root.querySelector('#uw-program-period').focus();}
+          else if(!owner.value.trim()){toast.textContent='Enter the function update owner and role.';owner.focus();}
+          else if(!change.value.trim()){toast.textContent='Describe the material change and why it matters.';change.focus();}
+          else if(action&&!request.value.trim()){toast.textContent='Describe the requested leadership or agency action, owner, and date.';request.focus();}
+          else {toast.textContent='Mockup response: the function update is ready for reporting synthesis. No information was transmitted.';}
+          toast.classList.add('show');
+        }
+        if(button.dataset.weeklyAction==='submit'){
+          const required=[['uw-week','Select a week ending date.'],['uw-change','Enter the material change for this week, or state that there was no material change.'],['uw-milestone','Enter the next milestone or decision.']];
+          const missing=required.find(([id])=>!root.querySelector(`#${id}`).value.trim());
+          const statusNeedsFollowup=[...root.querySelectorAll('[data-weekly-status]')].some(select=>['amber','red','hold'].includes(select.value));
+          if(missing){toast.textContent=missing[1];root.querySelector(`#${missing[0]}`).focus();}
+          else if(statusNeedsFollowup&&!([...exceptionList.querySelectorAll('.uw-exception-card')].some(card=>card.querySelector('[data-ex-description]').value.trim()&&card.querySelector('[data-ex-impact]').value.trim()&&card.querySelector('[data-ex-response]').value.trim()))){toast.textContent='For an amber, red, or on-hold project, add one blocker with its impact and response.';root.querySelector('.uw-exceptions-disclosure').open=true;exceptionList.querySelector('[data-ex-description]').focus();}
+          else {
+            const option=projectPicker.selectedOptions[0];
+            const submissions=readPmRollup().filter(item=>item.project!==option.value);
+            submissions.push({project:option.value,status:root.querySelector('#uw-overall').selectedOptions[0].text.split(' — ')[0],change:root.querySelector('#uw-change').value.trim(),milestone:root.querySelector('#uw-milestone').value.trim()});
+            localStorage.setItem('usvi-sector-pm-rollup',JSON.stringify(submissions));
+            renderPmRollup();
+            updateSectorPreview();
+            toast.textContent='PM update saved in this browser and added to the Sector Lead roll-up. No information was transmitted.';
+          }
+          toast.classList.add('show');
+        }
+      }));
+      try {
+        const saved=JSON.parse(localStorage.getItem('usvi-weekly-project-report-draft')||'null');
+        if(saved){Object.entries(saved.fields||{}).forEach(([id,data])=>{const el=root.querySelector(`#${id}`);if(el){el.value=data.value;if(el.type==='checkbox')el.checked=data.checked;}});
+          if(saved.exceptions?.length){exceptionList.textContent='';saved.exceptions.forEach(entry=>{exceptionList.insertAdjacentHTML('beforeend',exceptionMarkup());const card=exceptionList.lastElementChild;Object.entries(entry).forEach(([key,value])=>{const el=card.querySelector(`[data-ex-${key}]`);if(el)el.value=value;});});}
+          setReportMode(['project','program','sector'].includes(saved.mode) ? saved.mode : 'project');
+          updateProjectMetadata();updateProgramDetails();updateProgramPreview();updateSectorPreview();
+          root.querySelector('[data-program-action-details]').hidden=root.querySelector('#uw-program-action').value!=='yes';
+          root.querySelector('[data-sector-action-details]').hidden=root.querySelector('#uw-sector-action').value!=='yes';
+          updateStatusException();updateMilestoneStatus();dateChangeDetails.hidden=!dateChanged.checked;costDetails.hidden=!costDetailsToggle.checked;
+        }
+      } catch (_) { /* A browser with storage disabled can still use the form. */ }
+      refreshExceptions();syncMonthlySnapshot();
 
       const functionalEntryTypes = [...root.querySelectorAll('[data-functional-entry-type]')];
       const functionalOutcomeFields = [...root.querySelectorAll('[data-functional-outcome-fields]')];
@@ -1024,14 +1145,13 @@
       functionalLeadership.addEventListener('change', updateFunctionalLeadership);
       updateFunctionalLeadership();
 
-      // Weekly Work Substantiation: repeatable entries, locally saved drafts, and a live agency-facing preview.
+      // Weekly Work Substantiation: one high-level service summary, optional meeting details, and a live preview.
       const wsForm = root.querySelector('#uw-ws-form');
-      const wsServices = root.querySelector('#uw-ws-services');
       const wsMeetings = root.querySelector('#uw-ws-meetings');
       const wsStatus = root.querySelector('#uw-ws-status');
       const localDate = () => {
         const now = new Date();
-        return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+        return String(now.getFullYear())+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
       };
       const wsDateLabel = (value) => {
         if (!value) return '';
@@ -1042,87 +1162,74 @@
       let wsFieldId=0;
       const wsMakeField = (label, className, tagName='input', placeholder='') => {
         const wrap = document.createElement('div'); wrap.className = 'uw-field uw-span-12';
-        const field = document.createElement(tagName); field.className = className; field.id=`uw-ws-field-${++wsFieldId}`;
+        const field = document.createElement(tagName); field.className = className; field.id='uw-ws-field-'+(++wsFieldId);
         const lab = document.createElement('label'); lab.htmlFor=field.id; lab.textContent = label; wrap.appendChild(lab);
         if (placeholder) field.placeholder = placeholder;
         wrap.appendChild(field); return wrap;
       };
-      const wsAddEntry = (type, values={}) => {
-        const host = type === 'service' ? wsServices : wsMeetings;
-        const row = document.createElement('div'); row.className = 'uw-ws-entry'; row.dataset.wsEntry = type;
+      const wsAddMeeting = (values={}) => {
+        const row = document.createElement('div'); row.className = 'uw-ws-entry'; row.dataset.wsEntry = 'meeting';
         const head = document.createElement('div'); head.className = 'uw-ws-entry-head';
-        const title = document.createElement('span'); title.textContent = `${type === 'service' ? 'Service' : 'Meeting'} ${host.children.length+1}`;
+        const title = document.createElement('span'); title.textContent = 'Coordination session '+(wsMeetings.children.length+1);
         const remove = document.createElement('button'); remove.type='button'; remove.className='uw-ws-remove'; remove.dataset.wsRemove=''; remove.textContent='Remove';
         head.append(title,remove); row.appendChild(head);
-        if (type === 'service') {
-          const grid=document.createElement('div'); grid.className='uw-grid';
-          const areaWrap=wsMakeField('Service area','uw-ws-area','select'); areaWrap.className='uw-field uw-span-4';
-          const area=areaWrap.querySelector('select');
-          ['', 'Procurement Support','Program Controls','Program / Portfolio Coordination','Staffing Coordination','Financial Coordination','Project Management','Other'].forEach((v,i)=>{const o=document.createElement('option');o.value=v;o.textContent=v||'Select service area';if(v===values.area)o.selected=true;area.appendChild(o);});
-          const descWrap=wsMakeField('Description of work performed','uw-ws-description','textarea','Describe the consultant’s work performed.'); descWrap.className='uw-field uw-span-8';
-          descWrap.querySelector('textarea').value=values.description||''; grid.append(areaWrap,descWrap); row.appendChild(grid);
-        } else {
-          const grid=document.createElement('div'); grid.className='uw-grid';
-          const nameWrap=wsMakeField('Meeting or session name','uw-ws-meeting-name','input','Meeting name'); nameWrap.className='uw-field uw-span-5'; nameWrap.querySelector('input').value=values.name||'';
-          const dateWrap=wsMakeField('Date','uw-ws-meeting-date','input'); dateWrap.className='uw-field uw-span-3'; dateWrap.querySelector('input').type='date'; dateWrap.querySelector('input').value=values.date||'';
-          const roleWrap=wsMakeField('Consultant role or work performed','uw-ws-meeting-role','input','Role, contribution, or follow-up'); roleWrap.className='uw-field uw-span-4'; roleWrap.querySelector('input').value=values.role||'';
-          grid.append(nameWrap,dateWrap,roleWrap); row.appendChild(grid);
-        }
-        host.appendChild(row); wsUpdatePreview();
+        const grid=document.createElement('div'); grid.className='uw-grid';
+        const nameWrap=wsMakeField('Meeting or session name','uw-ws-meeting-name','input','Meeting name'); nameWrap.className='uw-field uw-span-5'; nameWrap.querySelector('input').value=values.name||'';
+        const dateWrap=wsMakeField('Date','uw-ws-meeting-date','input'); dateWrap.className='uw-field uw-span-3'; dateWrap.querySelector('input').type='date'; dateWrap.querySelector('input').value=values.date||'';
+        const roleWrap=wsMakeField('Consultant role or contribution','uw-ws-meeting-role','input','Role, contribution, or follow-up'); roleWrap.className='uw-field uw-span-4'; roleWrap.querySelector('input').value=values.role||'';
+        grid.append(nameWrap,dateWrap,roleWrap); row.appendChild(grid); wsMeetings.appendChild(row); wsUpdatePreview();
       };
-      const wsReadEntries = (host, type) => [...host.querySelectorAll('[data-ws-entry]')].map((row) => type === 'service'
-        ? {area:row.querySelector('.uw-ws-area').value, description:row.querySelector('.uw-ws-description').value.trim()}
-        : {name:row.querySelector('.uw-ws-meeting-name').value.trim(), date:row.querySelector('.uw-ws-meeting-date').value, role:row.querySelector('.uw-ws-meeting-role').value.trim()});
+      const wsReadMeetings = () => [...wsMeetings.querySelectorAll('[data-ws-entry]')].map(row => ({
+        name:row.querySelector('.uw-ws-meeting-name').value.trim(),
+        date:row.querySelector('.uw-ws-meeting-date').value,
+        role:row.querySelector('.uw-ws-meeting-role').value.trim()
+      }));
       const wsUpdatePreview = () => {
         const project=wsValue('#uw-ws-project')||'Project not entered';
         const start=wsDateLabel(wsValue('#uw-ws-start')), end=wsDateLabel(wsValue('#uw-ws-end'));
-        root.querySelector('#uw-ws-preview-meta').textContent=`${project}${start||end ? ` · ${start}${start&&end?' – ':''}${end}`:''}`;
-        root.querySelector('#uw-ws-preview-summary').textContent=wsValue('#uw-ws-summary')||'Weekly summary will appear here.';
-        const serviceList=root.querySelector('#uw-ws-preview-services'); serviceList.textContent='';
-        const activeServices=wsReadEntries(wsServices,'service').filter(x=>x.area||x.description);
-        if (!activeServices.length) { const li=document.createElement('li');li.textContent='Add a service performed to preview it here.';serviceList.appendChild(li); }
-        activeServices.forEach((item)=>{const li=document.createElement('li');if(item.area){const strong=document.createElement('strong');strong.textContent=`${item.area}: `;li.appendChild(strong);}li.append(document.createTextNode(item.description||'Description not entered.'));serviceList.appendChild(li);});
-        const activeMeetings=wsReadEntries(wsMeetings,'meeting').filter(x=>x.name||x.date||x.role);
+        root.querySelector('#uw-ws-preview-meta').textContent=project+((start||end) ? ' · '+start+(start&&end?' – ':'')+end : '');
+        root.querySelector('#uw-ws-preview-summary').textContent=wsValue('#uw-ws-services-summary')||'High-level services summary will appear here.';
+        const activeMeetings=wsReadMeetings().filter(x=>x.name||x.date||x.role);
         const meetingBlock=root.querySelector('#uw-ws-preview-meetings-block'), meetingList=root.querySelector('#uw-ws-preview-meetings');
         meetingBlock.hidden=!activeMeetings.length; meetingList.textContent='';
-        activeMeetings.forEach((item)=>{const li=document.createElement('li');li.textContent=[item.name||'Meeting / session',wsDateLabel(item.date),item.role].filter(Boolean).join(' · ');meetingList.appendChild(li);});
+        activeMeetings.forEach(item=>{const li=document.createElement('li');li.textContent=[item.name||'Meeting / session',wsDateLabel(item.date),item.role].filter(Boolean).join(' · ');meetingList.appendChild(li);});
         const records=wsValue('#uw-ws-records'); root.querySelector('#uw-ws-preview-records-block').hidden=!records;root.querySelector('#uw-ws-preview-records').textContent=records;
         const prepared=wsValue('#uw-ws-prepared'), submitted=wsDateLabel(wsValue('#uw-ws-submitted'));
-        root.querySelector('#uw-ws-preview-prepared').textContent=[prepared?`Prepared by ${prepared}`:'',submitted?`Submitted ${submitted}`:''].filter(Boolean).join(' · ');
+        root.querySelector('#uw-ws-preview-prepared').textContent=[prepared?'Prepared by '+prepared:'',submitted?'Submitted '+submitted:''].filter(Boolean).join(' · ');
       };
       const wsState = () => ({
-        fields:Object.fromEntries(['project','start','end','prepared','submitted','summary','records'].map((key)=>[key,root.querySelector(`#uw-ws-${key}`).value])),
-        services:wsReadEntries(wsServices,'service'), meetings:wsReadEntries(wsMeetings,'meeting')
+        fields:Object.fromEntries(['project','start','end','prepared','submitted','services-summary','records'].map(key=>[key,root.querySelector('#uw-ws-'+key).value])),
+        meetings:wsReadMeetings()
       });
       const wsRestore = (state) => {
         if (!state) return;
-        Object.entries(state.fields||{}).forEach(([key,value])=>{const input=root.querySelector(`#uw-ws-${key}`);if(input)input.value=value;});
-        wsServices.textContent='';wsMeetings.textContent='';
-        (state.services||[]).forEach((entry)=>wsAddEntry('service',entry));
-        (state.meetings||[]).forEach((entry)=>wsAddEntry('meeting',entry));
-        if (!wsServices.children.length) wsAddEntry('service');
+        Object.entries(state.fields||{}).forEach(([key,value])=>{const input=root.querySelector('#uw-ws-'+key);if(input)input.value=value;});
+        const legacyServices=(state.services||[]).map(item=>item.description).filter(Boolean).join(' ');
+        const serviceSummary=state.fields?.['services-summary'] || state.fields?.servicesSummary || state.fields?.summary || legacyServices;
+        if(serviceSummary)root.querySelector('#uw-ws-services-summary').value=serviceSummary;
+        wsMeetings.textContent='';
+        (state.meetings||[]).forEach(wsAddMeeting);
         wsUpdatePreview();
       };
       root.querySelector('#uw-ws-submitted').value=localDate();
-      wsAddEntry('service',{area:'Procurement Support',description:'Coordinated CMAR selection activities and prepared a draft recommendation for stakeholder review.'});
-      wsAddEntry('service',{area:'Program Controls',description:'Updated the RLSH action item list and maintained project tracking and reporting information.'});
-      wsAddEntry('service',{area:'Program / Portfolio Coordination',description:'Supported healthcare reviews and portfolio updates with current project and procurement information.'});
-      wsAddEntry('service',{area:'Staffing Coordination',description:'Participated in the Year 3 task order staffing review.'});
-      wsAddEntry('service',{area:'Financial Coordination',description:'Participated in financial model discussions for Juan F. Luis Hospital and RLSH.'});
-      ['JFLH and RLSH Action Items Update','Healthcare Check-In','USVI Healthcare Review and Updates','Year 3 Task Order Staffing Review','USVI Financial Model Summary – JFLH and RLSH','Healthcare Portfolio Update'].forEach(name=>wsAddEntry('meeting',{name,date:'2026-07-28'}));
+      ['JFLH and RLSH Action Items Update','Healthcare Portfolio Review'].forEach(name=>wsAddMeeting({name,date:'2026-07-28'}));
       wsUpdatePreview();
       try { const saved=localStorage.getItem('usvi-weekly-work-substantiation'); if(saved) wsRestore(JSON.parse(saved)); } catch (_) { /* local storage may be disabled */ }
-      root.querySelectorAll('[data-ws-add]').forEach(button=>button.addEventListener('click',()=>wsAddEntry(button.dataset.wsAdd)));
+      root.querySelectorAll('[data-ws-add="meeting"]').forEach(button=>button.addEventListener('click',()=>wsAddMeeting()));
       wsForm.addEventListener('input',wsUpdatePreview);wsForm.addEventListener('change',wsUpdatePreview);
-      wsForm.addEventListener('click',(event)=>{if(event.target.closest('[data-ws-remove]')){event.target.closest('[data-ws-entry]').remove();wsUpdatePreview();}});
-      root.querySelectorAll('[data-ws-action]').forEach((button)=>button.addEventListener('click',()=>{
+      wsForm.addEventListener('click',event=>{if(event.target.closest('[data-ws-remove]')){event.target.closest('[data-ws-entry]').remove();wsUpdatePreview();}});
+      root.querySelectorAll('[data-ws-action]').forEach(button=>button.addEventListener('click',()=>{
         const action=button.dataset.wsAction;
         if(action==='save'){localStorage.setItem('usvi-weekly-work-substantiation',JSON.stringify(wsState()));wsStatus.textContent='Draft saved in this browser.';}
-        if(action==='clear'){wsForm.reset();['project','start','end','prepared','summary','records'].forEach(key=>root.querySelector(`#uw-ws-${key}`).value='');root.querySelector('#uw-ws-submitted').value=localDate();wsServices.textContent='';wsMeetings.textContent='';wsAddEntry('service');wsUpdatePreview();wsStatus.textContent='Form cleared. Add the work performed for this reporting period.';}
+        if(action==='clear'){
+          wsForm.reset();
+          ['project','start','end','prepared','services-summary','records'].forEach(key=>root.querySelector('#uw-ws-'+key).value='');
+          root.querySelector('#uw-ws-submitted').value=localDate();wsMeetings.textContent='';wsUpdatePreview();
+          wsStatus.textContent='Form cleared. Add one high-level summary of the services performed for this period.';
+        }
         if(action==='submit'){
-          const hasService=wsReadEntries(wsServices,'service').some(x=>x.description);
           if(!wsForm.reportValidity()) return;
-          if(!hasService){wsStatus.textContent='Add at least one description under Services performed before submitting.';return;}
+          if(!wsValue('#uw-ws-services-summary')){wsStatus.textContent='Enter a high-level summary of the services performed.';root.querySelector('#uw-ws-services-summary').focus();return;}
           wsStatus.textContent='Mockup: report is complete and ready for agency review. No information was transmitted.';
         }
         if(action==='print'){root.classList.add('uw-print-substantiation');const cleanup=()=>{root.classList.remove('uw-print-substantiation');window.removeEventListener('afterprint',cleanup);};window.addEventListener('afterprint',cleanup);window.print();setTimeout(cleanup,1000);}
@@ -1140,9 +1247,9 @@
             const workItemCount = root.querySelectorAll('[data-functional-work-item]').length;
             return `${workItemCount} ${workItemCount === 1 ? 'work item' : 'work items'} submitted directly. No functional lead approval is required. SharePoint would timestamp the submission, preserve version history, and make reportable outcomes available for weekly and monthly curation.`;
           })(),
-          'refresh-month': 'Monthly view refreshed from four approved Healthcare weekly reports and material updates.',
+          'refresh-month': 'Monthly view refreshed from the submitted PM, Sector Lead, and Functional Lead inputs.',
           'generate-month': 'Leadership report generated from approved outcome data and routed for PMO quality review.',
-          'preview-month': 'The production solution would open the generated 12-15 page PDF preview.',
+          'preview-month': 'The production solution would open the generated 10-12 page report preview.',
           'add-outcome': 'Mockup response: another structured coordination outcome would be added.',
           'add-risk': 'Mockup response: another risk or issue record would be added.'
         };
