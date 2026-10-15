@@ -68,6 +68,17 @@
     #usvi-weekly-capture-mockup .uw-optional-details summary,
     #usvi-weekly-capture-mockup .uw-pr-more summary { cursor:pointer; font-size:12px; font-weight:500; }
     #usvi-weekly-capture-mockup .uw-pr-more { margin-top:14px; }
+    #usvi-weekly-capture-mockup .uw-history-toolbar { display:flex; justify-content:flex-end; padding:8px 20px; background:light-dark(#f4f4f4,#2c2c2c); }
+    #usvi-weekly-capture-mockup .uw-history-dialog { width:min(920px,calc(100vw - 32px)); max-height:82vh; padding:0; border:1px solid light-dark(#c8c8c8,#555); background:light-dark(#fff,#202020); color:inherit; }
+    #usvi-weekly-capture-mockup .uw-history-dialog::backdrop { background:rgba(0,0,0,.45); }
+    #usvi-weekly-capture-mockup .uw-history-dialog-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:16px; border-bottom:1px solid light-dark(#ddd,#444); }
+    #usvi-weekly-capture-mockup .uw-history-dialog-body { max-height:62vh; overflow:auto; padding:16px; }
+    #usvi-weekly-capture-mockup .uw-history-dialog table { width:100%; border-collapse:collapse; font-size:11px; }
+    #usvi-weekly-capture-mockup .uw-history-dialog th,#usvi-weekly-capture-mockup .uw-history-dialog td { padding:9px 7px; border-bottom:1px solid light-dark(#e5e5e5,#444); text-align:left; vertical-align:top; }
+    #usvi-weekly-capture-mockup .uw-functional-weekly-form { max-width:1050px; }
+    #usvi-weekly-capture-mockup .uw-project-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    #usvi-weekly-capture-mockup .uw-project-tags .uw-project-tag { display:inline-flex; align-items:center; gap:7px; }
+    #usvi-weekly-capture-mockup .uw-project-tags button { border:0; padding:0; color:inherit; background:transparent; font:inherit; cursor:pointer; }
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-masthead,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-tabs,
     #usvi-weekly-capture-mockup.uw-print-substantiation .uw-view:not(#uw-substantiation),
@@ -251,6 +262,19 @@
     #usvi-weekly-capture-mockup .uw-report-block h3 { margin-bottom: 9px; }
     #usvi-weekly-capture-mockup .uw-report-copy { font-size: 12px; line-height: 1.5; margin: 0; }
     #usvi-weekly-capture-mockup .uw-source-note { margin-top: 8px; color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-sector-project-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+    #usvi-weekly-capture-mockup .uw-sector-project-card { min-width: 0; padding: 12px; background: light-dark(#ffffff, #191919); border-top: 3px solid light-dark(#0078d4, #69afe5); }
+    #usvi-weekly-capture-mockup .uw-sector-project-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    #usvi-weekly-capture-mockup .uw-sector-project-head h3 { margin: 0; font-size: 13px; }
+    #usvi-weekly-capture-mockup .uw-sector-project-count { color: light-dark(#605e5c, #c8c8c8); font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-project-update-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+    #usvi-weekly-capture-mockup .uw-project-update-table th, #usvi-weekly-capture-mockup .uw-project-update-table td { padding: 7px 6px; border-bottom: 1px solid light-dark(#e5e5e5, #404040); text-align: left; vertical-align: top; }
+    #usvi-weekly-capture-mockup .uw-project-update-table th { color: light-dark(#605e5c, #c8c8c8); font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-project-update-table td:first-child { font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-report-status { display: inline-block; padding: 2px 6px; border-radius: 10px; background: light-dark(#e8f3e8, #173a1b); white-space: nowrap; }
+    #usvi-weekly-capture-mockup .uw-report-status.amber, #usvi-weekly-capture-mockup .uw-report-status.red, #usvi-weekly-capture-mockup .uw-report-status.hold { background: light-dark(#fff1e5, #4a2b18); }
+    #usvi-weekly-capture-mockup .uw-report-included { color: light-dark(#8a3700, #ffc08b); font-weight: 500; }
+    #usvi-weekly-capture-mockup .uw-project-updates-empty { margin: 8px 0 2px; color: light-dark(#605e5c, #c8c8c8); font-size: 11px; }
     #usvi-weekly-capture-mockup .uw-rag-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
     #usvi-weekly-capture-mockup .uw-rag { padding: 9px; background: light-dark(#f7f7f7, #292929); border-left: 4px solid #107c10; font-size: 10px; }
     #usvi-weekly-capture-mockup .uw-rag.amber { border-left-color: #ca5010; }
@@ -314,6 +338,7 @@
       #usvi-weekly-capture-mockup .uw-kpi-grid,
       #usvi-weekly-capture-mockup .uw-rag-row,
       #usvi-weekly-capture-mockup .uw-page-map { grid-template-columns: 1fr; }
+      #usvi-weekly-capture-mockup .uw-sector-project-groups { grid-template-columns: 1fr; }
       #usvi-weekly-capture-mockup .uw-sector-options,
       #usvi-weekly-capture-mockup .uw-project-options { grid-template-columns: 1fr; }
       #usvi-weekly-capture-mockup .uw-project-picker-head { align-items: stretch; flex-direction: column; }
@@ -335,9 +360,11 @@
 
     <nav class="uw-tabs" role="tablist" aria-label="SPFx reporting uses">
       <button class="uw-tab" type="button" role="tab" aria-selected="true" aria-controls="uw-weekly">Monthly Report Inputs</button>
+      <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-functional-weekly">Functional Weekly Log</button>
       <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-monthly">Monthly Report Preview</button>
       <button class="uw-tab" type="button" role="tab" aria-selected="false" aria-controls="uw-substantiation">Weekly Work Substantiation</button>
     </nav>
+    <div class="uw-history-toolbar"><button class="uw-button" type="button" data-history-open>Previous inputs <span data-history-count>0</span></button></div>
 
     <main class="uw-stage">
       <section class="uw-view" id="uw-weekly" role="tabpanel">
@@ -438,7 +465,7 @@
                     <div class="uw-field uw-span-4"><label for="uw-sector-trend">Compared with last month</label><select id="uw-sector-trend"><option>Improved</option><option selected>Unchanged</option><option>Worsened</option><option>New</option></select></div>
                     <div class="uw-field uw-span-4"><label for="uw-sector-confidence">Portfolio forecast confidence</label><select id="uw-sector-confidence"><option>High</option><option selected>Medium</option><option>Low</option></select></div>
                     <div class="uw-field uw-span-12"><label for="uw-sector-change">What materially changed across the sector? <span class="uw-required">*</span></label><textarea id="uw-sector-change">Healthcare advanced CMAR coordination and design optimization. Cost alignment at JFLH and contaminated soil at CHMC continue to govern near-term delivery confidence.</textarea><div class="uw-hint">Synthesize the PM updates into a few sentences. Lead with movement and impact, not a list of routine activities.</div></div>
-                    <div class="uw-field uw-span-12"><label>Projects selected for the monthly exception view</label><div id="uw-sector-selected-exceptions" class="uw-readonly">Choose the exception rows below to add their PM status, movement, and milestone to the report preview.</div><div class="uw-hint">Select the few projects that change the sector outlook or require a decision. Their submitted PM details are reused below; do not retype the project narrative.</div></div>
+                    <div class="uw-field uw-span-12"><label>Projects selected for the monthly exception view</label><div id="uw-sector-selected-exceptions" class="uw-readonly">No project exceptions selected.</div><div class="uw-hint">Use the visible project checklist below. Selected projects appear under their sector in Monthly Report Preview → Sector Portfolio.</div></div>
                     <div class="uw-field uw-span-12"><label for="uw-sector-next">Next 30–90 day sector milestones or outlook</label><textarea id="uw-sector-next">Resolve CHMC commercial and remediation strategy; confirm JFLH optimization and funding approach; advance RLSH CMAR procurement.</textarea></div>
                     <div class="uw-field uw-span-6"><label for="uw-sector-action">Does the sector need leadership or agency action?</label><select id="uw-sector-action" data-sector-action><option value="no">No</option><option value="yes" selected>Yes</option></select></div>
                     <div class="uw-field uw-span-6"><label for="uw-sector-source">Schedule, portfolio tracker, or source link</label><input id="uw-sector-source" type="url" placeholder="Link to sector roll-up or official source record"></div>
@@ -449,18 +476,19 @@
                     </div></div>
                   </div>
                 </section>
-                <details class="uw-optional-details"><summary>PM project status roll-up <span class="uw-help">(review submissions; verify before monthly synthesis)</span></summary>
-                  <div class="uw-rule">Sample portfolio records are shown here. PM submissions made in this browser demo are added to this roll-up. The Sector Lead confirms the roll-up and selects exceptions above.</div>
+                <section class="uw-optional-details" aria-labelledby="uw-sector-rollup-title">
+                  <div class="uw-section-title" id="uw-sector-rollup-title">Choose project exceptions for this sector</div>
+                  <div class="uw-rule">Check “Include” for the project updates that should appear as exceptions in the monthly report. The list follows the Sector selection above; other projects remain visible under their sector in the report preview.</div>
                   <div class="uw-rag-row">
                     <div class="uw-rag">Green projects<strong>2</strong></div><div class="uw-rag amber">Amber projects<strong>4</strong></div><div class="uw-rag amber">Red projects<strong>1</strong></div><div class="uw-rag">PM updates received<strong>6 of 7</strong></div>
                   </div>
-                  <div class="uw-table-wrap"><table><thead><tr><th>Project</th><th>PM status</th><th>Monthly movement</th><th>Next milestone</th><th>Include in report</th></tr></thead><tbody id="uw-sector-rollup-rows">
+                  <div class="uw-table-wrap"><table><thead><tr><th>Project</th><th>PM status</th><th>Monthly movement</th><th>Next milestone</th><th>Show as exception</th></tr></thead><tbody id="uw-sector-rollup-rows">
                     <tr data-pm-project="chmc"><td>Charles Harwood Medical Complex</td><td>Red</td><td>GMP / remediation activity</td><td>Foundation restart</td><td><label class="uw-check"><input type="checkbox" data-include-pm checked> Include</label></td></tr>
                     <tr data-pm-project="jfl"><td>Governor Juan F. Luis Hospital</td><td>Red</td><td>Optimization / enabling work</td><td>Optimization decision</td><td><label class="uw-check"><input type="checkbox" data-include-pm checked> Include</label></td></tr>
                     <tr data-pm-project="rlsh"><td>Roy L. Schneider Hospital</td><td>Amber</td><td>CMAR procurement / programming</td><td>CMAR award</td><td><label class="uw-check"><input type="checkbox" data-include-pm> Include</label></td></tr>
                     <tr data-pm-project="mks"><td>Myrah Keating Smith Community Health Center</td><td>Amber</td><td>Scope / cost alignment</td><td>Programming refinement</td><td><label class="uw-check"><input type="checkbox" data-include-pm> Include</label></td></tr>
                   </tbody></table></div>
-                </details>
+                </section>
                 <div class="uw-submit-actions"><button class="uw-button" type="button" data-weekly-action="save">Save draft</button><button class="uw-button uw-button-primary" type="button" data-weekly-action="submit-sector">Submit Sector Lead update</button></div>
                 <div class="uw-toast" aria-live="polite"></div>
               </div>
@@ -607,6 +635,40 @@
         </div>
       </section>
 
+      <section class="uw-view" id="uw-functional-weekly" role="tabpanel" hidden>
+        <div class="uw-surface">
+          <div class="uw-form-head">
+            <div><h2>Functional Weekly Log</h2><div class="uw-help">Capture your program support work for the week. Reopen an earlier log to carry information forward and update what changed.</div></div>
+            <div class="uw-workflow" aria-label="Workflow: Record work, save, submit"><span class="uw-workflow-step"><span class="uw-workflow-dot">1</span>Record work</span><span class="uw-workflow-line"></span><span class="uw-workflow-step"><span class="uw-workflow-dot">2</span>Save or submit</span></div>
+          </div>
+          <div class="uw-reuse-note"><span><strong>Keep the weekly record focused:</strong> identify the work area, projects, non-project tasks, meetings, and key completed work or actions. Use Previous inputs to reopen and update a prior week’s log.</span></div>
+          <form id="uw-functional-weekly-form" class="uw-functional-weekly-form">
+            <section class="uw-section uw-compact-section">
+              <div class="uw-section-title">Who, when, and what contract</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-6"><label for="ufw-name">Name <span class="uw-required">*</span></label><input id="ufw-name" value="Anthony McGarity" required></div>
+                <div class="uw-field uw-span-6"><label for="ufw-sector">Sector / program area <span class="uw-required">*</span></label><select id="ufw-sector" required><option>PMO</option><option>Education</option><option>Healthcare</option><option>Infrastructure</option><option>Public Buildings</option></select></div>
+                <div class="uw-field uw-span-4"><label for="ufw-role">Role <span class="uw-required">*</span></label><input id="ufw-role" value="Digital Lead" required></div>
+                <div class="uw-field uw-span-4"><label for="ufw-date">Week ending <span class="uw-required">*</span></label><input id="ufw-date" type="date" required></div>
+                <div class="uw-field uw-span-4"><label for="ufw-contract">Contract <span class="uw-required">*</span></label><select id="ufw-contract" required><option value="">Select contract</option><option>Program Management Support</option><option>Construction Management Support</option><option>Technical Assistance</option><option>Other / multiple contracts</option></select></div>
+                <div class="uw-field uw-span-12"><label for="ufw-project-picker">Projects worked on</label><select id="ufw-project-picker"><option value="">Find and add projects</option><option>Program-wide / PMO</option><option>Juan F. Luis Hospital</option><option>Roy L. Schneider Hospital</option><option>Charles Harwood Medical Complex</option><option>Myrah Keating Smith Community Health Center</option><option>Charlotte Amalie High School</option><option>St. Croix Underground Power</option><option>St. Thomas Wastewater</option><option>WAPA Generator Replacement</option></select><div class="uw-project-tags" data-func-project-tags aria-live="polite"></div><div class="uw-hint">Choose each project you supported. Remove a project with the × control.</div></div>
+              </div>
+            </section>
+            <section class="uw-section uw-compact-section">
+              <div class="uw-section-title">Weekly activity</div>
+              <div class="uw-grid">
+                <div class="uw-field uw-span-12"><label class="uw-check"><input id="ufw-nonproject-toggle" type="checkbox"> I performed non-project program tasks this week</label></div>
+                <div class="uw-field uw-span-12" data-ufw-nonproject hidden><label for="ufw-nonproject">Non-project tasks</label><textarea id="ufw-nonproject" placeholder="For example: workflow improvements, program-wide reporting, team support, or process development"></textarea></div>
+                <div class="uw-field uw-span-12"><label for="ufw-meetings">Meetings attended</label><textarea id="ufw-meetings" placeholder="List key meetings and your contribution or follow-up. Routine meeting counts alone are not needed."></textarea></div>
+                <div class="uw-field uw-span-12"><label for="ufw-work">Work completed / key notes or actions <span class="uw-required">*</span></label><textarea id="ufw-work" required placeholder="Summarize work completed, important notes, actions taken, or follow-up needed."></textarea><div class="uw-hint">Focus on what you completed, changed, prepared, resolved, or moved forward. Include action owner or due date when useful.</div></div>
+              </div>
+            </section>
+            <div class="uw-submit-actions"><button class="uw-button" type="button" data-functional-weekly-action="save">Save draft</button><button class="uw-button" type="button" data-functional-weekly-action="clear">Clear form</button><button class="uw-button uw-button-primary" type="button" data-functional-weekly-action="submit">Submit weekly log</button></div>
+            <div class="uw-toast" data-functional-weekly-status aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
       <section class="uw-view" id="uw-substantiation" role="tabpanel" hidden>
         <div class="uw-surface">
           <div class="uw-form-head">
@@ -721,7 +783,10 @@
               <tr><td>Infrastructure</td><td>Baseline scheduling, design coordination, and bundle procurement progressed.</td><td>Permitting, utility coordination, FEMA approvals, and agency review capacity.</td><td>Critical-path changes, bundle milestone forecast, cross-agency actions.</td></tr>
               <tr><td>Public Buildings</td><td>WAPA generator procurement, GMP validation, and payment workflows advanced.</td><td>Fire Stations paused; funding, approvals, contracts, and long-lead equipment.</td><td>WAPA execution milestones and paused-project leadership actions.</td></tr>
             </tbody></table></div>
-            <div class="uw-source-note">PMs provide project facts. Sector Leads verify the roll-up and select exceptions; detailed project narratives remain available through the source records.</div>
+            <div class="uw-section-title" style="margin-top:18px">PM project roll-up by sector</div>
+            <p class="uw-help">This is the PM roll-up in the monthly report: project status, monthly movement, next milestone, and whether the Sector Lead selected the update as an exception. New or updated PM check-ins appear under the matching sector.</p>
+            <div class="uw-sector-project-groups" id="uw-month-sector-projects" aria-live="polite"></div>
+            <div class="uw-source-note">PMs provide project facts. Sector Leads verify the roll-up and select exceptions; routine updates stay available here while the main report emphasizes selected exceptions and sector wide movement.</div>
           </section>
 
           <section class="uw-month-panel" id="uw-month-decisions" hidden>
@@ -774,23 +839,59 @@
         </div>
       </section>
     </main>
+    <dialog class="uw-history-dialog" id="uw-history-dialog" aria-labelledby="uw-history-title">
+      <div class="uw-history-dialog-head"><div><h2 id="uw-history-title">Previous inputs</h2><div class="uw-help">Open a saved or submitted entry, update its week or month, and reuse it as your next submission. Records in this demo stay in this browser.</div></div><button class="uw-button" type="button" data-history-close>Close</button></div>
+      <div class="uw-history-dialog-body"><div class="uw-table-wrap"><table><thead><tr><th>Section</th><th>Period / record</th><th>Last saved</th><th>Status</th><th></th></tr></thead><tbody data-history-rows></tbody></table></div><p class="uw-help" data-history-empty>No saved or submitted inputs yet.</p></div>
+    </dialog>
   </div>
 
   <script>
     (() => {
       const root = document.getElementById('usvi-weekly-capture-mockup');
+      const HISTORY_KEY = 'usvi-report-input-history-v1';
+      const readInputHistory = () => { try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch (_) { return []; } };
+      const writeInputHistory = (items) => { try { localStorage.setItem(HISTORY_KEY, JSON.stringify(items)); } catch (_) { /* local storage may be disabled */ } };
+      const addInputHistory = (type, label, state, status='Draft') => {
+        const items = readInputHistory();
+        const existing = status === 'Draft' ? items.find(item => item.type === type && item.label === label && item.status === 'Draft') : null;
+        const entry = {id: existing?.id || `${Date.now()}-${Math.random().toString(36).slice(2,8)}`, type, label, status, savedAt: new Date().toISOString(), state};
+        if (existing) items.splice(items.indexOf(existing), 1);
+        items.unshift(entry); writeInputHistory(items.slice(0,100)); renderInputHistory(); return entry;
+      };
+      const historyDialog = root.querySelector('#uw-history-dialog');
+      const renderInputHistory = () => {
+        const rows = root.querySelector('[data-history-rows]');
+        if (!rows) return;
+        const items = readInputHistory(); rows.textContent = '';
+        items.forEach(item => {
+          const row = document.createElement('tr');
+          [item.typeLabel || ({'weekly-project':'Project Manager weekly update','monthly-sector':'Sector Lead monthly update','monthly-functional':'Functional Lead monthly update','functional-weekly':'Functional weekly log','substantiation':'Weekly Work Substantiation'}[item.type] || 'Report input'), item.label, new Date(item.savedAt).toLocaleString(), item.status].forEach(value => { const cell=document.createElement('td');cell.textContent=value||'—';row.appendChild(cell); });
+          const action=document.createElement('td');const button=document.createElement('button');button.type='button';button.className='uw-link';button.dataset.historyOpenRecord=item.id;button.textContent='Reopen';action.appendChild(button);row.appendChild(action);rows.appendChild(row);
+        });
+        root.querySelector('[data-history-empty]').hidden = items.length > 0;
+        root.querySelector('[data-history-count]').textContent = items.length ? `(${items.length})` : '';
+      };
+      root.querySelector('[data-history-open]').addEventListener('click', () => { renderInputHistory(); historyDialog.showModal(); });
+      root.querySelector('[data-history-close]').addEventListener('click', () => historyDialog.close());
+      let reopenHistoryRecord = null;
+      historyDialog.addEventListener('click', event => {
+        const button=event.target.closest('[data-history-open-record]'); if(!button) return;
+        const entry=readInputHistory().find(item=>item.id===button.dataset.historyOpenRecord);
+        if(entry&&reopenHistoryRecord){historyDialog.close();reopenHistoryRecord(entry);}
+      });
+      renderInputHistory();
       const topTabs = [...root.querySelectorAll('.uw-tabs [role="tab"]')];
       const topViews = [...root.querySelectorAll('.uw-view')];
       const showTopView = (id) => {
         topTabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.getAttribute('aria-controls') === id)));
         topViews.forEach((view) => { view.hidden = view.id !== id; });
-        const functional = id === 'uw-functional';
+        const functional = id === 'uw-functional' || id === 'uw-functional-weekly';
         const monthly = id === 'uw-monthly';
         const substantiation = id === 'uw-substantiation';
         const reportMode = root.dataset.weeklyReportMode || 'project';
         const contributor = reportMode === 'project' ? 'Project Manager view' : reportMode === 'program' ? 'Functional Lead view' : 'Sector Lead view';
         root.querySelector('[data-user-view]').textContent = functional ? 'Functional Contributor view' : monthly ? 'Report reviewer view' : substantiation ? 'Consultant view' : contributor;
-        root.querySelector('[data-user-scope]').textContent = functional ? 'Program Support' : monthly ? 'Monthly report preview' : substantiation ? 'Weekly service record' : reportMode === 'sector' ? 'Sector portfolio' : reportMode === 'program' ? 'Cross-project function' : 'Project update';
+        root.querySelector('[data-user-scope]').textContent = id === 'uw-functional-weekly' ? 'Functional weekly log' : functional ? 'Program Support' : monthly ? 'Monthly report preview' : substantiation ? 'Weekly service record' : reportMode === 'sector' ? 'Sector portfolio' : reportMode === 'program' ? 'Cross-project function' : 'Project update';
       };
       topTabs.forEach((tab) => tab.addEventListener('click', () => showTopView(tab.getAttribute('aria-controls'))));
 
@@ -940,8 +1041,71 @@
       root.querySelector('#uw-sector-action').addEventListener('change', event => { root.querySelector('[data-sector-action-details]').hidden = event.target.value !== 'yes'; });
       weeklyForm.addEventListener('input', updateProgramPreview);
       weeklyForm.addEventListener('change', updateProgramPreview);
+      const renderMonthlySectorProjects = () => {
+        const target = root.querySelector('#uw-month-sector-projects');
+        if (!target) return;
+        const sectors = ['Education', 'Healthcare', 'Infrastructure', 'Public Buildings'];
+        const groups = Object.fromEntries(sectors.map(sector => [sector, []]));
+        root.querySelectorAll('#uw-sector-rollup-rows tr[data-pm-project]').forEach(row => {
+          const option = [...projectPicker.options].find(item => item.value === row.dataset.pmProject);
+          if (!option) return;
+          const sector = option.dataset.sector || 'Other';
+          if (!groups[sector]) groups[sector] = [];
+          groups[sector].push({row, option, cells: row.cells, included: Boolean(row.querySelector('[data-include-pm]')?.checked)});
+        });
+        target.replaceChildren();
+        sectors.forEach(sector => {
+          const projects = groups[sector] || [];
+          const card = document.createElement('article');
+          card.className = 'uw-sector-project-card';
+          const head = document.createElement('div');
+          head.className = 'uw-sector-project-head';
+          const title = document.createElement('h3');
+          title.textContent = sector;
+          const count = document.createElement('span');
+          count.className = 'uw-sector-project-count';
+          count.textContent = `${projects.length} project update${projects.length === 1 ? '' : 's'}`;
+          head.append(title, count);
+          card.appendChild(head);
+          if (!projects.length) {
+            const empty = document.createElement('p');
+            empty.className = 'uw-project-updates-empty';
+            empty.textContent = 'No PM updates submitted for this sector in the current browser demo.';
+            card.appendChild(empty);
+          } else {
+            const table = document.createElement('table');
+            table.className = 'uw-project-update-table';
+            const thead = document.createElement('thead');
+            const header = document.createElement('tr');
+            ['Project', 'Status', 'Monthly movement', 'Next milestone', 'Report'].forEach(label => {
+              const th = document.createElement('th'); th.textContent = label; header.appendChild(th);
+            });
+            thead.appendChild(header); table.appendChild(thead);
+            const tbody = document.createElement('tbody');
+            projects.forEach(({row, option, cells, included}) => {
+              const tr = document.createElement('tr');
+              const project = document.createElement('td');
+              project.textContent = option.textContent;
+              const status = document.createElement('td');
+              const badge = document.createElement('span');
+              const normalized = cells[1].textContent.trim().toLowerCase();
+              badge.className = 'uw-report-status' + (normalized.includes('red') ? ' red' : normalized.includes('amber') ? ' amber' : normalized.includes('hold') ? ' hold' : '');
+              badge.textContent = cells[1].textContent;
+              status.appendChild(badge);
+              const movement = document.createElement('td'); movement.textContent = cells[2].textContent;
+              const milestone = document.createElement('td'); milestone.textContent = cells[3].textContent;
+              const report = document.createElement('td'); report.textContent = included ? 'Exception' : 'Tracking';
+              if (included) report.className = 'uw-report-included';
+              tr.append(project, status, movement, milestone, report);
+              tbody.appendChild(tr);
+            });
+            table.appendChild(tbody); card.appendChild(table);
+          }
+          target.appendChild(card);
+        });
+      };
       const updateSectorPreview = () => {
-        const selectedExceptions = [...root.querySelectorAll('#uw-sector-rollup-rows tr')].filter(row => row.querySelector('[data-include-pm]')?.checked).map(row => {
+        const selectedExceptions = [...root.querySelectorAll('#uw-sector-rollup-rows tr')].filter(row => !row.hidden && row.querySelector('[data-include-pm]')?.checked).map(row => {
           const c = row.cells;
           return c[0].textContent + ' — ' + c[1].textContent + '; ' + c[2].textContent + '; next: ' + c[3].textContent;
         });
@@ -959,6 +1123,7 @@
         root.querySelector('[data-sector-pr-action-block]').hidden = !action;
         root.querySelector('[data-sector-pr-request]').textContent = root.querySelector('#uw-sector-request').value || 'Action details needed.';
         root.querySelector('[data-sector-pr-owner-date]').textContent = (root.querySelector('#uw-sector-action-owner').value || 'Owner not set') + ' · Needed by ' + (root.querySelector('#uw-sector-due').value || 'date not set');
+        renderMonthlySectorProjects();
       };
       weeklyForm.addEventListener('input', updateSectorPreview);
       weeklyForm.addEventListener('change', updateSectorPreview);
@@ -966,6 +1131,13 @@
       updateProgramPreview();
       updateSectorPreview();
       const rollupRows = root.querySelector('#uw-sector-rollup-rows');
+      const filterSectorProjects = () => {
+        const sector = root.querySelector('#uw-sector-name').value;
+        [...rollupRows.querySelectorAll('[data-pm-project]')].forEach(row => {
+          const option = [...projectPicker.options].find(item => item.value === row.dataset.pmProject);
+          row.hidden = Boolean(option && option.dataset.sector !== sector);
+        });
+      };
       const readPmRollup = () => {
         try { return JSON.parse(localStorage.getItem('usvi-sector-pm-rollup') || '[]'); } catch (_) { return []; }
       };
@@ -986,16 +1158,36 @@
         });
       };
       renderPmRollup();
+      filterSectorProjects();
       updateSectorPreview();
+      root.querySelector('#uw-sector-name').addEventListener('change', () => { filterSectorProjects(); updateSectorPreview(); });
       rollupRows.addEventListener('change', event => { if (event.target.matches('[data-include-pm]')) updateSectorPreview(); });
+      const captureWeeklyReportState = () => {
+        const fields = Object.fromEntries([...weeklyForm.querySelectorAll('input[id],select[id],textarea[id]')].map(el => [el.id, {value:el.value, checked:el.type==='checkbox'?el.checked:undefined}]));
+        const exceptions = [...exceptionList.querySelectorAll('.uw-exception-card')].map(card => Object.fromEntries([...card.querySelectorAll('[data-ex-type],[data-ex-description],[data-ex-projects],[data-ex-impact],[data-ex-likelihood],[data-ex-severity],[data-ex-response],[data-ex-unresolved],[data-ex-action],[data-ex-link],[data-ex-request],[data-ex-owner],[data-ex-date],[data-ex-delay]')].map(el => [el.dataset.exType!==undefined?'type':el.dataset.exDescription!==undefined?'description':el.dataset.exProjects!==undefined?'projects':el.dataset.exImpact!==undefined?'impact':el.dataset.exLikelihood!==undefined?'likelihood':el.dataset.exSeverity!==undefined?'severity':el.dataset.exResponse!==undefined?'response':el.dataset.exUnresolved!==undefined?'unresolved':el.dataset.exAction!==undefined?'action':el.dataset.exLink!==undefined?'link':el.dataset.exRequest!==undefined?'request':el.dataset.exOwner!==undefined?'owner':el.dataset.exDate!==undefined?'date':'delay',el.value])));
+        return {fields, exceptions, mode:root.dataset.weeklyReportMode, pmIncluded:Object.fromEntries([...rollupRows.querySelectorAll('[data-pm-project]')].map(row=>[row.dataset.pmProject,Boolean(row.querySelector('[data-include-pm]')?.checked)]))};
+      };
+      const restoreWeeklyReportState = saved => {
+        if(!saved) return;
+        Object.entries(saved.fields||{}).forEach(([id,data])=>{const el=root.querySelector(`#${id}`);if(el){el.value=data.value;if(el.type==='checkbox')el.checked=data.checked;}});
+        if(saved.exceptions?.length){exceptionList.textContent='';saved.exceptions.forEach(entry=>{exceptionList.insertAdjacentHTML('beforeend',exceptionMarkup());const card=exceptionList.lastElementChild;Object.entries(entry).forEach(([key,value])=>{const el=card.querySelector(`[data-ex-${key}]`);if(el)el.value=value;});});}
+        Object.entries(saved.pmIncluded||{}).forEach(([project,checked])=>{const row=[...rollupRows.querySelectorAll('[data-pm-project]')].find(item=>item.dataset.pmProject===project);if(row){const checkbox=row.querySelector('[data-include-pm]');if(checkbox)checkbox.checked=checked;}});
+        setReportMode(['project','program','sector'].includes(saved.mode)?saved.mode:'project');
+        updateProjectMetadata();updateProgramDetails();updateProgramPreview();filterSectorProjects();updateSectorPreview();
+        root.querySelector('[data-program-action-details]').hidden=root.querySelector('#uw-program-action').value!=='yes';
+        root.querySelector('[data-sector-action-details]').hidden=root.querySelector('#uw-sector-action').value!=='yes';
+        updateStatusException();updateMilestoneStatus();dateChangeDetails.hidden=!dateChanged.checked;costDetails.hidden=!costDetailsToggle.checked;
+      };
+      const weeklyHistoryLabel = mode => mode==='project' ? `${projectPicker.selectedOptions[0]?.textContent||'Project'} · week ending ${root.querySelector('#uw-week').value||'date not set'}` : mode==='program' ? `${root.querySelector('#uw-program-area').value||'Function'} · ${root.querySelector('#uw-program-period').value||'month not set'}` : `${root.querySelector('#uw-sector-name').value||'Sector'} · ${root.querySelector('#uw-sector-period').value||'month not set'}`;
       root.querySelectorAll('[data-weekly-action]').forEach(button=>button.addEventListener('click',()=>{
         const activeMode=root.dataset.weeklyReportMode;
         const toast=button.dataset.weeklyAction==='submit-sector' || (button.dataset.weeklyAction==='save' && activeMode==='sector') ? root.querySelector('#uw-sector-update-panel .uw-toast') : button.dataset.weeklyAction==='submit-program' || (button.dataset.weeklyAction==='save' && activeMode==='program') ? root.querySelector('#uw-program-update-panel .uw-toast') : activeMode==='project' ? weeklyForm.querySelector('#uw-project-update-panel .uw-toast') : root.querySelector('#uw-sector-update-panel .uw-toast');
         if(button.dataset.weeklyAction==='save'){
-          const controls=[...weeklyForm.querySelectorAll('input[id],select[id],textarea[id]')].filter(el=>el.type!=='file');
-          const fields=Object.fromEntries(controls.map(el=>[el.id,{value:el.value,checked:el.type==='checkbox'?el.checked:undefined}]));
-          const exceptions=[...exceptionList.querySelectorAll('.uw-exception-card')].map(card=>Object.fromEntries([...card.querySelectorAll('[data-ex-type],[data-ex-description],[data-ex-projects],[data-ex-impact],[data-ex-likelihood],[data-ex-severity],[data-ex-response],[data-ex-unresolved],[data-ex-action],[data-ex-link],[data-ex-request],[data-ex-owner],[data-ex-date],[data-ex-delay]')].map(el=>[el.dataset.exType!==undefined?'type':el.dataset.exDescription!==undefined?'description':el.dataset.exProjects!==undefined?'projects':el.dataset.exImpact!==undefined?'impact':el.dataset.exLikelihood!==undefined?'likelihood':el.dataset.exSeverity!==undefined?'severity':el.dataset.exResponse!==undefined?'response':el.dataset.exUnresolved!==undefined?'unresolved':el.dataset.exAction!==undefined?'action':el.dataset.exLink!==undefined?'link':el.dataset.exRequest!==undefined?'request':el.dataset.exOwner!==undefined?'owner':el.dataset.exDate!==undefined?'date':'delay',el.value])));
-          localStorage.setItem('usvi-weekly-project-report-draft',JSON.stringify({fields,exceptions,mode:root.dataset.weeklyReportMode}));toast.textContent='Draft saved in this browser.';toast.classList.add('show');
+          const state=captureWeeklyReportState();
+          localStorage.setItem('usvi-weekly-project-report-draft',JSON.stringify(state));
+          const type=activeMode==='project'?'weekly-project':activeMode==='program'?'monthly-functional':'monthly-sector';
+          addInputHistory(type,weeklyHistoryLabel(activeMode),state,'Draft');
+          toast.textContent='Draft saved in this browser. Reopen it from Previous inputs.';toast.classList.add('show');
         }
         if(button.dataset.weeklyAction==='submit-sector'){
           const required=[['uw-sector-period','Select the reporting month.'],['uw-sector-owner','Enter the Sector Lead and role.'],['uw-sector-change','Summarize the material sector movement.']];
@@ -1004,7 +1196,7 @@
           const request=root.querySelector('#uw-sector-request');
           if(missing){toast.textContent=missing[1];root.querySelector('#'+missing[0]).focus();}
           else if(action&&!request.value.trim()){toast.textContent='Describe the requested leadership or agency action.';request.focus();}
-          else {toast.textContent='Mockup response: the Sector Lead update is ready to combine with PM and Functional Lead submissions. No information was transmitted.';}
+          else {const state=captureWeeklyReportState();addInputHistory('monthly-sector',weeklyHistoryLabel('sector'),state,'Submitted');toast.textContent='Mockup response: the Sector Lead update is saved in Previous inputs and ready to combine with PM and Functional Lead submissions. No information was transmitted.';}
           toast.classList.add('show');
         }
         if(button.dataset.weeklyAction==='submit-program'){
@@ -1016,7 +1208,7 @@
           else if(!owner.value.trim()){toast.textContent='Enter the function update owner and role.';owner.focus();}
           else if(!change.value.trim()){toast.textContent='Describe the material change and why it matters.';change.focus();}
           else if(action&&!request.value.trim()){toast.textContent='Describe the requested leadership or agency action, owner, and date.';request.focus();}
-          else {toast.textContent='Mockup response: the function update is ready for reporting synthesis. No information was transmitted.';}
+          else {const state=captureWeeklyReportState();addInputHistory('monthly-functional',weeklyHistoryLabel('program'),state,'Submitted');toast.textContent='Mockup response: the Functional Lead update is saved in Previous inputs and ready for reporting synthesis. No information was transmitted.';}
           toast.classList.add('show');
         }
         if(button.dataset.weeklyAction==='submit'){
@@ -1030,6 +1222,7 @@
             const submissions=readPmRollup().filter(item=>item.project!==option.value);
             submissions.push({project:option.value,status:root.querySelector('#uw-overall').selectedOptions[0].text.split(' — ')[0],change:root.querySelector('#uw-change').value.trim(),milestone:root.querySelector('#uw-milestone').value.trim()});
             localStorage.setItem('usvi-sector-pm-rollup',JSON.stringify(submissions));
+            addInputHistory('weekly-project',weeklyHistoryLabel('project'),captureWeeklyReportState(),'Submitted');
             renderPmRollup();
             updateSectorPreview();
             toast.textContent='PM update saved in this browser and added to the Sector Lead roll-up. No information was transmitted.';
@@ -1039,14 +1232,7 @@
       }));
       try {
         const saved=JSON.parse(localStorage.getItem('usvi-weekly-project-report-draft')||'null');
-        if(saved){Object.entries(saved.fields||{}).forEach(([id,data])=>{const el=root.querySelector(`#${id}`);if(el){el.value=data.value;if(el.type==='checkbox')el.checked=data.checked;}});
-          if(saved.exceptions?.length){exceptionList.textContent='';saved.exceptions.forEach(entry=>{exceptionList.insertAdjacentHTML('beforeend',exceptionMarkup());const card=exceptionList.lastElementChild;Object.entries(entry).forEach(([key,value])=>{const el=card.querySelector(`[data-ex-${key}]`);if(el)el.value=value;});});}
-          setReportMode(['project','program','sector'].includes(saved.mode) ? saved.mode : 'project');
-          updateProjectMetadata();updateProgramDetails();updateProgramPreview();updateSectorPreview();
-          root.querySelector('[data-program-action-details]').hidden=root.querySelector('#uw-program-action').value!=='yes';
-          root.querySelector('[data-sector-action-details]').hidden=root.querySelector('#uw-sector-action').value!=='yes';
-          updateStatusException();updateMilestoneStatus();dateChangeDetails.hidden=!dateChanged.checked;costDetails.hidden=!costDetailsToggle.checked;
-        }
+        if(saved)restoreWeeklyReportState(saved);
       } catch (_) { /* A browser with storage disabled can still use the form. */ }
       refreshExceptions();syncMonthlySnapshot();
 
@@ -1153,6 +1339,40 @@
         const now = new Date();
         return String(now.getFullYear())+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
       };
+      const functionalWeeklyForm=root.querySelector('#uw-functional-weekly-form');
+      const functionalProjectPicker=root.querySelector('#ufw-project-picker');
+      const functionalProjectTags=root.querySelector('[data-func-project-tags]');
+      const functionalProjectState=()=>functionalProjectTags.dataset.selectedProjects?functionalProjectTags.dataset.selectedProjects.split('|').filter(Boolean):[];
+      const renderFunctionalProjectTags=()=>{
+        const projects=functionalProjectState();functionalProjectTags.textContent='';
+        projects.forEach(project=>{const tag=document.createElement('span');tag.className='uw-project-tag';const name=document.createElement('span');name.textContent=project;const remove=document.createElement('button');remove.type='button';remove.textContent='×';remove.setAttribute('aria-label',`Remove ${project}`);remove.dataset.removeFunctionalProject=project;tag.append(name,remove);functionalProjectTags.appendChild(tag);});
+      };
+      const functionalWeeklyState=()=>({fields:Object.fromEntries([...functionalWeeklyForm.querySelectorAll('input[id],select[id],textarea[id]')].map(el=>[el.id,{value:el.value,checked:el.type==='checkbox'?el.checked:undefined}])),projects:functionalProjectState()});
+      const restoreFunctionalWeeklyState=state=>{
+        Object.entries(state?.fields||{}).forEach(([id,data])=>{const field=root.querySelector(`#${id}`);if(field){field.value=data.value;if(field.type==='checkbox')field.checked=data.checked;}});
+        functionalProjectTags.dataset.selectedProjects=(state?.projects||[]).join('|');renderFunctionalProjectTags();
+        root.querySelector('[data-ufw-nonproject]').hidden=!root.querySelector('#ufw-nonproject-toggle').checked;
+        root.querySelector('#ufw-nonproject').required=root.querySelector('#ufw-nonproject-toggle').checked;
+      };
+      root.querySelector('#ufw-date').value=localDate();
+      functionalProjectPicker.addEventListener('change',()=>{
+        const value=functionalProjectPicker.value;if(value){const projects=functionalProjectState();if(value==='Program-wide / PMO')functionalProjectTags.dataset.selectedProjects=value;else{const next=projects.filter(item=>item!=='Program-wide / PMO');if(!next.includes(value))next.push(value);functionalProjectTags.dataset.selectedProjects=next.join('|');}renderFunctionalProjectTags();functionalProjectPicker.value='';}
+      });
+      functionalProjectTags.addEventListener('click',event=>{const remove=event.target.closest('[data-remove-functional-project]');if(!remove)return;functionalProjectTags.dataset.selectedProjects=functionalProjectState().filter(item=>item!==remove.dataset.removeFunctionalProject).join('|');renderFunctionalProjectTags();});
+      root.querySelector('#ufw-nonproject-toggle').addEventListener('change',event=>{const field=root.querySelector('#ufw-nonproject'),wrap=root.querySelector('[data-ufw-nonproject]');wrap.hidden=!event.target.checked;field.required=event.target.checked;});
+      root.querySelectorAll('[data-functional-weekly-action]').forEach(button=>button.addEventListener('click',()=>{
+        const action=button.dataset.functionalWeeklyAction,status=root.querySelector('[data-functional-weekly-status]');
+        if(action==='save'){const state=functionalWeeklyState(),label=`${root.querySelector('#ufw-name').value||'Contributor'} · week ending ${root.querySelector('#ufw-date').value||'date not set'}`;try{localStorage.setItem('usvi-functional-weekly-draft',JSON.stringify(state));}catch(_){}addInputHistory('functional-weekly',label,state,'Draft');status.textContent='Draft saved in this browser. Reopen it from Previous inputs.';}
+        if(action==='submit'){
+          if(!functionalWeeklyForm.reportValidity())return;
+          if(!functionalProjectState().length&&!(root.querySelector('#ufw-nonproject-toggle').checked&&root.querySelector('#ufw-nonproject').value.trim())){status.textContent='Add a project or sector, or describe non-project tasks for this week.';functionalProjectPicker.focus();return;}
+          if(root.querySelector('#ufw-nonproject-toggle').checked&&!root.querySelector('#ufw-nonproject').value.trim()){status.textContent='Describe the non-project tasks or turn off the non-project task option.';root.querySelector('#ufw-nonproject').focus();return;}
+          const state=functionalWeeklyState(),label=`${root.querySelector('#ufw-name').value} · ${root.querySelector('#ufw-sector').value} · week ending ${root.querySelector('#ufw-date').value}`;
+          addInputHistory('functional-weekly',label,state,'Submitted');status.textContent='Weekly functional log saved in Previous inputs. No information was transmitted.';
+        }
+        if(action==='clear'){functionalWeeklyForm.reset();functionalProjectTags.dataset.selectedProjects='';renderFunctionalProjectTags();root.querySelector('#ufw-date').value=localDate();root.querySelector('[data-ufw-nonproject]').hidden=true;root.querySelector('#ufw-nonproject').required=false;status.textContent='Form cleared. Reopen any prior log from Previous inputs.';}
+      }));
+      try{const saved=JSON.parse(localStorage.getItem('usvi-functional-weekly-draft')||'null');if(saved)restoreFunctionalWeeklyState(saved);}catch(_){}
       const wsDateLabel = (value) => {
         if (!value) return '';
         const [year, month, day] = value.split('-').map(Number);
@@ -1220,7 +1440,7 @@
       wsForm.addEventListener('click',event=>{if(event.target.closest('[data-ws-remove]')){event.target.closest('[data-ws-entry]').remove();wsUpdatePreview();}});
       root.querySelectorAll('[data-ws-action]').forEach(button=>button.addEventListener('click',()=>{
         const action=button.dataset.wsAction;
-        if(action==='save'){localStorage.setItem('usvi-weekly-work-substantiation',JSON.stringify(wsState()));wsStatus.textContent='Draft saved in this browser.';}
+        if(action==='save'){const state=wsState();localStorage.setItem('usvi-weekly-work-substantiation',JSON.stringify(state));addInputHistory('substantiation',`${state.fields.project||'Project'} · ${state.fields.start||'start'} to ${state.fields.end||'end'}`,state,'Draft');wsStatus.textContent='Draft saved in this browser. Reopen it from Previous inputs.';}
         if(action==='clear'){
           wsForm.reset();
           ['project','start','end','prepared','services-summary','records'].forEach(key=>root.querySelector('#uw-ws-'+key).value='');
@@ -1230,10 +1450,29 @@
         if(action==='submit'){
           if(!wsForm.reportValidity()) return;
           if(!wsValue('#uw-ws-services-summary')){wsStatus.textContent='Enter a high-level summary of the services performed.';root.querySelector('#uw-ws-services-summary').focus();return;}
-          wsStatus.textContent='Mockup: report is complete and ready for agency review. No information was transmitted.';
+          const state=wsState();addInputHistory('substantiation',`${state.fields.project} · ${state.fields.start} to ${state.fields.end}`,state,'Submitted');
+          wsStatus.textContent='Mockup: report is complete and saved in Previous inputs for agency review. No information was transmitted.';
         }
         if(action==='print'){root.classList.add('uw-print-substantiation');const cleanup=()=>{root.classList.remove('uw-print-substantiation');window.removeEventListener('afterprint',cleanup);};window.addEventListener('afterprint',cleanup);window.print();setTimeout(cleanup,1000);}
       }));
+
+      reopenHistoryRecord = entry => {
+        if(entry.type==='functional-weekly'){
+          showTopView('uw-functional-weekly');restoreFunctionalWeeklyState(entry.state);
+          root.querySelector('[data-functional-weekly-status]').textContent=`Reopened ${entry.status.toLowerCase()} log. Update the week ending date and details, then save or submit.`;
+          return;
+        }
+        if(['weekly-project','monthly-sector','monthly-functional'].includes(entry.type)){
+          showTopView('uw-weekly');restoreWeeklyReportState(entry.state);
+          const mode=entry.state.mode==='program'?'program':entry.state.mode==='sector'?'sector':'project';
+          root.querySelector(`#uw-${mode==='project'?'project':mode==='program'?'program':'sector'}-update-panel .uw-toast`).textContent=`Reopened ${entry.status.toLowerCase()} input. Change the week or month and update the information before resubmitting.`;
+          return;
+        }
+        if(entry.type==='substantiation'){
+          showTopView('uw-substantiation');wsRestore(entry.state);
+          wsStatus.textContent=`Reopened ${entry.status.toLowerCase()} record. Update the reporting period and details before submitting.`;
+        }
+      };
 
       root.querySelectorAll('[data-demo]').forEach((button) => button.addEventListener('click', () => {
         const view = button.closest('.uw-view');
